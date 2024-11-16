@@ -1,1 +1,3 @@
-# algorithmik
+# algorithmik [WIP]
+
+Under construction...
