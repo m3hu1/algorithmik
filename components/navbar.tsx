@@ -5,6 +5,7 @@ import { buttonVariants } from "./ui/button";
 import { page_routes } from "@/lib/routes-config";
 import Anchor from "./anchor";
 import { SheetClose } from "@/components/ui/sheet";
+import Search from "./search";
 
 export const NAVLINKS = [
   {
@@ -33,6 +34,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
+          <Search />
             <div className="flex ml-2.5 sm:ml-0">
               <Link
                 href="https://github.com/m3hu1/algorithmik"
