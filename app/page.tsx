@@ -14,9 +14,9 @@ export default function Home() {
         Support me by starring the repo on GitHub{" "}
         <MoveUpRightIcon className="w-4 h-4 font-extrabold" />
       </Link>
-      <h1 className="text-3xl font-bold mb-4 sm:text-6xl">
+      <h1 className="text-3xl font-bold mb-4 sm:text-6xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-transparent dark:from-white dark:to-slate-900/10 pb-2">
       Mastering Data Structure & Algorithms
-      </h1>
+</h1>
       <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
       This is a comprehensive guide to mastering data structures and algorithms. It covers a wide range of topics, from the basics to advanced concepts.
       </p>
