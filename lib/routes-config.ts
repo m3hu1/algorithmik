@@ -39,6 +39,22 @@ export const ROUTES: EachRoute[] = [
     ],
   },
   {
+    title: "Algorithms",
+    href: "/algorithms",
+    items: [
+      { title: "Binary Search", href: "/binary-search" },
+      { title: "Depth-First Search", href: "/dfs" },
+      { title: "Breadth-First Search", href: "/bfs" },
+      { title: "Sliding Window", href: "/sliding-window" },
+      { title: "Dynamic Programming", href: "/dp" },
+      { title: "Greedy", href: "/greedy" },
+      { title: "Backtracking", href: "/backtracking" },
+      { title: "Two Pointers", href: "/two-pointers" },
+      { title: "Sorting", href: "/sorting" },
+      { title: "Bit Manipulation", href: "/bit-manipulation" },
+    ]
+  },
+  {
     title: "Miscellaneous",
     href: "/misc",
     items: [
@@ -46,6 +62,7 @@ export const ROUTES: EachRoute[] = [
         title: "Complexity of Various Algorithms",
         href: "/complexity-of-algos",
       },
+      { title: "Recursion", href: "/recursion" },
     ],
   },
 ];
