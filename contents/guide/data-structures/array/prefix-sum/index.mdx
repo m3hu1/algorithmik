@@ -1,0 +1,116 @@
+---
+title: Introduction to Prefix Sum Algorithm
+description: Learn how the Prefix Sum Algorithm simplifies range-sum queries and optimizes computations in arrays.
+---
+
+## What is the Prefix Sum Algorithm?
+
+The **Prefix Sum Algorithm** is a simple yet powerful technique that preprocesses an array to answer **range-sum queries** efficiently. By creating a prefix sum array, it reduces the time complexity of summing elements between any two indices from `O(n)` to `O(1)` after preprocessing.
+
+### How It Works
+
+1. **Preprocessing**: Build a prefix sum array `prefix[i]`, where each element is the sum of all elements in the original array up to index `i`.
+   
+    `prefix[i] = prefix[i-1] + arr[i]`
+
+2. **Querying**: To find the sum of elements between indices `l` and `r`, use:
+   
+    `sum = prefix[r] - prefix[l-1]`
+
+    For `l = 0`, the sum is directly `prefix[r]`.
+
+### Why It's Useful
+
+- **Efficient Queries**: Once the prefix sum array is built, any range sum query takes `O(1)` time.
+- **Optimized Solutions**: Useful for problems involving multiple queries or large arrays, like subarray sums, range updates, or cumulative statistics.
+
+### Implementation
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    vector<int> buildPrefixSum(const vector<int>& arr) {
+        vector<int> prefix(arr.size(), 0);
+        prefix[0] = arr[0];
+        for (int i = 1; i < arr.size(); i++) {
+            prefix[i] = prefix[i - 1] + arr[i];
+        }
+        return prefix;
+    }
+
+    int rangeSum(const vector<int>& prefix, int l, int r) {
+        return l == 0 ? prefix[r] : prefix[r] - prefix[l - 1];
+    }
+
+    int main() {
+        vector<int> arr = {1, 2, 3, 4, 5};
+        vector<int> prefix = buildPrefixSum(arr);
+        cout << "Sum from index 1 to 3: " << rangeSum(prefix, 1, 3) << endl; // Output: 9
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    def build_prefix_sum(arr):
+        prefix = [0] * len(arr)
+        prefix[0] = arr[0]
+        for i in range(1, len(arr)):
+            prefix[i] = prefix[i - 1] + arr[i]
+        return prefix
+
+    def range_sum(prefix, l, r):
+        return prefix[r] if l == 0 else prefix[r] - prefix[l - 1]
+
+    arr = [1, 2, 3, 4, 5]
+    prefix = build_prefix_sum(arr)
+    print("Sum from index 1 to 3:", range_sum(prefix, 1, 3))  # Output: 9
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    public class PrefixSum {
+        public static int[] buildPrefixSum(int[] arr) {
+            int[] prefix = new int[arr.length];
+            prefix[0] = arr[0];
+            for (int i = 1; i < arr.length; i++) {
+                prefix[i] = prefix[i - 1] + arr[i];
+            }
+            return prefix;
+        }
+
+        public static int rangeSum(int[] prefix, int l, int r) {
+            return l == 0 ? prefix[r] : prefix[r] - prefix[l - 1];
+        }
+
+        public static void main(String[] args) {
+            int[] arr = {1, 2, 3, 4, 5};
+            int[] prefix = buildPrefixSum(arr);
+            System.out.println("Sum from index 1 to 3: " + rangeSum(prefix, 1, 3)); // Output: 9
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+### Example
+
+Input: `arr = [1, 2, 3, 4, 5]`  
+Prefix Array: `[1, 3, 6, 10, 15]`  
+Query: Sum of elements from idx `1` to `3` → `prefix[3] - prefix[0] = 10 - 1 = 9`
+
+### Key Takeaway
+
+The Prefix Sum Algorithm is a versatile tool for range-based computations. Its ability to preprocess data for quick queries makes it a go-to strategy for array-related problems in competitive programming and beyond.

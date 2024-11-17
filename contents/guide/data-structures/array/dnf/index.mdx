@@ -1,0 +1,134 @@
+---
+title: Understanding the Dutch National Flag Algorithm
+description: A guide to the Dutch National Flag Algorithm for efficiently sorting arrays with three distinct elements.
+---
+
+## What is the Dutch National Flag Algorithm?
+
+The **Dutch National Flag Algorithm** is an efficient method to sort an array containing three distinct elements (or categories) in a single pass. It is particularly useful for problems like sorting an array of 0s, 1s, and 2s.
+
+### How It Works
+
+The algorithm uses three pointers:
+1. **low**: Points to the boundary between the first category (e.g., 0s) and the rest.
+2. **mid**: Scans the array to classify elements.
+3. **high**: Points to the boundary between the third category (e.g., 2s) and the rest.
+
+The array is divided into three regions:
+- Elements before `low`: First category (e.g., 0s).
+- Elements between `low` and `high`: Unsorted elements.
+- Elements after `high`: Third category (e.g., 2s).
+
+At each step:
+- If `arr[mid]` belongs to the first category, swap it with `arr[low]` and increment both `low` and `mid`.
+- If `arr[mid]` belongs to the second category, increment `mid`.
+- If `arr[mid]` belongs to the third category, swap it with `arr[high]` and decrement `high`.
+
+### Why It’s Optimal
+
+1. **Linear Time Complexity**: The array is traversed once, making the time complexity `O(n)`.
+2. **In-Place Sorting**: It uses constant space, requiring no extra memory.
+
+### Implementation
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    void dutchFlag(vector<int>& arr) {
+        int low = 0, mid = 0, high = arr.size() - 1;
+
+        while (mid <= high) {
+            if (arr[mid] == 0) {
+                swap(arr[low++], arr[mid++]);
+            } else if (arr[mid] == 1) {
+                mid++;
+            } else { // arr[mid] == 2
+                swap(arr[mid], arr[high--]);
+            }
+        }
+    }
+
+    int main() {
+        vector<int> arr = {2, 0, 2, 1, 1, 0};
+        dutchFlag(arr);
+        for (int num : arr) {
+            cout << num << " ";
+        }
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    def dutch_flag(arr):
+        low, mid, high = 0, 0, len(arr) - 1
+
+        while mid <= high:
+            if arr[mid] == 0:
+                arr[low], arr[mid] = arr[mid], arr[low]
+                low += 1
+                mid += 1
+            elif arr[mid] == 1:
+                mid += 1
+            else:  # arr[mid] == 2
+                arr[mid], arr[high] = arr[high], arr[mid]
+                high -= 1
+
+    arr = [2, 0, 2, 1, 1, 0]
+    dutch_flag(arr)
+    print(arr)
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.Arrays;
+
+    public class DutchFlag {
+        public static void dutchFlag(int[] arr) {
+            int low = 0, mid = 0, high = arr.length - 1;
+
+            while (mid <= high) {
+                if (arr[mid] == 0) {
+                    int temp = arr[low];
+                    arr[low++] = arr[mid];
+                    arr[mid++] = temp;
+                } else if (arr[mid] == 1) {
+                    mid++;
+                } else { // arr[mid] == 2
+                    int temp = arr[high];
+                    arr[high--] = arr[mid];
+                    arr[mid] = temp;
+                }
+            }
+        }
+
+        public static void main(String[] args) {
+            int[] arr = {2, 0, 2, 1, 1, 0};
+            dutchFlag(arr);
+            System.out.println(Arrays.toString(arr));
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+### Example
+
+Input: `[2, 0, 2, 1, 1, 0]`  
+Output: `[0, 0, 1, 1, 2, 2]`
+
+### Key Takeaway
+
+The Dutch National Flag Algorithm efficiently sorts arrays with three categories using a simple, in-place approach. Its combination of clarity and performance makes it a popular choice for classification problems in programming contests and interviews.
