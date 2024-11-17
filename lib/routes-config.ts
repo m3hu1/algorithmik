@@ -58,11 +58,9 @@ export const ROUTES: EachRoute[] = [
     title: "Miscellaneous",
     href: "/misc",
     items: [
-      {
-        title: "Complexity of Various Algorithms",
-        href: "/complexity-of-algos",
-      },
+      { title: "Pointers", href: "/pointers" },
       { title: "Recursion", href: "/recursion" },
+      {  title: "Complexity of Various Algorithms", href: "/complexity-of-algos", },
     ],
   },
 ];
