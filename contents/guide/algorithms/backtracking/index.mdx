@@ -1,0 +1,194 @@
+---
+title: Backtracking
+description: Explore all possibilities for solving constraint-based problems.
+---
+
+## What is Backtracking?
+
+Backtracking is a recursive algorithmic technique for solving problems by exploring all possible options. It systematically builds solutions and abandons (backtracks from) those that fail to meet the problem's constraints, making it ideal for problems that require finding all solutions or the best one.
+
+## Key Concepts in Backtracking
+
+1. **Recursive Exploration**: Problems are solved by exploring decisions step by step.
+2. **Constraint Checking**: At each step, the algorithm checks whether the current state is valid.
+3. **Backtracking**: If the current state is invalid or does not lead to a solution, it undoes the last decision and tries a different one.
+
+## Time & Space Complexities
+
+- **Time Complexity**: Highly problem-dependent; can range from `O(k^n)` (exponential) for `n` decisions with `k` options each, to more optimized solutions using pruning.
+- **Space Complexity**: Depends on the recursion depth, often `O(n)` for problems with `n` levels of decisions.
+
+## When to Use Backtracking
+
+Backtracking is commonly used for:
+
+- Combinatorial problems (e.g., generating permutations, subsets).
+- Solving constraint satisfaction problems (e.g., N-Queens, Sudoku).
+- Pathfinding problems (e.g., finding all paths in a maze).
+- Optimization problems when brute force can be pruned.
+
+## Code Example
+
+Below is an example of solving the N-Queens problem using backtracking.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    bool isSafe(vector<string>& board, int row, int col, int n) {
+        for (int i = 0; i < row; i++) {
+            if (board[i][col] == 'Q') return false;
+            if (col - (row - i) >= 0 && board[i][col - (row - i)] == 'Q') return false;
+            if (col + (row - i) < n && board[i][col + (row - i)] == 'Q') return false;
+        }
+        return true;
+    }
+
+    void solve(vector<string>& board, int row, int n, vector<vector<string>>& solutions) {
+        if (row == n) {
+            solutions.push_back(board);
+            return;
+        }
+
+        for (int col = 0; col < n; col++) {
+            if (isSafe(board, row, col, n)) {
+                board[row][col] = 'Q';
+                solve(board, row + 1, n, solutions);
+                board[row][col] = '.'; // Backtrack
+            }
+        }
+    }
+
+    vector<vector<string>> solveNQueens(int n) {
+        vector<vector<string>> solutions;
+        vector<string> board(n, string(n, '.'));
+        solve(board, 0, n, solutions);
+        return solutions;
+    }
+
+    int main() {
+        int n = 4;
+        vector<vector<string>> solutions = solveNQueens(n);
+
+        for (const auto& solution : solutions) {
+            for (const auto& row : solution) {
+                cout << row << endl;
+            }
+            cout << endl;
+        }
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    def is_safe(board, row, col, n):
+        for i in range(row):
+            if board[i][col] == "Q":
+                return False
+            if col - (row - i) >= 0 and board[i][col - (row - i)] == "Q":
+                return False
+            if col + (row - i) < n and board[i][col + (row - i)] == "Q":
+                return False
+        return True
+
+    def solve(board, row, n, solutions):
+        if row == n:
+            solutions.append(["".join(row) for row in board])
+            return
+
+        for col in range(n):
+            if is_safe(board, row, col, n):
+                board[row][col] = "Q"
+                solve(board, row + 1, n, solutions)
+                board[row][col] = "."  # Backtrack
+
+    def solve_n_queens(n):
+        solutions = []
+        board = [["." for _ in range(n)] for _ in range(n)]
+        solve(board, 0, n, solutions)
+        return solutions
+
+    # Example usage
+    n = 4
+    solutions = solve_n_queens(n)
+    for solution in solutions:
+        for row in solution:
+            print(row)
+        print()
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.ArrayList;
+    import java.util.List;
+
+    public class NQueens {
+        public boolean isSafe(char[][] board, int row, int col, int n) {
+            for (int i = 0; i < row; i++) {
+                if (board[i][col] == 'Q') return false;
+                if (col - (row - i) >= 0 && board[i][col - (row - i)] == 'Q') return false;
+                if (col + (row - i) < n && board[i][col + (row - i)] == 'Q') return false;
+            }
+            return true;
+        }
+
+        public void solve(char[][] board, int row, int n, List<List<String>> solutions) {
+            if (row == n) {
+                List<String> solution = new ArrayList<>();
+                for (char[] chars : board) {
+                    solution.add(new String(chars));
+                }
+                solutions.add(solution);
+                return;
+            }
+
+            for (int col = 0; col < n; col++) {
+                if (isSafe(board, row, col, n)) {
+                    board[row][col] = 'Q';
+                    solve(board, row + 1, n, solutions);
+                    board[row][col] = '.'; // Backtrack
+                }
+            }
+        }
+
+        public List<List<String>> solveNQueens(int n) {
+            List<List<String>> solutions = new ArrayList<>();
+            char[][] board = new char[n][n];
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    board[i][j] = '.';
+                }
+            }
+            solve(board, 0, n, solutions);
+            return solutions;
+        }
+
+        public static void main(String[] args) {
+            int n = 4;
+            NQueens nq = new NQueens();
+            List<List<String>> solutions = nq.solveNQueens(n);
+
+            for (List<String> solution : solutions) {
+                for (String row : solution) {
+                    System.out.println(row);
+                }
+                System.out.println();
+            }
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>

@@ -1,0 +1,151 @@
+---
+title: Two Pointers Technique
+description: Simplify and optimize problems using the two pointers approach.
+---
+
+## What is the Two Pointers Technique?
+
+The **Two Pointers Technique** is a powerful approach to solve problems involving arrays or strings by using two pointers that traverse the data structure in a coordinated manner. This technique is often used to reduce time complexity compared to traditional nested loops.
+
+## Key Concepts in Two Pointers
+
+1. **Pointers Movement**: 
+   - **Opposite Direction**: Start one pointer at the beginning and the other at the end, moving them toward each other (e.g., checking for a palindrome or two-sum in a sorted array).
+   - **Same Direction**: Start both pointers from the same side and advance them at different rates (e.g., finding subarrays or solving sliding window problems).
+   
+2. **Conditions for Use**:
+   - The array or string must be sorted in many cases (e.g., two-sum in a sorted array).
+   - Problems should have a linear or near-linear solution, often replacing nested loops.
+
+## Time & Space Complexities
+
+- **Time Complexity**: Typically `O(n)` since each pointer traverses the array only once.
+- **Space Complexity**: `O(1)` as no extra space is used.
+
+## When to Use Two Pointers
+
+This technique is commonly used in problems like:
+
+- Finding pairs with a given sum (e.g., two-sum).
+- Merging two sorted arrays.
+- Solving substring or subarray problems.
+- Detecting cycles in linked lists (Floyd's cycle detection).
+- Validating palindromes or skipping specific characters.
+
+## Code Example
+
+Below is an example of using the Two Pointers technique to solve the **Two-Sum in a Sorted Array** problem.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        int left = 0, right = numbers.size() - 1;
+
+        while (left < right) {
+            int sum = numbers[left] + numbers[right];
+
+            if (sum == target) {
+                return {left + 1, right + 1}; // Return 1-based indices
+            } else if (sum < target) {
+                left++; // Move left pointer right
+            } else {
+                right--; // Move right pointer left
+            }
+        }
+
+        return {}; // No solution
+    }
+
+    int main() {
+        vector<int> numbers = {2, 7, 11, 15};
+        int target = 9;
+
+        vector<int> result = twoSum(numbers, target);
+        if (!result.empty()) {
+            cout << "Indices: " << result[0] << ", " << result[1] << endl;
+        } else {
+            cout << "No solution found." << endl;
+        }
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    def two_sum(numbers, target):
+        left, right = 0, len(numbers) - 1
+
+        while left < right:
+            current_sum = numbers[left] + numbers[right]
+
+            if current_sum == target:
+                return [left + 1, right + 1]  # Return 1-based indices
+            elif current_sum < target:
+                left += 1  # Move left pointer right
+            else:
+                right -= 1  # Move right pointer left
+
+        return []  # No solution found
+
+    # Example usage
+    numbers = [2, 7, 11, 15]
+    target = 9
+    result = two_sum(numbers, target)
+    if result:
+        print(f"Indices: {result[0]}, {result[1]}")
+    else:
+        print("No solution found.")
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.Arrays;
+
+    public class TwoSum {
+        public static int[] twoSum(int[] numbers, int target) {
+            int left = 0, right = numbers.length - 1;
+
+            while (left < right) {
+                int sum = numbers[left] + numbers[right];
+
+                if (sum == target) {
+                    return new int[]{left + 1, right + 1}; // Return 1-based indices
+                } else if (sum < target) {
+                    left++; // Move left pointer right
+                } else {
+                    right--; // Move right pointer left
+                }
+            }
+
+            return new int[]{}; // No solution
+        }
+
+        public static void main(String[] args) {
+            int[] numbers = {2, 7, 11, 15};
+            int target = 9;
+
+            int[] result = twoSum(numbers, target);
+            if (result.length > 0) {
+                System.out.println("Indices: " + result[0] + ", " + result[1]);
+            } else {
+                System.out.println("No solution found.");
+            }
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>

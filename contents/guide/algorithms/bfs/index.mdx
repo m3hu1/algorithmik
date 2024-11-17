@@ -1,0 +1,169 @@
+---
+title: Breadth First Search (BFS)
+description: Traverse or search a graph or tree level by level.
+---
+
+## What is Breadth First Search?
+
+Breadth First Search (BFS) is a graph traversal algorithm that explores all the vertices at the current depth level before moving to the next level. It uses a queue data structure to manage the order of exploration, ensuring a level-by-level traversal.
+
+BFS is commonly used for solving shortest path problems in unweighted graphs and finding connected components.
+
+## How the Algorithm Works
+
+Here’s how BFS works:
+
+1. Start at the root node (or any arbitrary node for a graph).
+2. Enqueue the starting node and mark it as visited.
+3. While the queue is not empty:
+   - Dequeue a node from the front of the queue.
+   - Explore all its unvisited neighbors:
+     - Mark each neighbor as visited and enqueue it.
+4. Repeat until all reachable nodes have been visited.
+
+What makes BFS unique is its guarantee to explore the closest nodes first, making it ideal for finding the shortest path in unweighted graphs.
+
+## Time & Space Complexities
+
+- **Time Complexity**: `O(V + E)`, where `V` is the number of vertices and `E` is the number of edges. Each vertex and edge is processed once.
+- **Space Complexity**: `O(V)`, due to the storage required for the queue and the visited list.
+
+## When to Use
+
+BFS is suitable for problems like:
+
+- Finding the shortest path in an unweighted graph.
+- Checking if a graph is bipartite.
+- Solving puzzles like the shortest path in a maze.
+- Performing level-order traversal in trees.
+
+## Code Example
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    #include <queue>
+    using namespace std;
+
+    void bfs(int start, vector<int> &visited, vector<vector<int>> &adj) {
+        queue<int> q;
+        q.push(start);
+        visited[start] = 1;
+
+        while (!q.empty()) {
+            int node = q.front();
+            q.pop();
+            cout << node << " ";
+
+            for (int neighbor : adj[node]) {
+                if (!visited[neighbor]) {
+                    q.push(neighbor);
+                    visited[neighbor] = 1;
+                }
+            }
+        }
+    }
+
+    int main() {
+        int vertices = 5;
+        vector<vector<int>> adj(vertices);
+        adj[0] = {1, 2};
+        adj[1] = {0, 3, 4};
+        adj[2] = {0};
+        adj[3] = {1};
+        adj[4] = {1};
+
+        vector<int> visited(vertices, 0);
+        cout << "BFS Traversal: ";
+        bfs(0, visited, adj);
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    from collections import deque
+
+    def bfs(start, visited, adj):
+        queue = deque([start])
+        visited[start] = True
+
+        while queue:
+            node = queue.popleft()
+            print(node, end=" ")
+
+            for neighbor in adj[node]:
+                if not visited[neighbor]:
+                    queue.append(neighbor)
+                    visited[neighbor] = True
+
+    # Example usage
+    vertices = 5
+    adj = [
+        [1, 2],   # Neighbors of node 0
+        [0, 3, 4],# Neighbors of node 1
+        [0],      # Neighbors of node 2
+        [1],      # Neighbors of node 3
+        [1]       # Neighbors of node 4
+    ]
+
+    visited = [False] * vertices
+    print("BFS Traversal: ", end="")
+    bfs(0, visited, adj)
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.*;
+
+    public class BFS {
+        public static void bfs(int start, boolean[] visited, List<List<Integer>> adj) {
+            Queue<Integer> queue = new LinkedList<>();
+            queue.add(start);
+            visited[start] = true;
+
+            while (!queue.isEmpty()) {
+                int node = queue.poll();
+                System.out.print(node + " ");
+
+                for (int neighbor : adj.get(node)) {
+                    if (!visited[neighbor]) {
+                        queue.add(neighbor);
+                        visited[neighbor] = true;
+                    }
+                }
+            }
+        }
+
+        public static void main(String[] args) {
+            int vertices = 5;
+            List<List<Integer>> adj = new ArrayList<>();
+            for (int i = 0; i < vertices; i++) {
+                adj.add(new ArrayList<>());
+            }
+
+            adj.get(0).addAll(Arrays.asList(1, 2));
+            adj.get(1).addAll(Arrays.asList(0, 3, 4));
+            adj.get(2).add(0);
+            adj.get(3).add(1);
+            adj.get(4).add(1);
+
+            boolean[] visited = new boolean[vertices];
+            System.out.print("BFS Traversal: ");
+            bfs(0, visited, adj);
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>

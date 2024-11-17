@@ -1,0 +1,58 @@
+---
+title: Algorithmic Complexity
+description: This section discusses about time and space complexity.
+---
+
+## Complexity of Algorithms
+
+When solving problems, it's not enough to just write code that works—you also need to ensure that your solution is efficient. This is where **algorithmic complexity** comes in. By understanding time and space complexity, you can evaluate how well your code performs as the input size grows.
+
+<Note title="Table of Complexity">
+  Click [here](../misc/complexity-of-algos) to check out the complexities of various algos.
+</Note>  
+
+### Time Complexity
+
+**Time complexity** measures the amount of time an algorithm takes to run as a function of the size of its input, often denoted as `n`. This helps us predict how an algorithm will perform as the input size increases.  
+
+![](/bigo.png)
+
+The most commonly used notation for expressing time complexity is **Big O notation**. Big O gives an upper bound on the growth rate of an algorithm's runtime, helping us focus on the worst-case scenario. Here are some common Big O complexities, from best to worst:
+
+- **O(1)**: Constant time – The algorithm takes the same amount of time regardless of the input size.  
+  Example: Accessing an element in an array.  
+- **O(log n)**: Logarithmic time – The runtime increases slowly as the input size grows.  
+  Example: Binary search.  
+- **O(n)**: Linear time – The runtime grows proportionally with the input size.  
+  Example: Traversing an array.  
+- **O(n log n)**: Log-linear time – Often seen in efficient sorting algorithms.  
+  Example: Merge sort, Quick sort.  
+- **O(n²)**: Quadratic time – The runtime grows quadratically with the input size.  
+  Example: Nested loops, like in bubble sort.  
+- **O(2ⁿ)**: Exponential time – The runtime doubles with each additional input.  
+  Example: Solving the traveling salesman problem with brute force.
+
+Understanding time complexity helps you choose the right algorithm for the problem at hand, especially when dealing with large datasets.
+
+### Space Complexity
+
+**Space complexity** measures the amount of memory an algorithm needs to run. This includes both:
+
+1. **Fixed Space**: Memory required for variables, constants, and program instructions.  
+2. **Dynamic Space**: Memory required for data structures, recursion, or temporary storage during execution.  
+
+Key factors affecting space complexity:  
+- The size of input data.  
+- Auxiliary data structures (e.g., arrays, stacks, hash maps).  
+- Recursion depth (stack space).  
+
+For example, consider a recursive function that computes the Fibonacci sequence. While it might have a time complexity of `O(2ⁿ)`, its space complexity depends on the maximum depth of the recursion stack.
+
+### Why Complexity Matters
+
+Efficiency in terms of time and space is crucial for scalability. A program that works well with small inputs might become unbearably slow or consume too much memory with larger inputs. By analyzing complexity, you can make informed trade-offs and optimize your code to handle real-world scenarios effectively.
+
+This understanding will be your foundation for writing better algorithms and solving problems efficiently.
+
+### Resources
+Check out [Big-O Cheat Sheet](https://www.bigocheatsheet.com/).

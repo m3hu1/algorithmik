@@ -1,0 +1,157 @@
+---
+title: Greedy Algorithm
+description: Solve optimization problems by making the best choice at each step.
+---
+
+## What is the Greedy Algorithm?
+
+A greedy algorithm is an approach for solving problems by choosing the best possible option at each step, hoping that this leads to the global optimum. Unlike other approaches like dynamic programming or backtracking, greedy algorithms do not reconsider choices once made, making them faster but not always accurate for every problem.
+
+## Key Concepts in Greedy Algorithms
+
+1. **Greedy Choice Property**: A locally optimal choice leads to a globally optimal solution.
+2. **Optimal Substructure**: The solution to the problem can be constructed from the solutions of its subproblems.
+
+These two properties must be satisfied for a greedy algorithm to provide the correct solution.
+
+## Time & Space Complexities
+
+- **Time Complexity**: Depends on the problem. For example:
+  - Sorting-based problems (e.g., activity selection): `O(n log n)`
+  - Iterative greedy steps: `O(n)`
+- **Space Complexity**: Typically `O(1)` for most greedy problems since decisions are made in-place.
+
+## When to Use Greedy Algorithms
+
+Greedy algorithms work well for problems like:
+
+- **Optimization Problems**: Finding the maximum or minimum value.
+- **Interval Scheduling**: Activity selection, task scheduling.
+- **Graph Problems**: Minimum Spanning Tree (Kruskal's or Prim's), Dijkstra's algorithm for shortest path.
+- **Resource Allocation**: Fractional Knapsack, Huffman coding.
+
+## Code Example
+
+Below is an example of the **Fractional Knapsack Problem** solved using a greedy approach.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    #include <algorithm>
+    using namespace std;
+
+    struct Item {
+        int weight;
+        int value;
+
+        bool operator<(const Item& other) const {
+            return (double)value / weight > (double)other.value / other.weight;
+        }
+    };
+
+    double fractionalKnapsack(int capacity, vector<Item>& items) {
+        sort(items.begin(), items.end());
+        double totalValue = 0.0;
+
+        for (const auto& item : items) {
+            if (capacity >= item.weight) {
+                totalValue += item.value;
+                capacity -= item.weight;
+            } else {
+                totalValue += (double)item.value * capacity / item.weight;
+                break;
+            }
+        }
+
+        return totalValue;
+    }
+
+    int main() {
+        vector<Item> items = {{10, 60}, {20, 100}, {30, 120}};
+        int capacity = 50;
+
+        double maxValue = fractionalKnapsack(capacity, items);
+        cout << "Maximum value in Knapsack = " << maxValue << endl;
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    def fractional_knapsack(capacity, items):
+        # Sort items by value-to-weight ratio in descending order
+        items.sort(key=lambda x: x[1] / x[0], reverse=True)
+
+        total_value = 0.0
+        for weight, value in items:
+            if capacity >= weight:
+                total_value += value
+                capacity -= weight
+            else:
+                total_value += value * (capacity / weight)
+                break
+
+        return total_value
+
+    # Example usage
+    items = [(10, 60), (20, 100), (30, 120)]  # (weight, value)
+    capacity = 50
+    max_value = fractional_knapsack(capacity, items)
+    print(f"Maximum value in Knapsack = {max_value}")
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.Arrays;
+    import java.util.Comparator;
+
+    class Item {
+        int weight, value;
+
+        Item(int weight, int value) {
+            this.weight = weight;
+            this.value = value;
+        }
+    }
+
+    public class FractionalKnapsack {
+        public static double fractionalKnapsack(int capacity, Item[] items) {
+            Arrays.sort(items, Comparator.comparingDouble(o -> -1.0 * o.value / o.weight));
+
+            double totalValue = 0.0;
+
+            for (Item item : items) {
+                if (capacity >= item.weight) {
+                    totalValue += item.value;
+                    capacity -= item.weight;
+                } else {
+                    totalValue += item.value * ((double) capacity / item.weight);
+                    break;
+                }
+            }
+
+            return totalValue;
+        }
+
+        public static void main(String[] args) {
+            Item[] items = {new Item(10, 60), new Item(20, 100), new Item(30, 120)};
+            int capacity = 50;
+
+            double maxValue = fractionalKnapsack(capacity, items);
+            System.out.println("Maximum value in Knapsack = " + maxValue);
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>

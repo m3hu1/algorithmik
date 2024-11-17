@@ -1,0 +1,151 @@
+---
+title: Depth First Search (DFS)
+description: Traverse or search a graph or tree in depthward motion.
+---
+
+## What is Depth First Search?
+
+Depth First Search (DFS) is a graph traversal algorithm that explores as far as possible along each branch before backtracking. It uses a stack data structure, either explicitly or via recursion, to keep track of the nodes it needs to visit.
+
+DFS is often used to explore all the nodes and edges in a graph, solve maze problems, or even for topological sorting.
+
+## How the Algorithm Works
+
+Here’s how DFS works:
+
+1. Start at the root node (or any arbitrary node for a graph).
+2. Mark the current node as visited.
+3. Explore each unvisited neighbor of the current node by:
+   - Moving to the neighbor.
+   - Recursively performing DFS on it.
+4. Backtrack when there are no unvisited neighbors.
+
+I find DFS fascinating because it mimics how a person might explore a maze — diving into a path until it ends, then retracing steps to find new paths.
+
+## Time & Space Complexities
+
+- **Time Complexity**: `O(V + E)`, where `V` is the number of vertices and `E` is the number of edges, because we visit each node and edge once.
+- **Space Complexity**: 
+  - `O(V)` for the recursion stack in the worst case (deep recursion in a graph/tree).
+  - For an iterative version, the stack size is also `O(V)`.
+
+## When to Use
+
+DFS is particularly useful when:
+
+- You need to visit all the nodes of a graph or tree.
+- You’re solving problems involving connected components, pathfinding, or cycle detection.
+- A depth-based search is more suitable than breadth-based.
+
+Some common applications include:
+- Detecting cycles in a graph.
+- Finding connected components in an undirected graph.
+- Topological sorting of a directed acyclic graph (DAG).
+
+## Code Example
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    void dfs(int node, vector<int> &visited, vector<vector<int>> &adj) {
+        cout << node << " ";
+        visited[node] = 1;
+
+        for (int neighbor : adj[node]) {
+            if (!visited[neighbor]) {
+                dfs(neighbor, visited, adj);
+            }
+        }
+    }
+
+    int main() {
+        int vertices = 5;
+        vector<vector<int>> adj(vertices);
+        adj[0] = {1, 2};
+        adj[1] = {0, 3, 4};
+        adj[2] = {0};
+        adj[3] = {1};
+        adj[4] = {1};
+
+        vector<int> visited(vertices, 0);
+        cout << "DFS Traversal: ";
+        dfs(0, visited, adj);
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    def dfs(node, visited, adj):
+        print(node, end=" ")
+        visited[node] = True
+
+        for neighbor in adj[node]:
+            if not visited[neighbor]:
+                dfs(neighbor, visited, adj)
+
+    # Example usage
+    vertices = 5
+    adj = [
+        [1, 2],   # Neighbors of node 0
+        [0, 3, 4],# Neighbors of node 1
+        [0],      # Neighbors of node 2
+        [1],      # Neighbors of node 3
+        [1]       # Neighbors of node 4
+    ]
+
+    visited = [False] * vertices
+    print("DFS Traversal: ", end="")
+    dfs(0, visited, adj)
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.*;
+
+    public class DFS {
+        public static void dfs(int node, boolean[] visited, List<List<Integer>> adj) {
+            System.out.print(node + " ");
+            visited[node] = true;
+
+            for (int neighbor : adj.get(node)) {
+                if (!visited[neighbor]) {
+                    dfs(neighbor, visited, adj);
+                }
+            }
+        }
+
+        public static void main(String[] args) {
+            int vertices = 5;
+            List<List<Integer>> adj = new ArrayList<>();
+            for (int i = 0; i < vertices; i++) {
+                adj.add(new ArrayList<>());
+            }
+
+            adj.get(0).addAll(Arrays.asList(1, 2));
+            adj.get(1).addAll(Arrays.asList(0, 3, 4));
+            adj.get(2).add(0);
+            adj.get(3).add(1);
+            adj.get(4).add(1);
+
+            boolean[] visited = new boolean[vertices];
+            System.out.print("DFS Traversal: ");
+            dfs(0, visited, adj);
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>

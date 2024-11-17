@@ -1,0 +1,102 @@
+---
+title: Array
+description: Understanding the basics of arrays as a data structure.
+---
+
+## What are Arrays?
+
+An array is one of the simplest and most commonly used data structures in programming. I like to think of it as a collection of items (like numbers or strings) stored in a fixed-size container. What makes arrays special is that all the elements are stored in a **contiguous block of memory**. This means that all the elements are laid out side by side in memory, making it easy and fast to access any element using its **index**.
+
+For example, if I want to get the 3rd element, I can directly go to its memory address by adding an offset to the start of the array. That’s why accessing elements in an array takes constant time, or **O(1)**.
+
+![](/array.png)
+
+### Types of Arrays
+
+#### 1. One-Dimensional Arrays
+This is the most basic type of array where elements are arranged in a straight line. Think of it like a list of items.
+
+#### 2. Two-Dimensional Arrays
+This is essentially a matrix, where data is stored in rows and columns. It's often used for grid-based problems like games or spreadsheets.
+
+#### 3. Multi-Dimensional Arrays
+If you go beyond 2D, you enter the world of 3D or even higher dimensions. These are less common but can be useful in scenarios like 3D modeling.
+
+
+### Memory Storage in Arrays
+
+Arrays are stored in **contiguous memory**, meaning all elements are stored one after another in a single block of memory. For example, if the first element is stored at memory location `1000`, and each element takes 4 bytes, the second element will be at `1004`, the third at `1008`, and so on. This is why arrays are so efficient for random access. However, this also means that you can't dynamically resize them without creating a new array.
+
+
+### Code Examples
+
+Here’s how you can define and use arrays in **C++**, **Python**, and **Java**. I've kept the examples simple, showing how to create, initialize, and access arrays.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    using namespace std;
+
+    int main() {
+        // One-dimensional array
+        int arr[5] = {10, 20, 30, 40, 50};
+
+        // Accessing elements
+        cout << "First element: " << arr[0] << endl;
+
+        // Two-dimensional array
+        int matrix[2][2] = {{1, 2}, {3, 4}};
+        cout << "Element at [1][0]: " << matrix[1][0] << endl;
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    # One-dimensional array
+    arr = [10, 20, 30, 40, 50]
+
+    # Accessing elements
+    print("First element:", arr[0])
+
+    # Two-dimensional array
+    matrix = [[1, 2], [3, 4]]
+    print("Element at [1][0]:", matrix[1][0])
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            // One-dimensional array
+            int[] arr = {10, 20, 30, 40, 50};
+
+            // Accessing elements
+            System.out.println("First element: " + arr[0]);
+
+            // Two-dimensional array
+            int[][] matrix = {
+                {1, 2},
+                {3, 4}
+            };
+            System.out.println("Element at [1][0]: " + matrix[1][0]);
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+
+### Why Arrays Matter
+
+Arrays are a go-to choice when you need a simple, fixed-size structure for storing and accessing data quickly. Whether you're solving a problem on LeetCode, implementing a sorting algorithm, or working with matrices, arrays are always there as a foundational tool. Just remember their limitations—like fixed size—and you'll be good to go!

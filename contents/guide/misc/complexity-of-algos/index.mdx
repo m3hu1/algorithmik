@@ -1,0 +1,35 @@
+---
+title: Complexity of Various Algorithms
+description: This section shows you the complexity of various algorithms.
+---
+
+## Table of Complexity
+
+Below is a table summarizing the time and space complexities of common algorithms across different categories. This provides a quick reference to understand their efficiency and suitability for specific problems.
+
+| **Algorithm**                  | **TimeComplexity(Best)** | **TimeComplexity(Avg.)** | **TimeComplexity(Worst)** | **SpaceComplexity** |
+|--------------------------------|----------------------------|-------------------------------|-----------------------------|-----------------------|
+| **`Sorting`**         |                            |                               |                             |                       |
+| Bubble                 | `O(n)`                      | `O(n²)`                        | `O(n²)`                      | `O(1)`                 |
+| Selection              | `O(n²)`                     | `O(n²)`                        | `O(n²)`                      | `O(1)`                 |
+| Insertion              | `O(n)`                      | `O(n²)`                        | `O(n²)`                      | `O(1)`                 |
+| Merge                    | `O(n log n)`                | `O(n log n)`                   | `O(n log n)`                 | `O(n)`                 |
+| Quick                  | `O(n log n)`                | `O(n log n)`                   | `O(n²)`                      | `O(log n)`             |
+| Heap                     | `O(n log n)`                | `O(n log n)`                   | `O(n log n)`                 | `O(1)`                 |
+| Counting                 | `O(n + k)`                  | `O(n + k)`                     | `O(n + k)`                   | `O(k)`                 |
+| `Searching`      |                            |                               |                             |                       |
+| Linear                 | `O(1)`                      | `O(n)`                         | `O(n)`                       | `O(1)`                 |
+| Binary               | `O(1)`                      | `O(log n)`                     | `O(log n)`                   | `O(1)`                 |
+| `Graph`          |                            |                               |                             |                       |
+| BFS     | `O(V + E)`                  | `O(V + E)`                     | `O(V + E)`                   | `O(V)`                 |
+| DFS     | `O(V + E)`                  | `O(V + E)`                     | `O(V + E)`                   | `O(V)`                 |
+| Dijkstra’s         | `O((V + E)log V)`          | `O((V + E)log V)`             | `O((V + E)log V)`           | `O(V + E)`             |
+| Floyd-Warshall     | `O(n³)`                     | `O(n³)`                        | `O(n³)`                      | `O(n²)`                |
+
+**Key:**  
+- `n` = size of input  
+- `k` = range of input values (e.g., for counting sort)
+- `V` = number of vertices in a graph  
+- `E` = number of edges in a graph  
+
+This table is a quick overview to help you compare and understand the performance of algorithms at a glance.

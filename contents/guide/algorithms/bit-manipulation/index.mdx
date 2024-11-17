@@ -1,0 +1,127 @@
+---
+title: Bit Manipulation
+description: Harness the power of bits to solve problems efficiently.
+---
+
+## What is Bit Manipulation?
+
+**Bit Manipulation** is a technique that operates directly on the binary representation of numbers. It involves using bitwise operators to perform computations efficiently. This method is particularly powerful in scenarios requiring performance optimization and solving problems related to integers, sets, and boolean logic.
+
+## Key Bitwise Operators
+
+Here are the common bitwise operators and their uses:
+
+| Operator | Symbol | Description                          | Example (`a = 5`, `b = 3`) |
+|----------|--------|--------------------------------------|----------------------------------------|
+| AND      | `&`    | Sets bits to `1` if both bits are `1` | `a & b = 1 (001)`                      |
+| OR       | `\|`   | Sets bits to `1` if either bit is `1`| `a \| b = 7 (111)`                      |
+| XOR      | `^`    | Sets bits to `1` if bits differ      | `a ^ b = 6 (110)`                      |
+| NOT      | `~`    | Inverts all bits                     | `~a = -6` (in 2’s complement)         |
+| Left Shift | `<<` | Shifts bits left, filling with `0`   | `a << 1 = 10 (1010)`                  |
+| Right Shift| `>>` | Shifts bits right, filling with `0` or sign bit | `a >> 1 = 2 (010)`           |
+
+## Common Applications of Bit Manipulation
+
+1. **Checking Odd or Even**:
+
+   - `x & 1 == 0` → Even
+   - `x & 1 == 1` → Odd
+
+2. **Swapping Numbers Without a Temp Variable**:
+   ```python
+   a ^= b
+   b ^= a
+   a ^= b
+   ```
+3. Set/Unset/Toggle Bits:
+
+- Set bit: `x | (1 << i)`
+- Unset bit: `x & ~(1 << i)`
+- Toggle bit: `x ^ (1 << i)`
+
+4. Count Set Bits (Hamming Weight): Use `x & (x - 1)` to unset the rightmost set bit iteratively.
+5. Detect Power of Two:
+
+- `x > 0` and `(x & (x - 1)) == 0`
+
+6. Subsets Generation: Iterate over all `2^n` bit masks for an array of size `n`.
+
+## Time & Space Complexities
+
+- Time Complexity: Operations like AND, OR, XOR, etc., take `O(1)`.
+- Space Complexity: `O(1)` as no additional memory is used.
+
+## When to Use Bit Manipulation
+
+This technique shines in:
+
+- Solving problems that involve boolean logic or binary states.
+- Efficiently generating combinations, permutations, or subsets.
+- Optimizing mathematical calculations like division, multiplication by powers of two.
+- Implementing bit-level tricks to solve problems faster.
+
+## Code Example
+
+Here’s an example to find the single number in an array where every element appears twice except one:
+
+<Tabs defaultValue="python" className="pt-5 pb-1"> 
+    <TabsList> 
+        <TabsTrigger value="cpp">C++</TabsTrigger> 
+        <TabsTrigger value="python">Python</TabsTrigger> 
+        <TabsTrigger value="java">Java</TabsTrigger> 
+    </TabsList> 
+<TabsContent value="cpp">
+```cpp
+#include <vector>
+using namespace std;
+
+int singleNumber(vector<int>& nums) {
+    int result = 0;
+    for (int num : nums) {
+        result ^= num; // XOR cancels out duplicates
+    }
+    return result;
+}
+
+int main() {
+    vector<int> nums = {4, 1, 2, 1, 2};
+    int result = singleNumber(nums);
+    cout << "The single number is: " << result << endl;
+    return 0;
+}
+```
+</TabsContent>
+<TabsContent value="python">
+```python
+def single_number(nums):
+    result = 0
+
+    for num in nums:
+        result ^= num # XOR cancels out duplicates 
+    
+    return result
+
+# Example usage
+nums = [4, 1, 2, 1, 2]
+print(f"The single number is: {single_number(nums)}")
+```
+</TabsContent>
+<TabsContent value="java">
+```java
+public class SingleNumber {
+    public static int singleNumber(int[] nums) {
+        int result = 0;
+        for (int num : nums) {
+            result ^= num; // XOR cancels out duplicates
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {4, 1, 2, 1, 2};
+        System.out.println("The single number is: " + singleNumber(nums));
+    }
+}
+```
+</TabsContent>
+</Tabs>

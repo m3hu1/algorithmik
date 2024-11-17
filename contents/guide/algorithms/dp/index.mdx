@@ -1,0 +1,154 @@
+---
+title: Dynamic Programming (DP)
+description: Solve optimization problems efficiently with the power of overlapping subproblems and optimal substructure.
+---
+
+## What is Dynamic Programming?
+
+Dynamic Programming (DP) is a powerful algorithmic paradigm used to solve problems by breaking them into smaller overlapping subproblems. Instead of solving the same subproblem multiple times, DP stores the results in a table (memoization or tabulation) and reuses them to optimize the overall computation.
+
+## Key Concepts in DP
+
+1. **Overlapping Subproblems**: The problem can be divided into subproblems that are reused multiple times.
+2. **Optimal Substructure**: The solution to the main problem can be built from the solutions to its subproblems.
+
+### DP Approaches
+
+1. **Top-Down (Memoization)**:
+   - Solve the problem recursively.
+   - Store the results of subproblems in a table to avoid redundant calculations.
+
+2. **Bottom-Up (Tabulation)**:
+   - Solve the problem iteratively.
+   - Build a solution by solving all subproblems from the smallest to the largest.
+
+## Time & Space Complexities
+
+- **Time Complexity**: `O(n)` to `O(n*m)` (depends on the problem and state space).
+- **Space Complexity**: Can range from `O(n)` (space-optimized DP) to `O(n*m)` (when storing a table of solutions).
+
+## When to Use DP
+
+Dynamic Programming is a great choice for problems like:
+
+- Fibonacci numbers.
+- Longest Common Subsequence (LCS).
+- Knapsack problem.
+- Shortest path in a graph (e.g., Floyd-Warshall, Bellman-Ford).
+- Partitioning problems (e.g., Palindrome Partitioning, Subset Sum).
+
+## Code Example
+
+Below is an example of solving the Fibonacci sequence problem using both approaches.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    // Bottom-Up Approach (Tabulation)
+    int fibonacci(int n) {
+        if (n <= 1) return n;
+        
+        vector<int> dp(n + 1);
+        dp[0] = 0;
+        dp[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+
+        return dp[n];
+    }
+
+    int main() {
+        int n = 10;
+        cout << "Fibonacci(" << n << ") = " << fibonacci(n) << endl;
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    # Top-Down Approach (Memoization)
+    def fibonacci(n, memo={}):
+        if n <= 1:
+            return n
+        if n not in memo:
+            memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo)
+        return memo[n]
+
+    # Bottom-Up Approach (Tabulation)
+    def fibonacci_tab(n):
+        if n <= 1:
+            return n
+
+        dp = [0] * (n + 1)
+        dp[1] = 1
+
+        for i in range(2, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+
+        return dp[n]
+
+    # Example usage
+    n = 10
+    print(f"Fibonacci({n}) using Memoization: {fibonacci(n)}")
+    print(f"Fibonacci({n}) using Tabulation: {fibonacci_tab(n)}")
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.HashMap;
+    import java.util.Map;
+
+    public class FibonacciDP {
+
+        // Top-Down Approach (Memoization)
+        public static int fibonacciMemo(int n, Map<Integer, Integer> memo) {
+            if (n <= 1) return n;
+            if (!memo.containsKey(n)) {
+                memo.put(n, fibonacciMemo(n - 1, memo) + fibonacciMemo(n - 2, memo));
+            }
+            return memo.get(n);
+        }
+
+        // Bottom-Up Approach (Tabulation)
+        public static int fibonacciTab(int n) {
+            if (n <= 1) return n;
+
+            int[] dp = new int[n + 1];
+            dp[0] = 0;
+            dp[1] = 1;
+
+            for (int i = 2; i <= n; i++) {
+                dp[i] = dp[i - 1] + dp[i - 2];
+            }
+
+            return dp[n];
+        }
+
+        public static void main(String[] args) {
+            int n = 10;
+
+            // Memoization example
+            Map<Integer, Integer> memo = new HashMap<>();
+            System.out.println("Fibonacci(" + n + ") using Memoization: " + fibonacciMemo(n, memo));
+
+            // Tabulation example
+            System.out.println("Fibonacci(" + n + ") using Tabulation: " + fibonacciTab(n));
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>

@@ -1,0 +1,115 @@
+---
+title: Sorting
+description: Organizing data in a specific order efficiently.
+---
+
+## What is Sorting?
+
+Sorting is the process of arranging elements in a specific order, often ascending or descending. It’s a fundamental concept in computer science, making data easier to analyze and search. Common sorting algorithms include Bubble Sort, Quick Sort, Merge Sort, and more.
+
+## How the Algorithm Works
+
+Sorting algorithms vary in how they function, but their goal is always to rearrange a collection of data into a specific order. Here’s a brief look at two common approaches:
+
+### 1. Comparison-Based Sorting
+- **Example**: Quick Sort, Merge Sort
+- These algorithms compare elements to determine their order and use this comparison to rearrange them.
+
+### 2. Non-Comparison-Based Sorting
+- **Example**: Counting Sort, Radix Sort
+- These algorithms use techniques like counting frequencies or bucket placement, bypassing direct comparisons.
+
+### Key Steps in Most Sorting Algorithms:
+1. **Divide and Conquer**: Some algorithms, like Merge Sort, divide the data into smaller pieces and sort them individually.
+2. **Comparison or Placement**: Decide the position of each element by comparing it to others or placing it based on predefined rules.
+3. **Combine**: Merge sorted parts back together into a single ordered structure.
+
+Sorting can be as simple as swapping adjacent elements or as complex as building a heap structure.
+
+## Time & Space Complexities
+
+Here are complexities for common sorting algorithms:
+
+| Algorithm         | Best Case     | Worst Case    | Average Case  | Space Complexity |
+|-------------------|-----------------------|---------------|---------------|---------------|
+| Bubble Sort       | `O(n)`          | `O(n²)`         | `O(n²)`         | `O(1)`             |
+| Selection Sort    | `O(n²)`         | `O(n²)`         | `O(n²)`         | `O(1)`             |
+| Insertion Sort    | `O(n)`          | `O(n²)`         | `O(n²)`         | `O(1)`             |
+| Merge Sort        | `O(n log n)`    | `O(n log n)`    | `O(n log n)`    | `O(n)`             |
+| Quick Sort        | `O(n log n)`    | `O(n²)`         | `O(n log n)`    | `O(log n)`         |
+| Heap Sort         | `O(n log n)`    | `O(n log n)`    | `O(n log n)`    | `O(1)`             |
+| Counting Sort     | `O(n + k)`      | `O(n + k)`      | `O(n + k)`      | `O(k)`             |
+| Radix Sort        | `O(nk)`         | `O(nk)`         | `O(nk)`         | `O(n + k)`         |
+| Bucket Sort       | `O(n + k)`      | `O(n²)`         | `O(n + k)`      | `O(n)`             |
+
+## When to Use
+
+Sorting algorithms are essential in various scenarios:
+- Preparing data for binary search.
+- Visualizing data in an ordered way.
+- Optimizing other algorithms that require sorted input.
+- Solving problems like finding the kth smallest/largest element.
+
+## Code Example
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    #include <algorithm>
+    using namespace std;
+
+    void printArray(vector<int>& arr) {
+        for (int num : arr) {
+            cout << num << " ";
+        }
+        cout << endl;
+    }
+
+    int main() {
+        vector<int> arr = {5, 2, 9, 1, 5, 6};
+        sort(arr.begin(), arr.end()); // Sort using STL
+        cout << "Sorted Array: ";
+        printArray(arr);
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    def print_array(arr):
+        print(" ".join(map(str, arr)))
+
+    # Example usage
+    arr = [5, 2, 9, 1, 5, 6]
+    arr.sort()  # Python's inbuilt Timsort
+    print("Sorted Array:", arr)
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.Arrays;
+
+    public class SortingExample {
+        public static void main(String[] args) {
+            int[] arr = {5, 2, 9, 1, 5, 6};
+            Arrays.sort(arr); // Java's inbuilt Dual-Pivot QuickSort
+
+            System.out.print("Sorted Array: ");
+            for (int num : arr) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>

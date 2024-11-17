@@ -1,0 +1,131 @@
+---
+title: Sliding Window Technique
+description: Optimize problems involving subarrays or substrings with the sliding window technique.
+---
+
+## What is the Sliding Window Technique?
+
+The Sliding Window technique is a highly efficient method for solving problems that involve arrays or strings. It works by maintaining a subset of the data as a "window" and sliding it across the dataset to optimize the solution, typically reducing the time complexity of brute-force approaches.
+
+This approach is commonly used to solve problems related to subarrays, substrings, or sequences.
+
+## How the Technique Works
+
+The Sliding Window technique involves the following steps:
+
+1. Start with a window (a subset of elements in the dataset), defined by two pointers: `start` and `end`.
+2. Expand or shrink the window dynamically based on the problem’s constraints:
+   - Expand the window by moving the `end` pointer.
+   - Shrink the window by moving the `start` pointer.
+3. Keep track of the desired condition (e.g., maximum sum, minimum length, unique characters).
+4. Repeat until the `end` pointer traverses the dataset.
+
+The key idea is to maintain only the necessary elements in the window at any time, reducing unnecessary computations.
+
+## Time & Space Complexities
+
+- **Time Complexity**: Typically `O(n)`, as each element is processed at most twice (once when added to the window and once when removed).
+- **Space Complexity**: `O(1)` if operating directly on the input, or `O(k)` for additional storage (e.g., to track elements within the window).
+
+## When to Use
+
+The Sliding Window technique is ideal for problems such as:
+
+- Finding the maximum/minimum sum of a subarray of fixed size.
+- Determining the smallest subarray with a given sum.
+- Counting distinct elements in every subarray of a fixed size.
+- Problems involving substrings with unique characters or other constraints.
+
+## Code Example
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    int maxSubarraySum(vector<int>& nums, int k) {
+        int n = nums.size();
+        int maxSum = 0, windowSum = 0;
+
+        for (int i = 0; i < n; i++) {
+            windowSum += nums[i];
+
+            if (i >= k - 1) {
+                maxSum = max(maxSum, windowSum);
+                windowSum -= nums[i - (k - 1)];
+            }
+        }
+
+        return maxSum;
+    }
+
+    int main() {
+        vector<int> nums = {2, 1, 5, 1, 3, 2};
+        int k = 3;
+
+        cout << "Maximum sum of subarray of size " << k << " is " 
+             << maxSubarraySum(nums, k) << endl;
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    def max_subarray_sum(nums, k):
+        max_sum, window_sum = 0, 0
+
+        for i in range(len(nums)):
+            window_sum += nums[i]
+
+            if i >= k - 1:
+                max_sum = max(max_sum, window_sum)
+                window_sum -= nums[i - (k - 1)]
+
+        return max_sum
+
+    # Example usage
+    nums = [2, 1, 5, 1, 3, 2]
+    k = 3
+    print(f"Maximum sum of subarray of size {k} is {max_subarray_sum(nums, k)}")
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    public class SlidingWindow {
+        public static int maxSubarraySum(int[] nums, int k) {
+            int maxSum = 0, windowSum = 0;
+
+            for (int i = 0; i < nums.length; i++) {
+                windowSum += nums[i];
+
+                if (i >= k - 1) {
+                    maxSum = Math.max(maxSum, windowSum);
+                    windowSum -= nums[i - (k - 1)];
+                }
+            }
+
+            return maxSum;
+        }
+
+        public static void main(String[] args) {
+            int[] nums = {2, 1, 5, 1, 3, 2};
+            int k = 3;
+
+            System.out.println("Maximum sum of subarray of size " + k + " is " 
+                               + maxSubarraySum(nums, k));
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
