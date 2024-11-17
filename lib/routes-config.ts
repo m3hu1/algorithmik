@@ -35,31 +35,58 @@ export const ROUTES: EachRoute[] = [
     title: "Data Structures",
     href: "/data-structures",
     items: [
-      { title: "Array", href: "/array" },
+      { title: "Arrays", href: "/array" },
+      // { title: "String", href: "/string"},
+      // { title: "Stack", href: "/stack"},
+      // { title: "Queue", href: "/q"},
+      // { title: "Linked Lists", href: "/linked-lists", items: [
+      //   { title: "Singly Linked List", href: "/singly" },
+      //   { title: "Doubly Linked List", href: "/doubly" },
+      // ]},
+      // { title: "Hash Tables", href: "/hash-tables", items: [
+      //   { title: "Hash Map", href: "/hashmap" },
+      //   { title: "Hash Set", href: "/hashset" },
+      // ] },
+      // { title: "Heaps", href: "/heaps", items: [
+      //   { title: "Min Heap", href: "/minheap" },
+      //   { title: "Max Heap", href: "/maxheap" },
+      // ]},
+      // { title: "Trees", href: "/trees", items: [
+      //   { title: "Binary Tree", href: "/binary" },
+      //   { title: "Binary Search Tree", href: "/bst" },
+      //   { title: "Trie", href: "/trie" },
+      //   { title: "Segment Tree", href: "/segment-tree" },
+      // ]}
     ],
   },
   {
     title: "Algorithms",
     href: "/algorithms",
     items: [
+      { title: "Sorting", href: "/sorting" },
       { title: "Binary Search", href: "/binary-search" },
+      { title: "Two Pointers", href: "/two-pointers" },
+      { title: "Greedy", href: "/greedy" },
+      { title: "Sliding Window", href: "/sliding-window" },
       { title: "Depth-First Search", href: "/dfs" },
       { title: "Breadth-First Search", href: "/bfs" },
-      { title: "Sliding Window", href: "/sliding-window" },
-      { title: "Dynamic Programming", href: "/dp" },
-      { title: "Greedy", href: "/greedy" },
       { title: "Backtracking", href: "/backtracking" },
-      { title: "Two Pointers", href: "/two-pointers" },
-      { title: "Sorting", href: "/sorting" },
+      { title: "Dynamic Programming", href: "/dp" },
       { title: "Bit Manipulation", href: "/bit-manipulation" },
+    ]
+  },
+  {
+    title: "Prerequisites",
+    href: "/prereq",
+    items: [
+      { title: "Pointers", href: "/pointers" },
+      { title: "Recursion", href: "/recursion" },
     ]
   },
   {
     title: "Miscellaneous",
     href: "/misc",
     items: [
-      { title: "Pointers", href: "/pointers" },
-      { title: "Recursion", href: "/recursion" },
       {  title: "Complexity of Various Algorithms", href: "/complexity-of-algos", },
     ],
   },
