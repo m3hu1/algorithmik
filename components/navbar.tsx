@@ -3,6 +3,8 @@ import { GithubIcon, TwitterIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { page_routes } from "@/lib/routes-config";
+import Anchor from "./anchor";
+import { SheetClose } from "@/components/ui/sheet";
 
 export const NAVLINKS = [
   {
@@ -63,5 +65,32 @@ export function Logo() {
     <Link href="/" className="flex items-center gap-2.5">
       <h2 className="text-md font-bold font-code">algorithmik.</h2>
     </Link>
+  );
+}
+
+export function NavMenu({ isSheet = false }) {
+  return (
+    <>
+      {NAVLINKS.map((item) => {
+        const Comp = (
+          <Anchor
+            key={item.title + item.href}
+            activeClassName="!text-primary md:font-semibold font-medium"
+            absolute
+            className="flex items-center gap-1 dark:text-stone-300/85 text-stone-800"
+            href={item.href}
+          >
+            {item.title}
+          </Anchor>
+        );
+        return isSheet ? (
+          <SheetClose key={item.title + item.href} asChild>
+            {Comp}
+          </SheetClose>
+        ) : (
+          Comp
+        );
+      })}
+    </>
   );
 }
