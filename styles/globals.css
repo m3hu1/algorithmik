@@ -75,6 +75,12 @@
   margin: 0 !important;
 }
 
+/* Remove italics and quotes from blockquotes */
+.prose blockquote {
+  font-style: normal;
+  quotes: none;
+}
+
 pre {
   padding: 2px 0 !important;
   width: inherit !important;
