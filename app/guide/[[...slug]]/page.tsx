@@ -5,6 +5,7 @@ import { page_routes } from "@/lib/routes-config";
 import { notFound } from "next/navigation";
 import { getDocsForSlug } from "@/lib/markdown";
 import { Typography } from "@/components/typography";
+import ScrollProgress from "@/components/scroll-progress";
 
 type PageProps = {
   params: { slug: string[] };
@@ -17,6 +18,7 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
   if (!res) notFound();
   return (
     <div className="flex items-start gap-10">
+      <ScrollProgress />
       <div className="flex-[4.5] pt-10">
         <DocsBreadcrumb paths={slug} />
         <Typography>
