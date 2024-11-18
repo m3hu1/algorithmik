@@ -77,7 +77,7 @@ export const ROUTES: EachRoute[] = [
   },
   {
     title: "Prerequisites",
-    href: "/prereq",
+    href: "/prerequisites",
     items: [
       { title: "Pointers", href: "/pointers" },
       { title: "Recursion", href: "/recursion" },
