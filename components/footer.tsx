@@ -16,7 +16,7 @@ export function Footer() {
             >
               Mehul
             </Link>
-            . Support me by starring the{" "}
+            . Star the{" "}
             <Link
               className=" underline underline-offset-2"
               target="_blank"
