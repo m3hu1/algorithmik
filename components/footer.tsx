@@ -30,6 +30,9 @@ export function Footer() {
 
         <div className="gap-4 items-center hidden md:flex">
           <FooterButtons />
+          <Link href="https://www.buymeacoffee.com/mehulpathak" target="_blank">
+          <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee <3&emoji=&slug=m3hu1&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" width={175}/>
+        </Link>
         </div>
       </div>
     </footer>
@@ -47,9 +50,6 @@ export function FooterButtons() {
         <HeartIcon className="h-4 w-4 mr-2 text-red-600 fill-current" />
         Sponsor
       </Link>
-      <Link href="https://www.buymeacoffee.com/m3hu1" target="_blank">
-          <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee <3&emoji=&slug=m3hu1&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" width={175}/>
-        </Link>
     </>
   );
 }

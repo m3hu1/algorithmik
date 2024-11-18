@@ -6,16 +6,17 @@ import { page_routes } from "@/lib/routes-config";
 import Anchor from "./anchor";
 import { SheetClose } from "@/components/ui/sheet";
 import Search from "./search";
+import { SheetLeftbar } from "./leftbar";
 
 export const NAVLINKS = [
   {
     title: "Learn",
     href: `/guide${page_routes[0].href}`,
   },
-  {
-    title: "Blog",
-    href: "/blog",
-  },
+  // {
+  //   title: "Blog",
+  //   href: "/blog",
+  // },
 ];
 
 export function Navbar() {
@@ -23,11 +24,13 @@ export function Navbar() {
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">
       <div className="sm:container mx-auto w-[95vw] h-full flex items-center justify-between md:gap-2">
         <div className="flex items-center gap-5">
+        <SheetLeftbar />
           <div className="flex items-center gap-6">
             <div className="sm:flex hidden">
               <Logo />
             </div>
             <div className="lg:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
+              <NavMenu />
             </div>
           </div>
         </div>

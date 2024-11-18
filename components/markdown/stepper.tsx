@@ -31,10 +31,19 @@ export function Stepper({ children }: PropsWithChildren) {
 export function StepperItem({
   children,
   title,
-}: PropsWithChildren & { title?: string }) {
+  href,
+}: PropsWithChildren & { title?: string, href?:string }) {
   return (
     <div className="pt-0.5">
-      <h4 className="mt-0">{title}</h4>
+      <h4 className="mt-0">
+        {href ? (
+          <a href={href} target="_blank" className="hover:underline">
+            {title}
+          </a>
+        ) : (
+          title
+        )}
+      </h4>
       <div>{children}</div>
     </div>
   );
