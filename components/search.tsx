@@ -61,7 +61,7 @@ export default function Search() {
             </div>
           </div>
         </DialogTrigger>
-        <DialogContent className="p-0 max-w-[650px] sm:top-[38%] top-[45%] !rounded-md">
+        <DialogContent className="p-0 max-w-[650px] sm:top-[38%] top-[45%] !rounded-3xl">
           <DialogTitle className="sr-only">Search</DialogTitle>
           <DialogHeader>
             <input
@@ -84,7 +84,7 @@ export default function Search() {
                 <DialogClose key={item.href} asChild>
                   <Anchor
                     className={cn(
-                      "dark:hover:bg-stone-900 hover:bg-stone-100 w-full px-3 rounded-sm text-sm flex items-center gap-2.5"
+                      "dark:hover:bg-gray-600/25 hover:bg-stone-100 w-full px-3 rounded-sm text-sm flex items-center gap-2.5"
                     )}
                     href={`/guide${item.href}`}
                   >
