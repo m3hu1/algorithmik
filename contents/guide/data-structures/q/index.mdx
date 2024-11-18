@@ -1,0 +1,149 @@
+---
+title: Queues
+description: Understanding the queue data structure and its practical applications.
+---
+
+## What are Queues?
+
+A **queue** is a data structure that follows the **FIFO** (First In, First Out) principle, meaning the first element added to the queue is the first one to be removed. You can think of it like a line at a ticket counter or a queue in a printer. The person who gets in line first gets served first. Similarly, in a queue, the first element inserted will be the first one to be removed.
+
+### How Queues Work in Memory
+
+Queues are typically implemented using arrays or linked lists. The idea is simple: elements are added to the **rear** (or tail) of the queue, and they are removed from the **front** (or head). This ensures that the order of the elements is maintained, and only the element at the front can be accessed for removal.
+
+When you **enqueue**, you add an element to the rear, and when you **dequeue**, you remove the element from the front. There’s also an operation called **peek**, which allows you to view the front element without removing it.
+
+### Common Operations on a Queue
+
+Here are the main operations that you’ll encounter when working with queues:
+
+- **Enqueue:** Add an element to the rear of the queue.
+- **Dequeue:** Remove the element from the front of the queue.
+- **Peek:** View the front element without removing it.
+- **IsEmpty:** Check if the queue is empty.
+
+### Applications of Queues
+
+Queues are used extensively in various domains. Here are a few applications:
+- **Task Scheduling:** In operating systems, tasks are often managed in queues, where each task is executed in the order it was received.
+- **Breadth-First Search (BFS):** In graph traversal algorithms, BFS uses a queue to explore nodes level by level.
+- **Print Spooling:** Print jobs are managed in a queue to ensure they are processed in the order they are received.
+- **Buffering:** Queues help manage streaming data, such as in audio/video buffers, ensuring that data is processed in the right order.
+
+### Types of Queues
+
+There are several variations of the basic queue concept:
+
+1. **Simple Queue:** A standard queue with enqueue and dequeue operations.
+2. **Circular Queue:** A queue where the last element connects back to the first element, making it more efficient for certain operations.
+3. **Priority Queue:** A queue where each element has a priority. The element with the highest priority is dequeued first, regardless of the order of arrival.
+
+### Code Examples
+
+Let’s take a look at how queues can be implemented in **C++**, **Python**, and **Java**. I’ve included comments to explain the code and make it easier to follow.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <queue>
+    using namespace std;
+
+    int main() {
+        queue<int> q;
+
+        // Enqueue elements
+        q.push(10);
+        q.push(20);
+        q.push(30);
+
+        // Dequeue the front element
+        cout << "Dequeueing: " << q.front() << endl;
+        q.pop();
+
+        // Peek the front element
+        cout << "Front element: " << q.front() << endl;
+
+        // Check if the queue is empty
+        if (q.empty()) {
+            cout << "Queue is empty." << endl;
+        } else {
+            cout << "Queue is not empty." << endl;
+        }
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    from collections import deque
+
+    # Create a queue using deque (double-ended queue)
+    queue = deque()
+
+    # Enqueue elements
+    queue.append(10)
+    queue.append(20)
+    queue.append(30)
+
+    # Dequeue the front element
+    print("Dequeueing:", queue.popleft())
+
+    # Peek the front element
+    print("Front element:", queue[0] if queue else "Queue is empty")
+
+    # Check if the queue is empty
+    if not queue:
+        print("Queue is empty.")
+    else:
+        print("Queue is not empty.")
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.LinkedList;
+    import java.util.Queue;
+
+    public class Main {
+        public static void main(String[] args) {
+            Queue<Integer> queue = new LinkedList<>();
+
+            // Enqueue elements
+            queue.offer(10);
+            queue.offer(20);
+            queue.offer(30);
+
+            // Dequeue the front element
+            System.out.println("Dequeueing: " + queue.poll());
+
+            // Peek the front element
+            System.out.println("Front element: " + queue.peek());
+
+            // Check if the queue is empty
+            if (queue.isEmpty()) {
+                System.out.println("Queue is empty.");
+            } else {
+                System.out.println("Queue is not empty.");
+            }
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+### Problems to Solve
+
+`WIP`
+
+### Resources
+
+`WIP`

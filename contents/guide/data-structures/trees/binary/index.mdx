@@ -1,0 +1,274 @@
+---
+title: Binary Tree
+description: An easy-to-understand explanation of the Binary Tree data structure.
+---
+
+## What is a Binary Tree?
+
+A **Binary Tree** is a tree-like data structure in which each node has at most two children: a **left child** and a **right child**. The top node of the tree is called the **root**, and from there, each child can have its own children, creating a hierarchical structure.
+
+In simple terms, a Binary Tree is like a family tree where each person (node) can have up to two children. The tree starts from a single ancestor (the root), and each level of the tree contains the descendants (children) of the previous level.
+
+### How a Binary Tree Works
+
+Each node in a Binary Tree contains:
+1. **Data**: The value or information stored at that node.
+2. **Left Child**: A reference to the left child node, which itself is the root of a subtree.
+3. **Right Child**: A reference to the right child node, also a root of a subtree.
+
+I can think of the Binary Tree as a set of decisions: at each node, I can choose to go left or right based on the value I’m searching for, similar to how I might navigate through options when making choices in a decision-making process.
+
+Here’s an example of a simple Binary Tree:
+
+![](/binary.png)
+
+
+- The **root** is 10.
+- The **left child** of 10 is 5, and the **right child** is 15.
+- Similarly, 5 has left and right children: 2 and 7, and 15 has 12 and 20.
+
+### Types of Binary Trees
+
+There are several types of Binary Trees based on their properties:
+- **Full Binary Tree**: Every node has either 0 or 2 children. No node has just one child.
+- **Perfect Binary Tree**: All levels are completely filled. Every leaf is at the same level.
+- **Complete Binary Tree**: All levels are completely filled except possibly for the last one, and all nodes are as far left as possible.
+- **Binary Search Tree (BST)**: A Binary Tree where the left child’s value is smaller, and the right child’s value is larger than the parent’s value.
+
+### Operations on a Binary Tree
+
+Here are some operations I can perform on a Binary Tree:
+- **Insertion**: Add a new node to the tree.
+- **Traversal**: Visit all nodes in a specific order (pre-order, in-order, post-order).
+- **Searching**: Find a specific value in the tree.
+- **Deletion**: Remove a node from the tree.
+- **Height Calculation**: Determine the number of levels in the tree.
+
+### Applications of Binary Trees
+
+Binary Trees are very useful in various scenarios:
+- **Binary Search Trees (BSTs)** are used for efficient searching and sorting of data. Since the values on the left are smaller and on the right are larger, it’s easy to find elements.
+- **Expression Trees**: Binary Trees are used to represent mathematical expressions, where the leaves are operands and internal nodes are operators.
+- **Huffman Encoding**: Binary Trees are also used in data compression techniques like Huffman encoding, where the tree represents the frequency of characters.
+- **Priority Queues**: Binary Trees can be used to implement heaps (min-heaps or max-heaps), which are useful in priority queues.
+
+### Code Examples
+
+I’ve included examples in **C++**, **Python**, and **Java** below, where I perform basic operations like inserting nodes and traversing the tree. Let’s walk through how this is done in each language:
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    using namespace std;
+
+    class Node {
+    public:
+        int data;
+        Node* left;
+        Node* right;
+
+        Node(int value) {
+            data = value;
+            left = nullptr;
+            right = nullptr;
+        }
+    };
+
+    class BinaryTree {
+    public:
+        Node* root;
+
+        BinaryTree() {
+            root = nullptr;
+        }
+
+        // Insert a node into the binary tree
+        void insert(int value) {
+            root = insertRec(root, value);
+        }
+
+        // Recursive function to insert a node
+        Node* insertRec(Node* root, int value) {
+            if (root == nullptr) {
+                return new Node(value);
+            }
+            if (value < root->data) {
+                root->left = insertRec(root->left, value);
+            } else {
+                root->right = insertRec(root->right, value);
+            }
+            return root;
+        }
+
+        // In-order traversal of the tree
+        void inOrder() {
+            inOrderRec(root);
+        }
+
+        void inOrderRec(Node* root) {
+            if (root != nullptr) {
+                inOrderRec(root->left);
+                cout << root->data << " ";
+                inOrderRec(root->right);
+            }
+        }
+    };
+
+    int main() {
+        BinaryTree tree;
+        tree.insert(10);
+        tree.insert(5);
+        tree.insert(15);
+        tree.insert(2);
+        tree.insert(7);
+
+        cout << "In-order traversal: ";
+        tree.inOrder(); // Should print 2 5 7 10 15
+        cout << endl;
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    class Node:
+        def __init__(self, value):
+            self.data = value
+            self.left = None
+            self.right = None
+
+    class BinaryTree:
+        def __init__(self):
+            self.root = None
+
+        # Insert a node into the binary tree
+        def insert(self, value):
+            if self.root is None:
+                self.root = Node(value)
+            else:
+                self._insert(self.root, value)
+
+        # Helper function to insert a node recursively
+        def _insert(self, root, value):
+            if value < root.data:
+                if root.left is None:
+                    root.left = Node(value)
+                else:
+                    self._insert(root.left, value)
+            else:
+                if root.right is None:
+                    root.right = Node(value)
+                else:
+                    self._insert(root.right, value)
+
+        # In-order traversal of the tree
+        def in_order(self):
+            self._in_order(self.root)
+
+        def _in_order(self, root):
+            if root:
+                self._in_order(root.left)
+                print(root.data, end=" ")
+                self._in_order(root.right)
+
+    # Example usage
+    tree = BinaryTree()
+    tree.insert(10)
+    tree.insert(5)
+    tree.insert(15)
+    tree.insert(2)
+    tree.insert(7)
+
+    print("In-order traversal: ", end="")
+    tree.in_order()  # Should print 2 5 7 10 15
+    print()
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    class Node {
+        int data;
+        Node left, right;
+
+        public Node(int value) {
+            data = value;
+            left = right = null;
+        }
+    }
+
+    class BinaryTree {
+        Node root;
+
+        public BinaryTree() {
+            root = null;
+        }
+
+        // Insert a node into the binary tree
+        public void insert(int value) {
+            root = insertRec(root, value);
+        }
+
+        // Recursive function to insert a node
+        private Node insertRec(Node root, int value) {
+            if (root == null) {
+                root = new Node(value);
+                return root;
+            }
+            if (value < root.data) {
+                root.left = insertRec(root.left, value);
+            } else {
+                root.right = insertRec(root.right, value);
+            }
+            return root;
+        }
+
+        // In-order traversal of the tree
+        public void inOrder() {
+            inOrderRec(root);
+        }
+
+        private void inOrderRec(Node root) {
+            if (root != null) {
+                inOrderRec(root.left);
+                System.out.print(root.data + " ");
+                inOrderRec(root.right);
+            }
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            BinaryTree tree = new BinaryTree();
+            tree.insert(10);
+            tree.insert(5);
+            tree.insert(15);
+            tree.insert(2);
+            tree.insert(7);
+
+            System.out.print("In-order traversal: ");
+            tree.inOrder();  // Should print 2 5 7 10 15
+            System.out.println();
+        }
+    }
+    ```
+    </TabsContent>
+
+</Tabs>
+
+### Problems to Solve
+
+`WIP`
+
+### Resources
+
+`WIP`

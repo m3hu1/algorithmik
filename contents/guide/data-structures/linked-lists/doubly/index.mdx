@@ -1,0 +1,163 @@
+---
+title: Doubly Linked List
+description: Learn about doubly linked lists and their benefits over singly linked lists.
+---
+
+## What is a Doubly Linked List?
+
+Unlike singly linked lists, a **doubly linked list** (DLL) contains nodes with two pointers:  
+1. **Next Pointer:** Points to the next node.  
+2. **Previous Pointer:** Points to the previous node.  
+
+This bidirectional structure allows for more flexible operations, like traversing in both directions and efficiently deleting nodes from the middle of the list.  
+
+
+### Advantages of Doubly Linked Lists  
+
+- **Bidirectional traversal:** You can move forward or backward through the list.  
+- **Easier deletion:** Since nodes have a pointer to their predecessor, deleting nodes in the middle is more straightforward.  
+
+However, DLLs require more memory due to the additional pointer.  
+
+
+### Common Operations  
+
+- **Insertion:** Add nodes at the beginning, end, or a specific position.  
+- **Deletion:** Remove nodes using both next and previous pointers.  
+- **Traversal:** Move forward or backward through the list.  
+
+
+### Code Examples  
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    using namespace std;
+
+    struct Node {
+        int data;
+        Node* next;
+        Node* prev;
+    };
+
+    void insertAtHead(Node*& head, int value) {
+        Node* newNode = new Node();
+        newNode->data = value;
+        newNode->next = head;
+        newNode->prev = NULL;
+        if (head) head->prev = newNode;
+        head = newNode;
+    }
+
+    void printList(Node* head) {
+        while (head) {
+            cout << head->data << " -> ";
+            head = head->next;
+        }
+        cout << "NULL" << endl;
+    }
+
+    int main() {
+        Node* head = NULL;
+        insertAtHead(head, 10);
+        insertAtHead(head, 20);
+        insertAtHead(head, 30);
+        printList(head);
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    class Node:
+        def __init__(self, data):  
+            self.data = data  
+            self.next = None  
+            self.prev = None  
+
+    class DoublyLinkedList:  
+        def __init__(self):  
+            self.head = None  
+
+        def insert_at_head(self, value):  
+            new_node = Node(value)  
+            new_node.next = self.head  
+            if self.head:  
+                self.head.prev = new_node  
+            self.head = new_node  
+
+        def print_list(self):  
+            current = self.head  
+            while current:  
+                print(current.data, "->", end=" ")  
+                current = current.next  
+            print("NULL")  
+
+    dll = DoublyLinkedList()  
+    dll.insert_at_head(10)  
+    dll.insert_at_head(20)  
+    dll.insert_at_head(30)  
+    dll.print_list()  
+    ```  
+  </TabsContent>  
+
+  <TabsContent value="java">  
+    ```java  
+    class Node {  
+        int data;  
+        Node next;  
+        Node prev;  
+
+        Node(int data) {  
+            this.data = data;  
+            this.next = null;  
+            this.prev = null;  
+        }  
+    }  
+
+    public class DoublyLinkedList {  
+        Node head;  
+
+        public void insertAtHead(int value) {  
+            Node newNode = new Node(value);  
+            newNode.next = head;  
+            if (head != null) head.prev = newNode;  
+            head = newNode;  
+        }  
+
+        public void printList() {  
+            Node current = head;  
+            while (current != null) {  
+                System.out.print(current.data + " -> ");  
+                current = current.next;  
+            }  
+            System.out.println("NULL");  
+        }  
+
+        public static void main(String[] args) {  
+            DoublyLinkedList dll = new DoublyLinkedList();  
+            dll.insertAtHead(10);  
+            dll.insertAtHead(20);  
+            dll.insertAtHead(30);  
+            dll.printList();  
+        }  
+    }  
+    ```  
+  </TabsContent>  
+</Tabs>  
+
+### Problems to Solve
+
+`WIP`
+
+### Resources
+
+`WIP`

@@ -1,0 +1,270 @@
+---
+title: Min Heap
+description: Understanding the Min Heap data structure and its practical applications.
+---
+
+## What is a Min Heap?
+
+A **Min Heap** is a binary tree-based data structure that follows the **heap property** in which, for every node, the value of the node is **smaller than or equal to** the values of its children. This property ensures that the smallest element is always at the **root** of the heap. 
+
+In a Min Heap, both the left and right children of a node are greater than or equal to the node itself. However, unlike in a Max Heap, the node’s children do not follow any specific order relative to each other. The only guarantee is that the root node will always be the smallest.
+
+### How a Min Heap Works
+
+A Min Heap is usually represented as a **complete binary tree**, which means all levels are fully filled except possibly for the last level, which is filled from left to right. It can be efficiently implemented using an array, where:
+- The **root node** is at index `0`.
+- The **left child** of a node at index `i` is located at index `2i + 1`.
+- The **right child** of a node at index `i` is located at index `2i + 2`.
+- The **parent** of a node at index `i` is located at index `(i - 1) / 2`.
+
+This array-based representation allows for efficient operations like insertion and deletion by keeping the tree balanced.
+
+### Common Operations on a Min Heap
+
+Here are some of the most common operations performed on a Min Heap:
+- **Insert:** Add an element to the heap while maintaining the heap property.
+- **Delete:** Remove the root element (the smallest) and reheapify the heap.
+- **Heapify:** Reorganize a heap so that it maintains the heap property, starting from any node.
+- **Peek:** Retrieve the root element without removing it (the minimum element).
+
+### Applications of Min Heaps
+
+Min Heaps are widely used in many algorithms due to their efficiency in finding the smallest element. Some common applications include:
+- **Priority Queues:** A Min Heap is often used in priority queues, where the element with the highest priority is the smallest element.
+- **Heap Sort:** Min Heaps can be used in heap sort, an efficient sorting algorithm that works by repeatedly extracting the minimum element from the heap.
+- **Dijkstra’s Algorithm:** Min Heaps are used in Dijkstra’s algorithm for finding the shortest path in a graph.
+- **Huffman Encoding:** Min Heaps are also used in Huffman coding for data compression, where the smallest element is processed first.
+
+### Code Examples
+
+Let’s see how a Min Heap can be implemented in **C++**, **Python**, and **Java**. I’ve included comments in the code to help you understand each part.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <vector>
+    using namespace std;
+
+    class MinHeap {
+    private:
+        vector<int> heap;
+
+        // Helper function to maintain the heap property after insertion
+        void heapifyUp(int index) {
+            while (index > 0 && heap[index] < heap[(index - 1) / 2]) {
+                swap(heap[index], heap[(index - 1) / 2]);
+                index = (index - 1) / 2;
+            }
+        }
+
+        // Helper function to maintain the heap property after deletion
+        void heapifyDown(int index) {
+            int leftChild = 2 * index + 1;
+            int rightChild = 2 * index + 2;
+            int smallest = index;
+
+            if (leftChild < heap.size() && heap[leftChild] < heap[smallest]) {
+                smallest = leftChild;
+            }
+            if (rightChild < heap.size() && heap[rightChild] < heap[smallest]) {
+                smallest = rightChild;
+            }
+            if (smallest != index) {
+                swap(heap[index], heap[smallest]);
+                heapifyDown(smallest);
+            }
+        }
+
+    public:
+        // Insert an element into the Min Heap
+        void insert(int value) {
+            heap.push_back(value);
+            heapifyUp(heap.size() - 1);
+        }
+
+        // Remove the root element (minimum element)
+        int extractMin() {
+            if (heap.size() == 0) return -1; // Heap is empty
+            int min = heap[0];
+            heap[0] = heap.back();
+            heap.pop_back();
+            heapifyDown(0);
+            return min;
+        }
+
+        // Peek the minimum element (root)
+        int peek() {
+            if (heap.size() == 0) return -1; // Heap is empty
+            return heap[0];
+        }
+    };
+
+    int main() {
+        MinHeap heap;
+        heap.insert(20);
+        heap.insert(15);
+        heap.insert(30);
+        heap.insert(10);
+
+        cout << "Min Element: " << heap.peek() << endl; // Should print 10
+        cout << "Extracting Min: " << heap.extractMin() << endl; // Should print 10
+        cout << "New Min Element: " << heap.peek() << endl; // Should print 15
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    class MinHeap:
+        def __init__(self):
+            self.heap = []
+
+        # Helper function to maintain heap property after insertion
+        def heapify_up(self, index):
+            while index > 0 and self.heap[index] < self.heap[(index - 1) // 2]:
+                self.heap[index], self.heap[(index - 1) // 2] = self.heap[(index - 1) // 2], self.heap[index]
+                index = (index - 1) // 2
+
+        # Helper function to maintain heap property after deletion
+        def heapify_down(self, index):
+            left_child = 2 * index + 1
+            right_child = 2 * index + 2
+            smallest = index
+
+            if left_child < len(self.heap) and self.heap[left_child] < self.heap[smallest]:
+                smallest = left_child
+            if right_child < len(self.heap) and self.heap[right_child] < self.heap[smallest]:
+                smallest = right_child
+            if smallest != index:
+                self.heap[index], self.heap[smallest] = self.heap[smallest], self.heap[index]
+                self.heapify_down(smallest)
+
+        # Insert an element into the Min Heap
+        def insert(self, value):
+            self.heap.append(value)
+            self.heapify_up(len(self.heap) - 1)
+
+        # Extract the minimum element
+        def extract_min(self):
+            if len(self.heap) == 0:
+                return None
+            min_val = self.heap[0]
+            self.heap[0] = self.heap[-1]
+            self.heap.pop()
+            self.heapify_down(0)
+            return min_val
+
+        # Peek the minimum element
+        def peek(self):
+            return self.heap[0] if self.heap else None
+
+    # Example usage
+    heap = MinHeap()
+    heap.insert(20)
+    heap.insert(15)
+    heap.insert(30)
+    heap.insert(10)
+
+    print("Min Element:", heap.peek())  # Should print 10
+    print("Extracting Min:", heap.extract_min())  # Should print 10
+    print("New Min Element:", heap.peek())  # Should print 15
+    ```
+  </TabsContent>
+  
+  <TabsContent value="java">
+    ```java
+    import java.util.ArrayList;
+
+    class MinHeap {
+        private ArrayList<Integer> heap;
+
+        // Constructor
+        public MinHeap() {
+            heap = new ArrayList<>();
+        }
+
+        // Helper function to maintain heap property after insertion
+        private void heapifyUp(int index) {
+            while (index > 0 && heap.get(index) < heap.get((index - 1) / 2)) {
+                int temp = heap.get(index);
+                heap.set(index, heap.get((index - 1) / 2));
+                heap.set((index - 1) / 2, temp);
+                index = (index - 1) / 2;
+            }
+        }
+
+        // Helper function to maintain heap property after deletion
+        private void heapifyDown(int index) {
+            int leftChild = 2 * index + 1;
+            int rightChild = 2 * index + 2;
+            int smallest = index;
+
+            if (leftChild < heap.size() && heap.get(leftChild) < heap.get(smallest)) {
+                smallest = leftChild;
+            }
+            if (rightChild < heap.size() && heap.get(rightChild) < heap.get(smallest)) {
+                smallest = rightChild;
+            }
+            if (smallest != index) {
+                int temp = heap.get(index);
+                heap.set(index, heap.get(smallest));
+                heap.set(smallest, temp);
+                heapifyDown(smallest);
+            }
+        }
+
+        // Insert an element into the Min Heap
+        public void insert(int value) {
+            heap.add(value);
+            heapifyUp(heap.size() - 1);
+        }
+
+        // Extract the minimum element
+        public int extractMin() {
+            if (heap.isEmpty()) return -1; // Empty heap
+            int min = heap.get(0);
+            heap.set(0, heap.get(heap.size() - 1));
+            heap.remove(heap.size() - 1);
+            heapifyDown(0);
+            return min;
+        }
+
+        // Peek the minimum element
+        public int peek() {
+            return heap.isEmpty() ? -1 : heap.get(0);
+        }
+    }
+
+    public class Main {
+        public static void main(String[] args) {
+            MinHeap heap = new MinHeap();
+            heap.insert(20);
+            heap.insert(15);
+            heap.insert(30);
+            heap.insert(10);
+
+            System.out.println("Min Element: " + heap.peek()); // Should print 10
+            System.out.println("Extracting Min: " + heap.extractMin()); // Should print 10
+            System.out.println("New Min Element: " + heap.peek()); // Should print 15
+        }
+    }
+    ```
+    </TabsContent>
+</Tabs>
+
+### Problems to Solve
+
+`WIP`
+
+### Resources
+
+`WIP`

@@ -1,0 +1,263 @@
+---
+title: Trie
+description: A detailed explanation of the Trie data structure with examples and use cases.
+---
+
+## What is a Trie?
+
+A **Trie** (pronounced as "try") is a tree-based data structure that stores strings efficiently for fast search, insertion, and deletion. Each node represents a single character, and paths in the tree represent words. Tries are particularly useful for prefix-based problems, such as autocomplete and dictionary lookups.
+
+### How a Trie Works
+
+Each node in a Trie contains:
+1. **Character**: The value stored in the node.
+2. **Children**: References to child nodes (next characters in the word).
+3. **End of Word Marker**: A flag to indicate if the node marks the end of a word.
+
+Tries build words character by character, where a single root node branches out for each possible starting character.
+
+Here’s an example of how the Trie looks after inserting the words: `cat`, `cap`, `bat`, and `bad`.
+
+![](/trie.png)
+
+### Key Operations on a Trie
+
+#### Insertion
+Inserts a word character by character. If a character doesn't exist as a child, it creates a new node.
+
+#### Search
+Checks if a word exists by traversing the tree character by character.
+
+#### Prefix Matching
+Efficiently finds all words starting with a given prefix.
+
+### Applications of Tries
+
+Tries are widely used in:
+- **Autocomplete systems** (like search engines and text editors).
+- **Spell checkers** and **dictionary lookups**.
+- **IP routing** (used in networking).
+- **Pattern matching** for strings and text processing.
+
+Tries are efficient for operations involving prefixes, making them indispensable in various real-world applications.
+
+### Code Examples
+
+Here are examples of basic Trie operations in **Python**, **C++**, and **Java**.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+  <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="python">
+    ```python
+    class TrieNode:
+        def __init__(self):
+            self.children = {}
+            self.is_end_of_word = False
+
+    class Trie:
+        def __init__(self):
+            self.root = TrieNode()
+
+        # Insert a word into the Trie
+        def insert(self, word):
+            node = self.root
+            for char in word:
+                if char not in node.children:
+                    node.children[char] = TrieNode()
+                node = node.children[char]
+            node.is_end_of_word = True
+
+        # Search for a word in the Trie
+        def search(self, word):
+            node = self.root
+            for char in word:
+                if char not in node.children:
+                    return False
+                node = node.children[char]
+            return node.is_end_of_word
+
+        # Check if any word starts with a given prefix
+        def starts_with(self, prefix):
+            node = self.root
+            for char in prefix:
+                if char not in node.children:
+                    return False
+                node = node.children[char]
+            return True
+
+    # Example usage
+    trie = Trie()
+    trie.insert("cat")
+    trie.insert("cap")
+    trie.insert("bat")
+    trie.insert("bad")
+
+    print(trie.search("cat"))  # Output: True
+    print(trie.starts_with("ba"))  # Output: True
+    ```
+  </TabsContent>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <unordered_map>
+    using namespace std;
+
+    class TrieNode {
+    public:
+        unordered_map<char, TrieNode*> children;
+        bool isEndOfWord;
+
+        TrieNode() {
+            isEndOfWord = false;
+        }
+    };
+
+    class Trie {
+    private:
+        TrieNode* root;
+
+    public:
+        Trie() {
+            root = new TrieNode();
+        }
+
+        // Insert a word into the Trie
+        void insert(string word) {
+            TrieNode* node = root;
+            for (char ch : word) {
+                if (!node->children.count(ch)) {
+                    node->children[ch] = new TrieNode();
+                }
+                node = node->children[ch];
+            }
+            node->isEndOfWord = true;
+        }
+
+        // Search for a word in the Trie
+        bool search(string word) {
+            TrieNode* node = root;
+            for (char ch : word) {
+                if (!node->children.count(ch)) {
+                    return false;
+                }
+                node = node->children[ch];
+            }
+            return node->isEndOfWord;
+        }
+
+        // Check if any word starts with a given prefix
+        bool startsWith(string prefix) {
+            TrieNode* node = root;
+            for (char ch : prefix) {
+                if (!node->children.count(ch)) {
+                    return false;
+                }
+                node = node->children[ch];
+            }
+            return true;
+        }
+    };
+
+    // Example usage
+    int main() {
+        Trie trie;
+        trie.insert("cat");
+        trie.insert("cap");
+        trie.insert("bat");
+        trie.insert("bad");
+
+        cout << trie.search("cat") << endl; // Output: 1 (true)
+        cout << trie.startsWith("ba") << endl; // Output: 1 (true)
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.HashMap;
+    import java.util.Map;
+
+    class TrieNode {
+        Map<Character, TrieNode> children;
+        boolean isEndOfWord;
+
+        public TrieNode() {
+            children = new HashMap<>();
+            isEndOfWord = false;
+        }
+    }
+
+    class Trie {
+        private TrieNode root;
+
+        public Trie() {
+            root = new TrieNode();
+        }
+
+        // Insert a word into the Trie
+        public void insert(String word) {
+            TrieNode node = root;
+            for (char ch : word.toCharArray()) {
+                node.children.putIfAbsent(ch, new TrieNode());
+                node = node.children.get(ch);
+            }
+            node.isEndOfWord = true;
+        }
+
+        // Search for a word in the Trie
+        public boolean search(String word) {
+            TrieNode node = root;
+            for (char ch : word.toCharArray()) {
+                if (!node.children.containsKey(ch)) {
+                    return false;
+                }
+                node = node.children.get(ch);
+            }
+            return node.isEndOfWord;
+        }
+
+        // Check if any word starts with a given prefix
+        public boolean startsWith(String prefix) {
+            TrieNode node = root;
+            for (char ch : prefix.toCharArray()) {
+                if (!node.children.containsKey(ch)) {
+                    return false;
+                }
+                node = node.children.get(ch);
+            }
+            return true;
+        }
+    }
+
+    // Example usage
+    public class Main {
+        public static void main(String[] args) {
+            Trie trie = new Trie();
+            trie.insert("cat");
+            trie.insert("cap");
+            trie.insert("bat");
+            trie.insert("bad");
+
+            System.out.println(trie.search("cat")); // Output: true
+            System.out.println(trie.startsWith("ba")); // Output: true
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+### Problems to Solve
+
+`WIP`
+
+### Resources
+
+`WIP`

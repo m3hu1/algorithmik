@@ -1,0 +1,159 @@
+---
+title: Singly Linked List
+description: Learn about singly linked lists and how they function.
+---
+
+## What is a Singly Linked List?
+
+A **singly linked list** is a linear data structure made up of nodes where each node points to the next node in the sequence. Unlike arrays, linked lists don't store elements in contiguous memory locations, which means they can dynamically grow or shrink as needed.  
+
+Each node in a singly linked list has two components:  
+1. **Data:** The actual value stored in the node.  
+2. **Pointer:** A reference (or link) to the next node.  
+
+The first node is called the **head**, and the last node points to `null` (or `None` in Python), indicating the end of the list.  
+
+### Why Use Singly Linked Lists?  
+
+Singly linked lists are useful when you need:  
+- **Dynamic size:** They can grow or shrink without worrying about memory allocation.  
+- **Efficient insertion and deletion:** Unlike arrays, there’s no need to shift elements around.  
+
+However, they do have drawbacks:  
+- **Sequential access:** You can't directly access elements by index.  
+- **Extra memory:** Each node requires additional space for the pointer.  
+
+
+### Operations  
+
+Here are the most common operations on a singly linked list:  
+- **Insertion:** Add a new node at the beginning, end, or a specific position.  
+- **Deletion:** Remove a node by its position or value.  
+- **Traversal:** Go through the list to access or modify data.  
+
+
+### Code Examples  
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    using namespace std;
+
+    struct Node {
+        int data;  
+        Node* next;  
+    };  
+
+    void insertAtHead(Node*& head, int value) {  
+        Node* newNode = new Node();  
+        newNode->data = value;  
+        newNode->next = head;  
+        head = newNode;  
+    }  
+
+    void printList(Node* head) {  
+        while (head) {  
+            cout << head->data << " -> ";  
+            head = head->next;  
+        }  
+        cout << "NULL" << endl;  
+    }  
+
+    int main() {  
+        Node* head = NULL;  
+        insertAtHead(head, 10);  
+        insertAtHead(head, 20);  
+        insertAtHead(head, 30);  
+        printList(head);  
+        return 0;  
+    }  
+    ```  
+  </TabsContent>  
+
+  <TabsContent value="python">  
+    ```python  
+    class Node:  
+        def __init__(self, data):  
+            self.data = data  
+            self.next = None  
+
+    class SinglyLinkedList:  
+        def __init__(self):  
+            self.head = None  
+
+        def insert_at_head(self, value):  
+            new_node = Node(value)  
+            new_node.next = self.head  
+            self.head = new_node  
+
+        def print_list(self):  
+            current = self.head  
+            while current:  
+                print(current.data, "->", end=" ")  
+                current = current.next  
+            print("NULL")  
+
+    sll = SinglyLinkedList()  
+    sll.insert_at_head(10)  
+    sll.insert_at_head(20)  
+    sll.insert_at_head(30)  
+    sll.print_list()  
+    ```  
+  </TabsContent>  
+
+  <TabsContent value="java">  
+    ```java  
+    class Node {  
+        int data;  
+        Node next;  
+
+        Node(int data) {  
+            this.data = data;  
+            this.next = null;  
+        }  
+    }  
+
+    public class SinglyLinkedList {  
+        Node head;  
+
+        public void insertAtHead(int value) {  
+            Node newNode = new Node(value);  
+            newNode.next = head;  
+            head = newNode;  
+        }  
+
+        public void printList() {  
+            Node current = head;  
+            while (current != null) {  
+                System.out.print(current.data + " -> ");  
+                current = current.next;  
+            }  
+            System.out.println("NULL");  
+        }  
+
+        public static void main(String[] args) {  
+            SinglyLinkedList sll = new SinglyLinkedList();  
+            sll.insertAtHead(10);  
+            sll.insertAtHead(20);  
+            sll.insertAtHead(30);  
+            sll.printList();  
+        }  
+    }  
+    ```  
+  </TabsContent>  
+</Tabs>  
+
+### Problems to Solve
+
+`WIP`
+
+### Resources
+
+`WIP`

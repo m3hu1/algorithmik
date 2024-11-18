@@ -1,0 +1,144 @@
+---
+title: Stacks
+description: Understanding the stack data structure and its applications.
+---
+
+## What are Stacks?
+
+A stack follows the **LIFO** (Last In, First Out) principle, which means the last element added to the stack is the first one to be removed. Imagine a stack of plates—when you add a plate, it goes on top, and when you remove one, it’s also from the top. That’s how stacks work.
+
+### How Stacks Work in Memory
+
+Stacks are typically implemented using arrays or linked lists. In memory, they grow from one end—either upwards or downwards, depending on how the system manages memory. When you **push** an element onto the stack, it’s added to the top of the stack. When you **pop**, the top element is removed.
+
+
+### Common Operations on a Stack
+
+Here are the main operations you'll use with stacks:
+- **Push:** Add an element to the top of the stack.
+- **Pop:** Remove the top element.
+- **Peek:** Look at the top element without removing it.
+- **IsEmpty:** Check if the stack is empty.
+
+
+### Applications of Stacks
+
+Stacks are everywhere. Here are a few places where they shine:
+- **Expression evaluation and conversion** (e.g., infix to postfix).
+- **Backtracking** in algorithms like DFS or solving mazes.
+- **Undo functionality** in text editors.
+- **Function call management** in recursion.
+
+
+### Types of Stacks
+
+While the basic concept of a stack is the same, there are variations:
+1. **Static Stack:** Fixed size, implemented using arrays.
+2. **Dynamic Stack:** Can grow or shrink in size, typically implemented using linked lists.
+
+
+### Code Examples
+
+Here’s how stacks can be implemented in **C++**, **Python**, and **Java**. Each language has its way of dealing with stacks, but the underlying concept remains the same.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <stack>
+    using namespace std;
+
+    int main() {
+        stack<int> s;
+
+        // Push elements
+        s.push(10);
+        s.push(20);
+        s.push(30);
+
+        // Pop the top element
+        s.pop();
+
+        // Peek the top element
+        cout << "Top element: " << s.top() << endl;
+
+        // Check if stack is empty
+        if (s.empty()) {
+            cout << "Stack is empty." << endl;
+        } else {
+            cout << "Stack is not empty." << endl;
+        }
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    # Using a list as a stack
+    stack = []
+
+    # Push elements
+    stack.append(10)
+    stack.append(20)
+    stack.append(30)
+
+    # Pop the top element
+    stack.pop()
+
+    # Peek the top element
+    print("Top element:", stack[-1] if stack else "Stack is empty")
+
+    # Check if stack is empty
+    if not stack:
+        print("Stack is empty.")
+    else:
+        print("Stack is not empty.")
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    import java.util.Stack;
+
+    public class Main {
+        public static void main(String[] args) {
+            Stack<Integer> stack = new Stack<>();
+
+            // Push elements
+            stack.push(10);
+            stack.push(20);
+            stack.push(30);
+
+            // Pop the top element
+            stack.pop();
+
+            // Peek the top element
+            System.out.println("Top element: " + stack.peek());
+
+            // Check if stack is empty
+            if (stack.isEmpty()) {
+                System.out.println("Stack is empty.");
+            } else {
+                System.out.println("Stack is not empty.");
+            }
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+### Problems to Solve
+
+`WIP`
+
+### Resources
+
+`WIP`
