@@ -36,27 +36,27 @@ export const ROUTES: EachRoute[] = [
     href: "/data-structures",
     items: [
       { title: "Arrays", href: "/array" },
-      { title: "String", href: "/string"},
-      // { title: "Stack", href: "/stack"},
-      // { title: "Queue", href: "/q"},
-      // { title: "Linked Lists", href: "/linked-lists", items: [
-      //   { title: "Singly Linked List", href: "/singly" },
-      //   { title: "Doubly Linked List", href: "/doubly" },
-      // ]},
-      // { title: "Hash Tables", href: "/hash-tables", items: [
-      //   { title: "Hash Map", href: "/hashmap" },
-      //   { title: "Hash Set", href: "/hashset" },
-      // ] },
-      // { title: "Heaps", href: "/heaps", items: [
-      //   { title: "Min Heap", href: "/minheap" },
-      //   { title: "Max Heap", href: "/maxheap" },
-      // ]},
-      // { title: "Trees", href: "/trees", items: [
-      //   { title: "Binary Tree", href: "/binary" },
-      //   { title: "Binary Search Tree", href: "/bst" },
-      //   { title: "Trie", href: "/trie" },
-      //   { title: "Segment Tree", href: "/segment-tree" },
-      // ]}
+      { title: "Strings", href: "/string"},
+      { title: "Stacks", href: "/stack"},
+      { title: "Queues", href: "/q"},
+      { title: "Linked Lists", href: "/linked-lists", items: [
+        { title: "Singly Linked List", href: "/singly" },
+        { title: "Doubly Linked List", href: "/doubly" },
+      ]},
+      { title: "Hash Tables", href: "/hash-tables", items: [
+        { title: "Hash Map", href: "/hashmap" },
+        { title: "Hash Set", href: "/hashset" },
+      ] },
+      { title: "Heaps", href: "/heaps", items: [
+        { title: "Min Heap", href: "/minheap" },
+        { title: "Max Heap", href: "/maxheap" },
+      ]},
+      { title: "Trees", href: "/trees", items: [
+        { title: "Binary Tree", href: "/binary" },
+        { title: "Binary Search Tree", href: "/bst" },
+        { title: "Trie", href: "/trie" },
+        { title: "Segment Tree", href: "/segment-tree" },
+      ]}
     ],
   },
   {
