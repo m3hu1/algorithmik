@@ -1,0 +1,97 @@
+---
+title: Recursion
+description: Solve complex problems by breaking them into simpler sub-problems.
+---
+
+## What is Recursion?
+
+Recursion is a programming technique where a function calls itself to solve smaller instances of a problem until it reaches a base case. It’s a powerful tool for tackling problems that can be broken down into similar sub-problems, such as tree traversals, divide-and-conquer algorithms, and combinatorial problems.
+
+## How the Algorithm Works
+
+Here’s how recursion works:
+
+1. **Base Case**: Define a condition under which the recursion stops. Without a base case, the recursion would continue indefinitely, leading to a stack overflow.
+2. **Recursive Case**: Break the problem into smaller instances and solve them by calling the same function.
+3. **Return Values**: Use return statements to propagate results back through the call stack.
+
+For example, calculating the factorial of a number involves breaking it down as `n! = n * (n-1)!` until the base case of `0! = 1`.
+
+## Time & Space Complexities
+
+- **Time Complexity**: Depends on the number of recursive calls. For example:
+  - Factorial: `O(n)`
+  - Fibonacci (Naive): `O(2^n)` (can be reduced with memoization)
+- **Space Complexity**: `O(n)` due to the recursion stack, where `n` is the depth of the recursive calls.
+
+## When to Use
+
+Recursion is ideal for problems that can be divided into smaller, self-similar sub-problems, such as:
+
+- Divide-and-conquer algorithms (e.g., Merge Sort, Quick Sort)
+- Tree traversals (e.g., Inorder, Preorder, Postorder)
+- Dynamic programming (e.g., Fibonacci with memoization)
+- Combinatorial problems (e.g., Permutations, Subsets)
+
+It’s essential to ensure the base case is well-defined to avoid infinite recursion.
+
+## Code Example
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    using namespace std;
+
+    int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1; // Base case
+        }
+        return n * factorial(n - 1); // Recursive case
+    }
+
+    int main() {
+        int num = 5;
+        cout << "Factorial of " << num << " is " << factorial(num) << endl;
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    def factorial(n):
+        if n == 0 or n == 1:
+            return 1  # Base case
+        return n * factorial(n - 1)  # Recursive case
+
+    # Example usage
+    num = 5
+    print(f"Factorial of {num} is {factorial(num)}")
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    public class RecursionExample {
+        public static int factorial(int n) {
+            if (n == 0 || n == 1) {
+                return 1; // Base case
+            }
+            return n * factorial(n - 1); // Recursive case
+        }
+
+        public static void main(String[] args) {
+            int num = 5;
+            System.out.println("Factorial of " + num + " is " + factorial(num));
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
