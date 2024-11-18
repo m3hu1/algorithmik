@@ -36,7 +36,7 @@ export const ROUTES: EachRoute[] = [
     href: "/data-structures",
     items: [
       { title: "Arrays", href: "/array" },
-      // { title: "String", href: "/string"},
+      { title: "String", href: "/string"},
       // { title: "Stack", href: "/stack"},
       // { title: "Queue", href: "/q"},
       // { title: "Linked Lists", href: "/linked-lists", items: [
