@@ -1,0 +1,128 @@
+---
+title: Strings
+description: Understanding strings as a data structure.
+---
+
+## What are Strings?
+
+A string is a sequence of characters. Unlike arrays, which hold homogeneous data (like integers or floats), strings are specifically designed for handling characters. Strings are `immutable` in many programming languages, meaning once you create a string, you can’t change its content directly.
+
+### How Strings Are Stored
+
+Let’s talk memory. In most languages, strings are stored as a continuous block of characters. For example:
+- In `C++`, a string often ends with a null character (`'\0'`) to mark where it stops.
+- In `Python` and `Java`, these details are abstracted—just remember strings are `immutable` in these languages.
+
+When you think about memory, imagine a bookshelf where each slot represents a character in the string. If I have a string like `"Hello"`, it’s stored as contiguous slots with `H`, `e`, `l`, `l`, and `o`. That’s why accessing the third letter is super fast—because it knows exactly where it is!
+
+### Common String Operations
+
+Here’s a quick list of some operations you’ll often perform on strings:
+- **Concatenation:** Combining two strings.
+- **Substring:** Extracting part of a string.
+- **Length:** Finding out how many characters are in the string.
+- **Search:** Checking if a character or substring exists within the string.
+
+### Types of Strings
+
+There are two main types of strings:
+1. **Immutable Strings:** These are strings that can’t be changed after creation. Languages like Python and Java use this approach, which can be frustrating at first but helps with performance and security.
+2. **Mutable Strings:** These allow direct modifications. For example, in C++, `std::string` is mutable.
+
+### Code Examples
+
+Here’s how you work with strings in `C++`, `Python`, and `Java`. Each language has its own syntax, but once you understand one, switching between them isn’t that hard.
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+
+  <TabsContent value="cpp">
+    ```cpp
+    #include <iostream>
+    #include <string>
+    using namespace std;
+
+    int main() {
+        // Defining a string
+        string str = "Hello, World!";
+
+        // String length
+        cout << "Length: " << str.length() << endl;
+
+        // Concatenation
+        string greeting = str + " How are you?";
+        cout << "Concatenated: " << greeting << endl;
+
+        // Substring
+        cout << "Substring: " << str.substr(7, 5) << endl;
+
+        // Searching for a character
+        size_t pos = str.find('W');
+        if (pos != string::npos)
+            cout << "'W' found at position: " << pos << endl;
+
+        return 0;
+    }
+    ```
+  </TabsContent>
+
+  <TabsContent value="python">
+    ```python
+    # Defining a string
+    str = "Hello, World!"
+
+    # String length
+    print("Length:", len(str))
+
+    # Concatenation
+    greeting = str + " How are you?"
+    print("Concatenated:", greeting)
+
+    # Substring
+    print("Substring:", str[7:12])
+
+    # Searching for a character
+    pos = str.find('W')
+    if pos != -1:
+        print("'W' found at position:", pos)
+    ```
+  </TabsContent>
+
+  <TabsContent value="java">
+    ```java
+    public class Main {
+        public static void main(String[] args) {
+            // Defining a string
+            String str = "Hello, World!";
+
+            // String length
+            System.out.println("Length: " + str.length());
+
+            // Concatenation
+            String greeting = str + " How are you?";
+            System.out.println("Concatenated: " + greeting);
+
+            // Substring
+            System.out.println("Substring: " + str.substring(7, 12));
+
+            // Searching for a character
+            int pos = str.indexOf('W');
+            if (pos != -1)
+                System.out.println("'W' found at position: " + pos);
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+### Problems to Solve
+
+`WIP`
+
+### Resources
+
+`WIP`
