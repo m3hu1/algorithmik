@@ -1,4 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
+import { RainbowButton } from "@/components/ui/rainbow-btn";
 import { page_routes } from "@/lib/routes-config";
 import { MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
@@ -21,12 +22,13 @@ export default function Home() {
       This is a comprehensive guide to mastering data structures and algorithms. It covers a wide range of topics, from the basics to advanced concepts.
       </p>
       <div className="flex flex-row items-center gap-5">
-        <Link
+        {/* <Link
           href={`/guide${page_routes[0].href}`}
           className={buttonVariants({ className: "px-6", size: "lg" })}
         >
           Start Learning
-        </Link>
+        </Link> */}
+        <Link href={`/guide${page_routes[0].href}`}><RainbowButton className="px-6">Start Learning</RainbowButton></Link>
         {/* <Link
           href="/blog"
           className={buttonVariants({
