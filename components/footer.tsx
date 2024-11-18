@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { HeartIcon } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -31,7 +32,14 @@ export function Footer() {
         <div className="gap-4 items-center hidden md:flex">
           <FooterButtons />
           <Link href="https://www.buymeacoffee.com/mehulpathak" target="_blank">
-          <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee <3&emoji=&slug=m3hu1&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" width={175}/>
+          {/* <img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee <3&emoji=&slug=m3hu1&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff" width={175}/> */}
+          <Image 
+              src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee <3&emoji=&slug=m3hu1&button_colour=FFDD00&font_colour=000000&font_family=Inter&outline_colour=000000&coffee_colour=ffffff"
+              alt="Buy Me A Coffee"
+              width={171}
+              height={1}
+              unoptimized
+            />
         </Link>
         </div>
       </div>
