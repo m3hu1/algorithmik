@@ -84,6 +84,10 @@ export const ROUTES: EachRoute[] = [
     ]
   },
   {
+    title: "Problem Sets",
+    href: "/problem-sets",
+  },
+  {
     title: "Miscellaneous",
     href: "/misc",
     items: [
