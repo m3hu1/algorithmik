@@ -78,7 +78,7 @@ export default function Search() {
               <span className="text-primary">{`"${searchedInput}"`}</span>
             </p>
           )}
-          <ScrollArea className="max-h-[400px] overflow-y-auto">
+          <ScrollArea className="max-h-[400px] overflow-y-auto group">
             <div className="flex flex-col items-start overflow-y-auto sm:px-2 px-1 pb-4">
               {filteredResults.map((item) => (
                 <DialogClose key={item.href} asChild>
