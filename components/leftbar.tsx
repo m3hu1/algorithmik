@@ -15,11 +15,16 @@ import {
   
   export function Leftbar() {
     return (
-      <aside className="md:flex hidden flex-[1.5] min-w-[238px] sticky top-16 flex-col h-[93.75vh] overflow-y-auto">
-        <ScrollArea className="py-4">
-          <DocsMenu />
-        </ScrollArea>
-      </aside>
+      // <aside className="md:flex hidden flex-[1.5] min-w-[238px] sticky top-16 flex-col h-[93.75vh] overflow-y-auto">
+      //   <ScrollArea className="py-4">
+      //     <DocsMenu />
+      //   </ScrollArea>
+      // </aside>
+      <aside className="md:flex hidden flex-[1.5] min-w-[238px] sticky top-16 flex-col h-[93.75vh] overflow-y-auto group">
+    <ScrollArea className="py-4">
+      <DocsMenu />
+    </ScrollArea>
+  </aside>
     );
   }
   
