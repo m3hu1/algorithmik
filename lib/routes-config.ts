@@ -38,10 +38,10 @@ export const ROUTES: EachRoute[] = [
       { title: "Arrays", href: "/array" },
       { title: "Strings", href: "/string"},
       { title: "Stacks", href: "/stack"},
-      { title: "Queues", href: "/q"},
+      { title: "Queues", href: "/queue"},
       { title: "Linked Lists", href: "/linked-lists", items: [
-        { title: "Singly Linked List", href: "/singly" },
-        { title: "Doubly Linked List", href: "/doubly" },
+        { title: "Singly Linked List", href: "/singly-linked-list" },
+        { title: "Doubly Linked List", href: "/doubly-linked-list" },
       ]},
       { title: "Hash Tables", href: "/hash-tables", items: [
         { title: "Hash Map", href: "/hashmap" },
@@ -52,8 +52,8 @@ export const ROUTES: EachRoute[] = [
         { title: "Max Heap", href: "/maxheap" },
       ]},
       { title: "Trees", href: "/trees", items: [
-        { title: "Binary Tree", href: "/binary" },
-        { title: "Binary Search Tree", href: "/bst" },
+        { title: "Binary Tree", href: "/binary-tree" },
+        { title: "Binary Search Tree", href: "/BST" },
         { title: "Trie", href: "/trie" },
         { title: "Segment Tree", href: "/segment-tree" },
       ]}
@@ -68,10 +68,10 @@ export const ROUTES: EachRoute[] = [
       { title: "Two Pointers", href: "/two-pointers" },
       { title: "Greedy", href: "/greedy" },
       { title: "Sliding Window", href: "/sliding-window" },
-      { title: "Depth-First Search", href: "/dfs" },
-      { title: "Breadth-First Search", href: "/bfs" },
+      { title: "Depth-First Search", href: "/DFS" },
+      { title: "Breadth-First Search", href: "/BFS" },
       { title: "Backtracking", href: "/backtracking" },
-      { title: "Dynamic Programming", href: "/dp" },
+      { title: "Dynamic Programming", href: "/DP" },
       { title: "Bit Manipulation", href: "/bit-manipulation" },
     ]
   },
