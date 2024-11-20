@@ -52,7 +52,7 @@ function RenderTreeItem({ item }: { item: TreeViewElement }) {
   if (!item.children?.length) {
     return (
       <File value={item.id} isSelectable>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 whitespace-nowrap">
           {item.link ? (
             <Link 
               href={item.link} 
@@ -64,8 +64,6 @@ function RenderTreeItem({ item }: { item: TreeViewElement }) {
           ) : (
             item.name
           )}
-          {/* <ChevronUp className="text-green-500"/> */}
-          {/* <ChevronUp className="text-yellow-500"/> */}
           {item.difficulty && (
             <ChevronUp className={getDifficultyColor(item.difficulty)} />
           )}
