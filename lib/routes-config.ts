@@ -32,6 +32,14 @@ export const ROUTES: EachRoute[] = [
     ],
   },
   {
+    title: "Problem Sets",
+    href: "/problem-sets",
+    items: [
+      { title: "Problems Folder", href: "/problems-folder" },
+      { title: "LeetCode Problem Lists", href: "/leetcode-list" },
+    ],
+  },
+  {
     title: "Data Structures",
     href: "/data-structures",
     items: [
@@ -82,10 +90,6 @@ export const ROUTES: EachRoute[] = [
       { title: "Pointers", href: "/pointers" },
       { title: "Recursion", href: "/recursion" },
     ]
-  },
-  {
-    title: "Problem Sets",
-    href: "/problem-sets",
   },
   {
     title: "Miscellaneous",
