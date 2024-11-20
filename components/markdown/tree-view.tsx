@@ -3,7 +3,7 @@
 import { Tree, TreeViewElement, File, Folder } from "@/components/ui/tree";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Check, ChevronUp } from "lucide-react";
+import { Check, BrainIcon } from "lucide-react";
 
 interface TreeViewProps {
   data: TreeViewElement[];
@@ -65,7 +65,7 @@ function RenderTreeItem({ item }: { item: TreeViewElement }) {
             item.name
           )}
           {item.difficulty && (
-            <ChevronUp className={getDifficultyColor(item.difficulty)} />
+            <BrainIcon size={20} className={getDifficultyColor(item.difficulty)} />
           )}
           <button
             onClick={toggleSolved}
