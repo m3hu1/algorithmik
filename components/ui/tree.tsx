@@ -46,7 +46,6 @@ const useTree = () => {
   return context;
 };
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface TreeViewComponentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 type Direction = "rtl" | "ltr" | undefined;
@@ -204,7 +203,6 @@ const TreeIndicator = forwardRef<
 
 TreeIndicator.displayName = "TreeIndicator";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface FolderComponentProps
   extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item> {}
 
@@ -229,7 +227,6 @@ const Folder = forwardRef<
       children,
       ...props
     },
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     ref,
   ) => {
     const {
@@ -303,7 +300,6 @@ const File = forwardRef<
     {
       value,
       className,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       handleSelect,
       isSelectable = true,
       isSelect,
@@ -349,7 +345,6 @@ const CollapseButton = forwardRef<
     elements: TreeViewElement[];
     expandAll?: boolean;
   } & React.HTMLAttributes<HTMLButtonElement>
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 >(({ className, elements, expandAll = false, children, ...props }, ref) => {
   const { expandedItems, setExpandedItems } = useTree();
 
