@@ -57,7 +57,7 @@ function RenderTreeItem({ item }: { item: TreeViewElement }) {
             <Link 
               href={item.link} 
               target="_blank"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition-colors no-underline"
             >
               {item.name}
             </Link>
