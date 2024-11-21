@@ -80,7 +80,7 @@ export async function getDocsForSlug(slug: string) {
 export async function getDocsTocs(slug: string) {
   const contentPath = getDocsContentPath(slug);
   const rawMdx = await fs.readFile(contentPath, "utf-8");
-  // captures between ## - #### can modify accordingly
+  // captures between ## - #### <Annotate>can modify accordingly</Annotate>
   // const headingsRegex = /^(#{2,4})\s(.+)$/gm;
   const headingsRegex = /^(#{2,4})\s(?:<Annotate>)?(.+?)(?:<\/Annotate>)?$/gm;
   let match;
