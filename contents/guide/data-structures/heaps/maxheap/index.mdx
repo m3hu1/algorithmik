@@ -3,13 +3,13 @@ title: Max Heap
 description: Understanding the Max Heap data structure and its practical applications.
 ---
 
-## What is a Max Heap?
+## <Annotate>What is a Max Heap?</Annotate>
 
 A **Max Heap** is a binary tree-based data structure that follows the **heap property**. In a Max Heap, for every node, the value of the node is greater than or equal to the values of its children. This property makes the largest element always present at the **root** of the heap, making it highly useful for scenarios where quick access to the maximum element is needed.
 
 In a Max Heap, both the left and right children of a node are smaller than or equal to the node itself. It’s important to note that while the Max Heap maintains this property for all nodes, it does **not** guarantee any particular order for the children of a given node. The only guarantee is that the root node is the largest.
 
-### How a Max Heap Works
+### <Annotate>How a Max Heap Works</Annotate>
 
 A Max Heap can be implemented as a complete binary tree, meaning all levels of the tree are fully filled except possibly for the last level, which is filled from left to right. The heap is usually represented as an array, where:
 - The **root node** is at index `0`.
@@ -19,7 +19,7 @@ A Max Heap can be implemented as a complete binary tree, meaning all levels of t
 
 This array-based representation makes it efficient to manage the heap structure, particularly for operations like insertion and deletion.
 
-### Common Operations on a Max Heap
+### <Annotate>Common Operations on a Max Heap</Annotate>
 
 There are several important operations that you will frequently use with Max Heaps:
 - **Insert:** Add an element to the heap and ensure the heap property is maintained.
@@ -27,7 +27,7 @@ There are several important operations that you will frequently use with Max Hea
 - **Heapify:** Reorganize a heap so that it maintains the heap property. This can be done from any node in the heap.
 - **Peek:** View the root element without removing it (the maximum element).
 
-### Applications of Max Heaps
+### <Annotate>Applications of Max Heaps</Annotate>
 
 Max Heaps are widely used in algorithms and data structures due to their efficiency in finding the maximum element. Some common applications include:
 - **Priority Queues:** A Max Heap is often used to implement priority queues, where the highest-priority element is always at the top.
@@ -35,7 +35,7 @@ Max Heaps are widely used in algorithms and data structures due to their efficie
 - **Graph Algorithms:** Some graph algorithms, such as Dijkstra’s algorithm for shortest paths, use Max Heaps to efficiently extract the maximum element from a priority queue.
 - **Scheduling Algorithms:** In operating systems, Max Heaps can be used to manage task scheduling based on priority.
 
-### Code Examples
+### <Annotate>Code Examples</Annotate>
 
 Let’s see how a Max Heap can be implemented in **C++**, **Python**, and **Java**. I’ve added comments to explain the code and to help you understand each step.
 
@@ -261,10 +261,10 @@ Let’s see how a Max Heap can be implemented in **C++**, **Python**, and **Java
   </TabsContent>
 </Tabs>
 
-### Problems to Solve
+### <Annotate>Problems to Solve</Annotate>
 
 > [Important Problems on Heaps](https://leetcode.com/problem-list/akwketg6/)
 
-### Resources
+### <Annotate>Resources</Annotate>
 
 `WIP`

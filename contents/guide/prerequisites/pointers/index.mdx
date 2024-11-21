@@ -3,13 +3,13 @@ title: Pointers
 description: Understanding pointers and their significance in programming.
 ---
 
-## What Are Pointers?
+## <Annotate>What Are Pointers?</Annotate>
 
 Pointers are a fundamental concept in programming, especially in low-level languages like C and C++. They allow us to directly interact with memory by storing the *address* of a variable rather than its actual value. In simpler terms, a pointer is a variable that "points" to the location of another variable in memory.
 
 When I first learned about pointers, it felt a bit abstract, but as I worked with them, I realized how powerful they are. They're not just a tool—they’re a gateway to understanding how memory works in a program.
 
-## Why Are Pointers Important?
+## <Annotate>Why Are Pointers Important?</Annotate>
 
 Pointers are powerful because they allow you to:
 
@@ -18,7 +18,7 @@ Pointers are powerful because they allow you to:
 3. **Enable dynamic memory allocation**: They let you manage memory manually using functions like `malloc` or `new`.
 4. **Facilitate complex data structures**: Concepts like linked lists, trees, and graphs rely heavily on pointers.
 
-## How Do Pointers Work?
+## <Annotate>How Do Pointers Work?</Annotate>
 
 To understand pointers, let’s break it down step by step:
 
@@ -64,7 +64,7 @@ cout << x; // Prints 20
 
 This is where I found pointers really fascinating—it’s like directly controlling another variable without needing to touch it!
 
-## Common Pointer Scenarios
+## <Annotate>Common Pointer Scenarios</Annotate>
 
 ### 1. Null Pointers
 A null pointer is a pointer that doesn’t point to any memory location. It’s initialized as `nullptr` (in modern C++) or `NULL` (in older C):
@@ -107,21 +107,21 @@ int **pptr = &ptr;
 cout << **pptr; // Prints 10
 ```
 
-## Pitfalls and Best Practices
+## <Annotate>Pitfalls and Best Practices</Annotate>
 
-### Common Issues
+### <Annotate>Common Issues</Annotate>
 - **Dangling Pointers**: These are pointers that point to memory that has already been freed. Accessing such memory leads to undefined behavior.
 - **Memory Leaks**: If you allocate memory dynamically but forget to free it, you might encounter memory leaks.
 
-### Best Practices
+### <Annotate>Best Practices</Annotate>
 - Always initialize pointers.
 - Use `nullptr` instead of `NULL` in modern C++.
 - Free memory when it’s no longer needed.
 
-## Wrapping Up
+## <Annotate>Wrapping Up</Annotate>
 
 Pointers can feel intimidating at first, but once you start working with them, they unlock a deeper understanding of programming and memory management. They’re essential for efficient coding and form the backbone of many complex data structures. Dive into them, experiment, and you’ll see how much control they offer!
 
-### Resources
+### <Annotate>Resources</Annotate>
 
 `WIP`
