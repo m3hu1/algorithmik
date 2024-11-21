@@ -20,6 +20,8 @@ import Link from "@/components/markdown/link";
 import Outlet from "@/components/markdown/outlet";
 import TreeView from "@/components/markdown/tree-view";
 import Annotate from "@/components/markdown/annotate";
+import HoverUnderline from "@/components/markdown/hover-underline";
+import AnimatedUnderline from "@/components/markdown/underline";
 
 // add custom components
 const components = {
@@ -35,7 +37,9 @@ const components = {
   a: Link,
   Outlet,
   TreeView: TreeView,
-  Annotate
+  Annotate,
+  HoverUnderline,
+  AnimatedUnderline
 };
 
 // can be used for other pages like blogs, Guides etc
@@ -80,9 +84,9 @@ export async function getDocsForSlug(slug: string) {
 export async function getDocsTocs(slug: string) {
   const contentPath = getDocsContentPath(slug);
   const rawMdx = await fs.readFile(contentPath, "utf-8");
-  // captures between ## - #### <Annotate>can modify accordingly</Annotate>
+  // captures between ## - #### <HoverUnderline>can modify accordingly</HoverUnderline>
   // const headingsRegex = /^(#{2,4})\s(.+)$/gm;
-  const headingsRegex = /^(#{2,4})\s(?:<Annotate>)?(.+?)(?:<\/Annotate>)?$/gm;
+  const headingsRegex = /^(#{2,4})\s(?:<HoverUnderline>)?(.+?)(?:<\/HoverUnderline>)?$/gm;
   let match;
   const extractedHeadings = [];
   while ((match = headingsRegex.exec(rawMdx)) !== null) {

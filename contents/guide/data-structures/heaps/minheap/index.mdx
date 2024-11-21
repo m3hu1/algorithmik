@@ -3,13 +3,13 @@ title: Min Heap
 description: Understanding the Min Heap data structure and its practical applications.
 ---
 
-## <Annotate>What is a Min Heap?</Annotate>
+## <HoverUnderline>What is a Min Heap?</HoverUnderline>
 
 A **Min Heap** is a binary tree-based data structure that follows the **heap property** in which, for every node, the value of the node is **smaller than or equal to** the values of its children. This property ensures that the smallest element is always at the **root** of the heap. 
 
 In a Min Heap, both the left and right children of a node are greater than or equal to the node itself. However, unlike in a Max Heap, the node’s children do not follow any specific order relative to each other. The only guarantee is that the root node will always be the smallest.
 
-### <Annotate>How a Min Heap Works</Annotate>
+### <HoverUnderline>How a Min Heap Works</HoverUnderline>
 
 A Min Heap is usually represented as a **complete binary tree**, which means all levels are fully filled except possibly for the last level, which is filled from left to right. It can be efficiently implemented using an array, where:
 - The **root node** is at index `0`.
@@ -19,7 +19,7 @@ A Min Heap is usually represented as a **complete binary tree**, which means all
 
 This array-based representation allows for efficient operations like insertion and deletion by keeping the tree balanced.
 
-### <Annotate>Common Operations on a Min Heap</Annotate>
+### <HoverUnderline>Common Operations on a Min Heap</HoverUnderline>
 
 Here are some of the most common operations performed on a Min Heap:
 - **Insert:** Add an element to the heap while maintaining the heap property.
@@ -27,7 +27,7 @@ Here are some of the most common operations performed on a Min Heap:
 - **Heapify:** Reorganize a heap so that it maintains the heap property, starting from any node.
 - **Peek:** Retrieve the root element without removing it (the minimum element).
 
-### <Annotate>Applications of Min Heaps</Annotate>
+### <HoverUnderline>Applications of Min Heaps</HoverUnderline>
 
 Min Heaps are widely used in many algorithms due to their efficiency in finding the smallest element. Some common applications include:
 - **Priority Queues:** A Min Heap is often used in priority queues, where the element with the highest priority is the smallest element.
@@ -35,7 +35,7 @@ Min Heaps are widely used in many algorithms due to their efficiency in finding 
 - **Dijkstra’s Algorithm:** Min Heaps are used in Dijkstra’s algorithm for finding the shortest path in a graph.
 - **Huffman Encoding:** Min Heaps are also used in Huffman coding for data compression, where the smallest element is processed first.
 
-### <Annotate>Code Examples</Annotate>
+### <HoverUnderline>Code Examples</HoverUnderline>
 
 Let’s see how a Min Heap can be implemented in **C++**, **Python**, and **Java**. I’ve included comments in the code to help you understand each part.
 
@@ -261,10 +261,10 @@ Let’s see how a Min Heap can be implemented in **C++**, **Python**, and **Java
     </TabsContent>
 </Tabs>
 
-### <Annotate>Problems to Solve</Annotate>
+### <HoverUnderline>Problems to Solve</HoverUnderline>
 
 > [Important Problems on Heaps](https://leetcode.com/problem-list/akwketg6/)
 
-### <Annotate>Resources</Annotate>
+### <HoverUnderline>Resources</HoverUnderline>
 
 `WIP`

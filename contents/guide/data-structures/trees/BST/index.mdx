@@ -3,7 +3,7 @@ title: Binary Search Tree
 description: A detailed yet simple explanation of the Binary Search Tree (BST) data structure.
 ---
 
-## <Annotate>What is a Binary Search Tree?</Annotate>
+## <HoverUnderline>What is a Binary Search Tree?</HoverUnderline>
 
 A **Binary Search Tree (BST)** is a special type of Binary Tree where the nodes are arranged in a specific order:
 - The **left child** of a node contains values **smaller** than the node’s value.
@@ -11,7 +11,7 @@ A **Binary Search Tree (BST)** is a special type of Binary Tree where the nodes 
 
 This ordering property allows for efficient searching, insertion, and deletion operations. It is like a "sorted" Binary Tree, making it easy to search for values by comparing each node’s value and moving left or right based on whether the target value is smaller or larger.
 
-### <Annotate>How a Binary Search Tree Works</Annotate>
+### <HoverUnderline>How a Binary Search Tree Works</HoverUnderline>
 
 The key to understanding a Binary Search Tree is the ordering rule:
 - At each node, I compare the target value with the node’s value.
@@ -29,7 +29,7 @@ Here’s an example of a simple Binary Search Tree:
 - 15 is greater than 10, so it goes to the **right**.
 - The same comparison applies recursively for each node.
 
-### <Annotate>Operations on a Binary Search Tree</Annotate>
+### <HoverUnderline>Operations on a Binary Search Tree</HoverUnderline>
 
 There are several important operations I can perform on a Binary Search Tree:
 1. **Insertion**: Add a new node to the tree while maintaining the BST property.
@@ -39,21 +39,21 @@ There are several important operations I can perform on a Binary Search Tree:
 5. **Finding Minimum/Maximum**: Find the smallest or largest value in the tree.
 6. **Finding Height**: Calculate the number of levels in the tree.
 
-### <Annotate>Insertion in a Binary Search Tree</Annotate>
+### <HoverUnderline>Insertion in a Binary Search Tree</HoverUnderline>
 
 When inserting a node, I follow these steps:
 - Start at the root and compare the value to be inserted with the current node.
 - If the value is smaller, move left; if larger, move right.
 - Repeat this process recursively until I find an empty spot (null) where the new node can be inserted.
 
-### <Annotate>Deletion in a Binary Search Tree</Annotate>
+### <HoverUnderline>Deletion in a Binary Search Tree</HoverUnderline>
 
 When deleting a node, there are three possible cases:
 1. **Node has no children**: Simply remove the node.
 2. **Node has one child**: Replace the node with its child.
 3. **Node has two children**: Find the **in-order successor** (the smallest value node in the right subtree) or **in-order predecessor** (the largest value node in the left subtree), replace the node with that value, and then delete the successor or predecessor.
 
-### <Annotate>Code Examples</Annotate>
+### <HoverUnderline>Code Examples</HoverUnderline>
 
 Let’s look at how I can implement basic operations like insertion and in-order traversal in **C++**, **Python**, and **Java**.
 
@@ -265,10 +265,10 @@ Let’s look at how I can implement basic operations like insertion and in-order
     </TabsContent>
 </Tabs>
 
-### <Annotate>Problems to Solve</Annotate>
+### <HoverUnderline>Problems to Solve</HoverUnderline>
 
 `WIP`
 
-### <Annotate>Resources</Annotate>
+### <HoverUnderline>Resources</HoverUnderline>
 
 `WIP`

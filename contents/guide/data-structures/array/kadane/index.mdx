@@ -3,11 +3,11 @@ title: Mastering Kadane's Algorithm
 description: Learn how Kadane's Algorithm efficiently finds the maximum sum subarray, even with negative numbers.
 ---
 
-## <Annotate>What is Kadane's Algorithm?</Annotate>
+## <HoverUnderline>What is Kadane's Algorithm?</HoverUnderline>
 
 Kadane's Algorithm is a powerful technique to find the **maximum sum of a contiguous subarray** in a one-dimensional array. It runs in `O(n)` time, making it an optimal solution for problems involving subarray sums.
 
-### <Annotate>How It Works</Annotate>
+### <HoverUnderline>How It Works</HoverUnderline>
 
 The algorithm uses two variables:
 - **current_sum**: Tracks the sum of the current subarray.
@@ -17,19 +17,19 @@ At each step, it decides:
 1. If the current element alone is greater than the sum of the ongoing subarray (`current_sum`), it starts a new subarray.
 2. Otherwise, it continues adding the current element to the ongoing subarray.
 
-### <Annotate>Handling Negative Numbers</Annotate>
+### <HoverUnderline>Handling Negative Numbers</HoverUnderline>
 
 Kadane's Algorithm efficiently handles arrays with negative numbers by dynamically resetting the `current_sum` when it falls below zero. This ensures:
 - The subarray contributing to `max_sum` does not include unnecessary negative values.
 - The algorithm adapts to the array's state, even when all numbers are negative, by selecting the **least negative single element** as the maximum sum.
 
-### <Annotate>Why Kadane's Algorithm is Optimal</Annotate>
+### <HoverUnderline>Why Kadane's Algorithm is Optimal</HoverUnderline>
 
 1. **Linear Time Complexity**: It traverses the array in a single pass.
 2. **Space Efficiency**: Uses constant space, with no additional data structures required.
 3. **Dynamic Decisions**: Ensures the optimal subarray is built without unnecessary calculations.
 
-### <Annotate>Pseudo-Code and Implementation</Annotate>
+### <HoverUnderline>Pseudo-Code and Implementation</HoverUnderline>
 
 <Tabs defaultValue="python" className="pt-5 pb-1">
   <TabsList>
@@ -102,15 +102,15 @@ Kadane's Algorithm efficiently handles arrays with negative numbers by dynamical
   </TabsContent>
 </Tabs>
 
-### <Annotate>Example</Annotate>
+### <HoverUnderline>Example</HoverUnderline>
 
 Input: `[-2, 1, -3, 4, -1, 2, 1, -5, 4]`  
 Output: `6` (Subarray: `[4, -1, 2, 1]`)
 
-### <Annotate>Key Takeaway</Annotate>
+### <HoverUnderline>Key Takeaway</HoverUnderline>
 
 Kadane's Algorithm's ability to dynamically reset the subarray when faced with negatives ensures it always finds the optimal solution. Its simplicity and efficiency make it a cornerstone of competitive programming and algorithmic problem-solving.
 
-### <Annotate>Resources</Annotate>
+### <HoverUnderline>Resources</HoverUnderline>
 
 `WIP`

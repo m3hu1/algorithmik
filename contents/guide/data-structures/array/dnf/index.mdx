@@ -3,11 +3,11 @@ title: Understanding the Dutch National Flag Algorithm
 description: A guide to the Dutch National Flag Algorithm for efficiently sorting arrays with three distinct elements.
 ---
 
-## <Annotate>What is the Dutch National Flag Algorithm?</Annotate>
+## <HoverUnderline>What is the Dutch National Flag Algorithm?</HoverUnderline>
 
 The **Dutch National Flag Algorithm** is an efficient method to sort an array containing three distinct elements (or categories) in a single pass. It is particularly useful for problems like sorting an array of 0s, 1s, and 2s.
 
-### <Annotate>How It Works</Annotate>
+### <HoverUnderline>How It Works</HoverUnderline>
 
 The algorithm uses three pointers:
 1. **low**: Points to the boundary between the first category (e.g., 0s) and the rest.
@@ -24,12 +24,12 @@ At each step:
 - If `arr[mid]` belongs to the second category, increment `mid`.
 - If `arr[mid]` belongs to the third category, swap it with `arr[high]` and decrement `high`.
 
-### <Annotate>Why It’s Optimal</Annotate>
+### <HoverUnderline>Why It’s Optimal</HoverUnderline>
 
 1. **Linear Time Complexity**: The array is traversed once, making the time complexity `O(n)`.
 2. **In-Place Sorting**: It uses constant space, requiring no extra memory.
 
-### <Annotate>Implementation</Annotate>
+### <HoverUnderline>Implementation</HoverUnderline>
 
 <Tabs defaultValue="python" className="pt-5 pb-1">
   <TabsList>
@@ -124,15 +124,15 @@ At each step:
   </TabsContent>
 </Tabs>
 
-### <Annotate>Example</Annotate>
+### <HoverUnderline>Example</HoverUnderline>
 
 Input: `[2, 0, 2, 1, 1, 0]`  
 Output: `[0, 0, 1, 1, 2, 2]`
 
-### <Annotate>Key Takeaway</Annotate>
+### <HoverUnderline>Key Takeaway</HoverUnderline>
 
 The Dutch National Flag Algorithm efficiently sorts arrays with three categories using a simple, in-place approach. Its combination of clarity and performance makes it a popular choice for classification problems in programming contests and interviews.
 
-### <Annotate>Resources</Annotate>
+### <HoverUnderline>Resources</HoverUnderline>
 
 `WIP`
