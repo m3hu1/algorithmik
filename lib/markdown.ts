@@ -124,6 +124,16 @@ function justGetFrontmatterFromMD<Frontmatter>(rawMd: string): Frontmatter {
 }
 
 export async function getAllChilds(pathString: string) {
+  if (pathString === "*") {
+    // Fetch all top-level categories (parents) from ROUTES, excluding the 'introduction' page
+    return ROUTES.filter((route) => route.href !== "/introduction") // Exclude introduction page
+      .map((route) => ({
+        title: route.title, // Ensure your ROUTES config has a 'title' field
+        description: route.description || "", // Provide a fallback if description is missing
+        href: `/guide${route.href}`,
+      }));
+  }
+
   const items = pathString.split("/").filter((it) => it != "");
   let page_routes_copy = ROUTES;
 

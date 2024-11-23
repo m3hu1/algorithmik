@@ -3,6 +3,7 @@ export type EachRoute = {
   href: string;
   noLink?: true;
   items?: EachRoute[];
+  description?: string;
 };
 
 export const ROUTES: EachRoute[] = [
@@ -19,6 +20,7 @@ export const ROUTES: EachRoute[] = [
   {
     title: "Getting Started",
     href: "/getting-started",
+    description: "This section tells you how to navigate this guide effectively.",
     items: [
       { title: "Structure of This Guide", href: "/structure" },
       {
@@ -34,6 +36,7 @@ export const ROUTES: EachRoute[] = [
   {
     title: "Problem Sets",
     href: "/problem-sets",
+    description: "A list of various problem sets that you can use to practice.",
     items: [
       { title: "Problems Folder", href: "/problems-folder" },
       { title: "LeetCode Problem Lists", href: "/leetcode-list" },
@@ -42,6 +45,7 @@ export const ROUTES: EachRoute[] = [
   {
     title: "Data Structures",
     href: "/data-structures",
+    description: "List of various data structures to learn.",
     items: [
       { title: "Arrays", href: "/array" },
       { title: "Strings", href: "/string"},
@@ -70,6 +74,7 @@ export const ROUTES: EachRoute[] = [
   {
     title: "Algorithms",
     href: "/algorithms",
+    description: "List of various algorithms to learn.",
     items: [
       { title: "Sorting", href: "/sorting" },
       { title: "Binary Search", href: "/binary-search" },
@@ -86,6 +91,7 @@ export const ROUTES: EachRoute[] = [
   {
     title: "Prerequisites",
     href: "/prerequisites",
+    description: "Things to know before or during learning data structures & algorithms.",
     items: [
       { title: "Pointers", href: "/pointers" },
       { title: "Recursion", href: "/recursion" },
@@ -94,6 +100,7 @@ export const ROUTES: EachRoute[] = [
   {
     title: "Miscellaneous",
     href: "/misc",
+    description: "This section contains miscellaneous topics.",
     items: [
       {  title: "Complexity of Various Algorithms", href: "/complexity-of-algos", },
     ],
