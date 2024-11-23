@@ -1,4 +1,5 @@
 import { Leftbar } from "@/components/leftbar";
+import 'rehype-callouts/theme/github';
 
 export default function DocsLayout({
   children,

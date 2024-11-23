@@ -6,6 +6,7 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeCodeTitles from "rehype-code-titles";
+import rehypeCallouts from "rehype-callouts";
 import { page_routes, ROUTES } from "./routes-config";
 import { visit } from "unist-util-visit";
 import matter from "gray-matter";
@@ -55,6 +56,7 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
           rehypePrism,
           rehypeSlug,
           rehypeAutolinkHeadings,
+          [rehypeCallouts, { theme: 'github' }],
           postProcess,
         ],
         remarkPlugins: [remarkGfm],
