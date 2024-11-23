@@ -97,8 +97,19 @@ export default function TreeView({
   initialExpandedItems 
 }: TreeViewProps) {
   return (
-    <div className="rounded-lg my-4">
+    <div className="rounded-lg my-4 overflow-x-auto">
       {/* <ScrollArea className="h-full"> */}
+        {/* <Tree
+          elements={data}
+          initialSelectedId={initialSelectedId}
+          initialExpandedItems={initialExpandedItems}
+        >
+          {data.map((item) => (
+            <RenderTreeItem key={item.id} item={item} />
+          ))}
+        </Tree> */}
+      {/* </ScrollArea> */}
+      <div className="inline-block min-w-full">
         <Tree
           elements={data}
           initialSelectedId={initialSelectedId}
@@ -108,7 +119,7 @@ export default function TreeView({
             <RenderTreeItem key={item.id} item={item} />
           ))}
         </Tree>
-      {/* </ScrollArea> */}
+      </div>
     </div>
   );
 }
