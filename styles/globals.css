@@ -130,3 +130,7 @@ pre>code {
 .highlight-comp>code {
   background-color: transparent !important;
 }
+
+.table-responsive {
+  overflow-x: auto;
+}
