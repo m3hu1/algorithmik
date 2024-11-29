@@ -39,6 +39,19 @@ export const ROUTES: EachRoute[] = [
     description: "A list of various problem sets that you can use to practice.",
     items: [
       { title: "Problems Folder", href: "/problems-folder" },
+      { title: "Company Folder", href: "/company-folder", items: [
+        { title: "Amazon", href: "/amazon"},
+        { title: "Google", href: "/google"},
+        { title: "Microsoft", href: "/microsoft"},
+        { title: "Facebook", href: "/facebook"},
+        { title: "Tesla", href: "/tesla"},
+        { title: "Uber", href: "/uber"},
+        { title: "PayPal", href: "/paypal"},
+        { title: "Bloomberg", href: "/bloomberg"},
+        { title: "Samsung", href: "/samsung"},
+        { title: "Dropbox", href: "/dropbox"},
+        
+      ]},
       { title: "LeetCode Problem Lists", href: "/leetcode-list" },
     ],
   },
