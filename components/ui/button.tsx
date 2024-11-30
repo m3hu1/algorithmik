@@ -18,6 +18,7 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        expandIcon: "group relative bg-[#18181B] text-white hover:bg-[#18181B]/90 dark:bg-white dark:text-[#18181B] dark:hover:bg-white/90",
       },
       size: {
         default: "h-10 px-4 py-2",

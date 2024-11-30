@@ -1,7 +1,7 @@
 import { buttonVariants } from "@/components/ui/button";
-import { RainbowButton } from "@/components/ui/rainbow-btn";
+// import { RainbowButton } from "@/components/ui/rainbow-btn";
 import { page_routes } from "@/lib/routes-config";
-import { MoveUpRightIcon } from "lucide-react";
+import { MoveRight, MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
@@ -28,7 +28,20 @@ export default function Home() {
         >
           Start Learning
         </Link> */}
-        <Link href={`/guide${page_routes[0].href}`}><RainbowButton className="px-6">Start Learning</RainbowButton></Link>
+        <Link
+          href={`/guide${page_routes[0].href}`}
+          className={buttonVariants({ 
+            variant: "expandIcon",
+            className: "px-6", 
+            size: "lg" 
+          })}
+        >
+          Start Learning
+          <div className="w-0 translate-x-[100%] pl-0 opacity-0 transition-all duration-200 group-hover:w-5 group-hover:translate-x-0 group-hover:pl-2 group-hover:opacity-100">
+            <MoveRight className="h-4 w-4" />
+          </div>
+        </Link>
+        {/* <Link href={`/guide${page_routes[0].href}`}><RainbowButton className="px-6">Start Learning</RainbowButton></Link> */}
         {/* <Link
           href="/blog"
           className={buttonVariants({
