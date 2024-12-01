@@ -23,6 +23,7 @@ import TreeView from "@/components/markdown/tree-view";
 import Annotate from "@/components/markdown/annotate";
 import HoverUnderline from "@/components/markdown/hover-underline";
 import AnimatedUnderline from "@/components/markdown/underline";
+import ProblemProgress from "@/components/markdown/problem-progress";
 
 // add custom components
 const components = {
@@ -40,7 +41,8 @@ const components = {
   TreeView: TreeView,
   Annotate,
   HoverUnderline,
-  AnimatedUnderline
+  AnimatedUnderline,
+  ProblemProgress
 };
 
 // can be used for other pages like blogs, Guides etc

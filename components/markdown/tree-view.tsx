@@ -11,14 +11,16 @@ interface TreeViewProps {
   initialExpandedItems?: string[];
 }
 
-function RenderTreeItem({ item }: { item: TreeViewElement }) {
+function RenderTreeItem({ item, data }: { item: TreeViewElement, data: TreeViewElement[] }) {
   const [isSolved, setIsSolved] = useState(false);
 
   // Load solved state from localStorage on component mount
   useEffect(() => {
-    const solvedProblems = JSON.parse(localStorage.getItem('solvedProblems') || '{}');
+    const rootId = data[0]?.id || '';
+    const storageKey = `solvedProblems_${rootId}`;
+    const solvedProblems = JSON.parse(localStorage.getItem(storageKey) || '{}');
     setIsSolved(!!solvedProblems[item.id]);
-  }, [item.id]);
+  }, [item.id, data]);
 
   const toggleSolved = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -26,14 +28,24 @@ function RenderTreeItem({ item }: { item: TreeViewElement }) {
     const newSolvedState = !isSolved;
     setIsSolved(newSolvedState);
     
-    // Update localStorage
-    const solvedProblems = JSON.parse(localStorage.getItem('solvedProblems') || '{}');
+    const rootId = data[0]?.id || '';
+    const storageKey = `solvedProblems_${rootId}`;
+    const solvedProblems = JSON.parse(localStorage.getItem(storageKey) || '{}');
+    
     if (newSolvedState) {
       solvedProblems[item.id] = true;
     } else {
       delete solvedProblems[item.id];
     }
-    localStorage.setItem('solvedProblems', JSON.stringify(solvedProblems));
+    
+    localStorage.setItem(storageKey, JSON.stringify(solvedProblems));
+
+    // Dispatch custom event with root ID
+    window.dispatchEvent(
+      new CustomEvent('problemSolved', {
+        detail: { rootId }
+      })
+    );
   };
 
   const getDifficultyColor = (difficulty?: string) => {
@@ -85,7 +97,7 @@ function RenderTreeItem({ item }: { item: TreeViewElement }) {
   return (
     <Folder element={item.name} value={item.id} isSelectable>
       {item.children.map((child) => (
-        <RenderTreeItem key={child.id} item={child} />
+        <RenderTreeItem key={child.id} item={child} data={data} />
       ))}
     </Folder>
   );
@@ -116,7 +128,7 @@ export default function TreeView({
           initialExpandedItems={initialExpandedItems}
         >
           {data.map((item) => (
-            <RenderTreeItem key={item.id} item={item} />
+            <RenderTreeItem key={item.id} item={item} data={data} />
           ))}
         </Tree>
       </div>
