@@ -27,10 +27,6 @@ export const ROUTES: EachRoute[] = [
         title: "Choosing a Language",
         href: "/programming-language",
       },
-      {
-        title: "Algorithmic Complexity",
-        href: "/complexity",
-      },
     ],
   },
   {
@@ -106,6 +102,10 @@ export const ROUTES: EachRoute[] = [
     href: "/prerequisites",
     description: "Things to know before or during learning data structures & algorithms.",
     items: [
+      {
+        title: "Algorithmic Complexity",
+        href: "/complexity",
+      },
       { title: "Pointers", href: "/pointers" },
       { title: "Recursion", href: "/recursion" },
     ]
@@ -116,6 +116,8 @@ export const ROUTES: EachRoute[] = [
     description: "This section contains miscellaneous topics.",
     items: [
       {  title: "Complexity of Various Algorithms", href: "/complexity-of-algos", },
+      { title: "Identifying Patterns", href: "/patterns", },
+      { title: "Learning Roadmap", href: "/roadmap" },
     ],
   },
 ];

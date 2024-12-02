@@ -1,0 +1,147 @@
+---
+title: Identifying Patterns
+description: This section gives an overview on how to recognize patterns.
+---
+
+![](/patterns.jpeg)
+
+## <HoverUnderline>Problem-Solving Patterns</HoverUnderline>
+
+Recognizing patterns in problems is crucial for efficient problem-solving. Here's a comprehensive guide to common patterns and how to apply them.
+
+## Graph Problems
+
+When you see problems involving networks, connections, or paths:
+
+> [!TIP]
+> - Navigate through graphs effectively using DFS or BFS traversal methods
+> - Structure your graph using adjacency lists for better performance
+> - Identify cycles and determine shortest paths based on problem requirements
+> - Consider using topological sort for directed acyclic graphs
+> - Watch out for disconnected components
+
+## Sliding Window Problems
+
+For problems involving subarrays or subsequences with constraints:
+
+> [!TIP]
+> - Modify window boundaries based on given problem constraints
+> - Implement two pointers to efficiently manage window boundaries
+> - Keep track of relevant metrics (sums, counts) within the current window
+> - Consider using a hash map for frequency tracking
+> - Handle edge cases when window size equals array length
+
+## Linked List Problems
+
+When working with linked data structures:
+
+> [!TIP]
+> - Implement fast and slow pointers for cycle detection and middle node finding
+> - Master in-place reversal through careful pointer manipulation
+> - Consider using a dummy head node for edge cases
+> - Always validate pointers before accessing next nodes
+
+## Maximum/Minimum Subarray Problems
+
+For problems involving optimal subarrays:
+
+> [!TIP]
+> - Apply dynamic programming to identify optimal subarrays
+> - Keep track of running sums and compare with global maximum/minimum
+> - Break down complex problems into simpler subproblems
+> - Consider Kadane's algorithm for contiguous subarrays
+> - Handle the case of all negative numbers
+
+## In-Place Operations
+
+When space complexity matters:
+
+> [!TIP]
+> - Perform value swaps to achieve desired array ordering
+> - Utilize the array itself for storage to avoid extra space
+> - Be mindful of index management during swap operations
+> - Consider working backwards to prevent overwriting
+> - Use mathematical properties to store multiple values in one position
+
+## Top/Least K Elements
+
+For problems involving K elements:
+
+> [!TIP]
+> - Utilize heap data structures for efficient K element tracking
+> - Consider QuickSelect algorithm when complete sorting isn't needed
+> - Optimize memory usage by maintaining K-sized windows
+> - Handle duplicate elements appropriately
+> - Think about streaming scenarios
+
+## Permutations/Subsets
+
+When generating combinations or arrangements:
+
+> [!TIP]
+> - Use backtracking to generate all possible combinations
+> - Implement early pruning for invalid solution paths
+> - Maintain state and revert changes in recursive approaches
+> - Consider using bitmasks for subset generation
+> - Watch out for duplicate combinations
+
+## String Problems
+
+For string manipulation and pattern matching:
+
+> [!TIP]
+> - Implement Map/Trie structures for efficient string operations
+> - Use frequency counting to identify patterns
+> - Consider using string builders for concatenation
+> - Watch for case sensitivity requirements
+
+## Recursion-Banned Problems
+
+When recursion is not allowed:
+
+> [!TIP]
+> - Replace recursive calls with stack-based iteration
+> - Explicitly track program state during execution
+> - Carefully manage stack operations to maintain logical flow
+> - Consider multiple stacks for complex state management
+
+## Sorted Array Problems
+
+When working with sorted data:
+
+> [!TIP]
+> - Apply binary search techniques to narrow search space
+> - Leverage sorted properties for optimization
+> - Implement two-pointer approach for pair finding
+> - Handle duplicate elements carefully
+> - Consider using binary search variations
+
+## Tree Problems
+
+For hierarchical data structures:
+
+> [!TIP]
+> - Choose between DFS and BFS based on traversal needs
+> - Maintain visited node tracking to prevent cycles
+> - Account for edge cases in unbalanced or incomplete trees
+> - Consider iterative approaches for better space complexity
+> - Use level-order traversal for breadth-based problems
+
+## General Approaches
+
+When the pattern isn't immediately clear:
+
+> [!TIP]
+> - Utilize Maps/Sets for constant-time lookups
+> - Consider sorting as a preprocessing step
+> - Break down complex problems into smaller parts
+> - Look for opportunities to preprocess data
+
+## <HoverUnderline>Practice Strategy</HoverUnderline>
+
+1. Identify the core pattern in the problem
+2. Apply appropriate techniques based on the pattern
+3. Consider edge cases and constraints
+4. Practice similar problems to strengthen pattern recognition
+
+Remember: Pattern recognition improves with practice. Focus on understanding why certain patterns work better for specific problems.
