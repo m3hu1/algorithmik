@@ -9,7 +9,7 @@ A **segment tree** is a data structure used for solving range queries efficientl
 
 If you’ve ever wanted to calculate the sum of an array range or find the minimum element in a range in a way faster than a loop, a segment tree is your friend.
 
-### <HoverUnderline>How Does a Segment Tree Work?</HoverUnderline>
+## <HoverUnderline>How Does a Segment Tree Work?</HoverUnderline>
 
 Imagine you take an array and build a binary tree on top of it. Each leaf node of the tree represents an element of the array, and each internal node represents a combination (like sum, min, or max) of its children. This structure lets you query or update any part of the array in **O(log n)** time.
 
@@ -19,13 +19,13 @@ For example:
 3. Update the value of a single element and automatically reflect that in the tree.
 
 
-### <HoverUnderline>Common Operations on a Segment Tree</HoverUnderline>
+## <HoverUnderline>Common Operations on a Segment Tree</HoverUnderline>
 
-- **Build the tree**: Construct the tree from the array.
-- **Range Query**: Perform operations like sum or minimum over a specific range.
-- **Update**: Change the value of an element and update the tree.
+- **Build the tree**: Construct the tree from the array. `O(n)`
+- **Range Query**: Perform operations like sum or minimum over a specific range. `O(log n)`
+- **Update**: Change the value of an element and update the tree. `O(log n)`
 
-### <HoverUnderline>Why Use Segment Trees?</HoverUnderline>
+## <HoverUnderline>Why Use Segment Trees?</HoverUnderline>
 
 - They handle range queries efficiently, even for large datasets.
 - Perfect for problems involving frequent updates and queries.
@@ -33,7 +33,7 @@ For example:
 
 If you need blazing-fast range operations and updates, a segment tree is your go-to data structure!
 
-### <HoverUnderline>Code Examples</HoverUnderline>
+## <HoverUnderline>Code Examples</HoverUnderline>
 
 Let me show you how a segment tree works with an example in **Python**. I’ll use the range sum query as the operation, but you can replace it with other operations like minimum or maximum.
 
@@ -280,10 +280,10 @@ Let me show you how a segment tree works with an example in **Python**. I’ll u
   </TabsContent>
 </Tabs>
 
-### <HoverUnderline>Problems to Solve</HoverUnderline>
+## <HoverUnderline>Problems to Solve</HoverUnderline>
 
 `WIP`
 
-### <HoverUnderline>Resources</HoverUnderline>
+## <HoverUnderline>Resources</HoverUnderline>
 
 `WIP`

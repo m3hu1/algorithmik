@@ -11,7 +11,7 @@ For example, if I want to get the 3rd element, I can directly go to its memory a
 
 ![](/array.png)
 
-### <HoverUnderline>Types of Arrays</HoverUnderline>
+## <HoverUnderline>Types of Arrays</HoverUnderline>
 
 #### 1. One-Dimensional Arrays
 This is the most basic type of array where elements are arranged in a straight line. Think of it like a list of items.
@@ -22,13 +22,31 @@ This is essentially a matrix, where data is stored in rows and columns. It's oft
 #### 3. Multi-Dimensional Arrays
 If you go beyond 2D, you enter the world of 3D or even higher dimensions. These are less common but can be useful in scenarios like 3D modeling.
 
-
-### <HoverUnderline>Memory Storage in Arrays</HoverUnderline>
+## <HoverUnderline>Memory Storage in Arrays</HoverUnderline>
 
 Arrays are stored in **contiguous memory**, meaning all elements are stored one after another in a single block of memory. For example, if the first element is stored at memory location `1000`, and each element takes 4 bytes, the second element will be at `1004`, the third at `1008`, and so on. This is why arrays are so efficient for random access. However, this also means that you can't dynamically resize them without creating a new array.
 
+## <HoverUnderline>Common Array Operations</HoverUnderline>
 
-### <HoverUnderline>Code Examples</HoverUnderline>
+- **Access Operations**
+  - Get element at index: `O(1)`
+  - Set element at index: `O(1)`
+  - Get array length: `O(1)`
+
+- **Search Operations**
+  - Linear Search: `O(n)`
+  - Binary Search (sorted array): `O(log n)`
+  - Find minimum/maximum: `O(n)`
+
+- **Modification Operations**
+  - Insert at end: `O(1)`
+  - Insert at beginning/middle: `O(n)`
+  - Delete from end: `O(1)`
+  - Delete from beginning/middle: `O(n)`
+  - Reverse array: `O(n)`
+  - Rotate array: `O(n)`
+
+## <HoverUnderline>Code Examples</HoverUnderline>
 
 Here’s how you can define and use arrays in **C++**, **Python**, and **Java**. I've kept the examples simple, showing how to create, initialize, and access arrays.
 
@@ -96,17 +114,17 @@ Here’s how you can define and use arrays in **C++**, **Python**, and **Java**.
   </TabsContent>
 </Tabs>
 
-### <HoverUnderline>Algorithms Related to Arrays</HoverUnderline>
+## <HoverUnderline>Algorithms Related to Arrays</HoverUnderline>
 
 - [Kadane's Algorithm](array/kadane/)
 - [Binary Search](../algorithms/binary-search/)
 - [Dutch National Flag Algorithm](array/dnf/)
 - [Prefix Sum](array/prefix-sum/)
 
-### <HoverUnderline>Problems to Solve</HoverUnderline>
+## <HoverUnderline>Problems to Solve</HoverUnderline>
 
 > [Important Problems on Arrays](https://leetcode.com/problem-list/a630svvj/)
 
-### <HoverUnderline>Resources</HoverUnderline>
+## <HoverUnderline>Resources</HoverUnderline>
 
 `WIP`

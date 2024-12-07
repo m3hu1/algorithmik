@@ -7,7 +7,7 @@ description: A detailed explanation of the Trie data structure with examples and
 
 A **Trie** (pronounced as "try") is a tree-based data structure that stores strings efficiently for fast search, insertion, and deletion. Each node represents a single character, and paths in the tree represent words. Tries are particularly useful for prefix-based problems, such as autocomplete and dictionary lookups.
 
-### <HoverUnderline>How a Trie Works</HoverUnderline>
+## <HoverUnderline>How a Trie Works</HoverUnderline>
 
 Each node in a Trie contains:
 1. **Character**: The value stored in the node.
@@ -20,18 +20,18 @@ Here’s an example of how the Trie looks after inserting the words: `cat`, `cap
 
 ![](/trie.png)
 
-### <HoverUnderline>Key Operations on a Trie</HoverUnderline>
+## <HoverUnderline>Key Operations on a Trie</HoverUnderline>
 
-#### Insertion
+#### Insertion `O(m)` where m is the length of the word
 Inserts a word character by character. If a character doesn't exist as a child, it creates a new node.
 
-#### Search
+#### Search `O(m)` where m is the length of the word
 Checks if a word exists by traversing the tree character by character.
 
-#### Prefix Matching
+#### Prefix Matching `O(p + n)` where p is the length of the prefix and n is the number of child nodes traversed.
 Efficiently finds all words starting with a given prefix.
 
-### <HoverUnderline>Applications of Tries</HoverUnderline>
+## <HoverUnderline>Applications of Tries</HoverUnderline>
 
 Tries are widely used in:
 - **Autocomplete systems** (like search engines and text editors).
@@ -254,10 +254,10 @@ Here are examples of basic Trie operations in **Python**, **C++**, and **Java**.
   </TabsContent>
 </Tabs>
 
-### <HoverUnderline>Problems to Solve</HoverUnderline>
+## <HoverUnderline>Problems to Solve</HoverUnderline>
 
 `WIP`
 
-### <HoverUnderline>Resources</HoverUnderline>
+## <HoverUnderline>Resources</HoverUnderline>
 
 `WIP`

@@ -77,7 +77,8 @@ export const ROUTES: EachRoute[] = [
         { title: "Binary Search Tree", href: "/BST" },
         { title: "Trie", href: "/trie" },
         { title: "Segment Tree", href: "/segment-tree" },
-      ]}
+      ]},
+      { title: "Graphs", href: "/graphs"},
     ],
   },
   {

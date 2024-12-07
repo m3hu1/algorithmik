@@ -1,27 +1,31 @@
 ---
 title: Stacks
-description: Understanding the stack data structure and its applications.
+description: Understanding stacks as a data structure.
 ---
 
 ## <HoverUnderline>What are Stacks?</HoverUnderline>
 
 A stack follows the **LIFO** (Last In, First Out) principle, which means the last element added to the stack is the first one to be removed. Imagine a stack of plates—when you add a plate, it goes on top, and when you remove one, it’s also from the top. That’s how stacks work.
 
-### <HoverUnderline>How Stacks Work in Memory</HoverUnderline>
+## <HoverUnderline>Types of Stacks</HoverUnderline>
+
+While the basic concept of a stack is the same, there are variations:
+1. **Static Stack:** Fixed size, implemented using arrays.
+2. **Dynamic Stack:** Can grow or shrink in size, typically implemented using linked lists.
+
+## <HoverUnderline>How Stacks Work in Memory</HoverUnderline>
 
 Stacks are typically implemented using arrays or linked lists. In memory, they grow from one end—either upwards or downwards, depending on how the system manages memory. When you **push** an element onto the stack, it’s added to the top of the stack. When you **pop**, the top element is removed.
 
-
-### <HoverUnderline>Common Operations on a Stack</HoverUnderline>
+## <HoverUnderline>Common Stack Operations</HoverUnderline>
 
 Here are the main operations you'll use with stacks:
-- **Push:** Add an element to the top of the stack.
-- **Pop:** Remove the top element.
-- **Peek:** Look at the top element without removing it.
-- **IsEmpty:** Check if the stack is empty.
+- **Push:** Add an element to the top of the stack. `O(1)`
+- **Pop:** Remove the top element. `O(1)`
+- **Peek/Top:** Look at the top element without removing it. `O(1)`
+- **IsEmpty:** Check if the stack is empty. `O(1)`
 
-
-### <HoverUnderline>Applications of Stacks</HoverUnderline>
+## <HoverUnderline>Applications of Stacks</HoverUnderline>
 
 Stacks are everywhere. Here are a few places where they shine:
 - **Expression evaluation and conversion** (e.g., infix to postfix).
@@ -29,15 +33,7 @@ Stacks are everywhere. Here are a few places where they shine:
 - **Undo functionality** in text editors.
 - **Function call management** in recursion.
 
-
-### <HoverUnderline>Types of Stacks</HoverUnderline>
-
-While the basic concept of a stack is the same, there are variations:
-1. **Static Stack:** Fixed size, implemented using arrays.
-2. **Dynamic Stack:** Can grow or shrink in size, typically implemented using linked lists.
-
-
-### <HoverUnderline>Code Examples</HoverUnderline>
+## <HoverUnderline>Code Examples</HoverUnderline>
 
 Here’s how stacks can be implemented in **C++**, **Python**, and **Java**. Each language has its way of dealing with stacks, but the underlying concept remains the same.
 
@@ -135,10 +131,10 @@ Here’s how stacks can be implemented in **C++**, **Python**, and **Java**. Eac
   </TabsContent>
 </Tabs>
 
-### <HoverUnderline>Problems to Solve</HoverUnderline>
+## <HoverUnderline>Problems to Solve</HoverUnderline>
 
 > [Important Problems on Stacks](https://leetcode.com/problem-list/akn7z2qt/)
 
-### <HoverUnderline>Resources</HoverUnderline>
+## <HoverUnderline>Resources</HoverUnderline>
 
 `WIP`
