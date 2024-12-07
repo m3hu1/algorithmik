@@ -44,6 +44,16 @@ export default function Home() {
               <MoveRight className="h-4 w-4" />
             </div>
           </Link>
+          <Link
+          href="/guide/problem-sets/problems-folder"
+          className={buttonVariants({
+            variant: "problems",
+            className: "px-6",
+            size: "lg",
+          })}
+        >
+          Problems Folder
+        </Link>
           {/* <Link
           href="/blog"
           className={buttonVariants({
