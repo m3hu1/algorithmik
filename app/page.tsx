@@ -45,7 +45,7 @@ export default function Home() {
             </div>
           </Link>
           <Link
-          href="/guide/problem-sets/problems-folder"
+          href="/guide/problem-sets/"
           className={buttonVariants({
             variant: "problems",
             className: "px-6",
