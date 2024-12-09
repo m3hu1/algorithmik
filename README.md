@@ -2,6 +2,8 @@
 
 Your comprehensive guide to mastering Data Structures and Algorithms.
 
+Check it out: [Algorithmik](https://www.algorithmik.in/)
+
 ## Guide Features 📚
 
 ### 1. Structured Learning Path
