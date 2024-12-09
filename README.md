@@ -92,3 +92,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Report issues
 
 ~ Mehul Pathak
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=m3hu1/algorithmik&type=Date)](https://star-history.com/#m3hu1/algorithmik&Date)
