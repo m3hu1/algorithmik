@@ -48,6 +48,7 @@ export const ROUTES: EachRoute[] = [
         { title: "Dropbox", href: "/dropbox"},
         
       ]},
+      { title: "Blind 75", href: "/blind-75"},
       { title: "LeetCode Problem Lists", href: "/leetcode-list" },
     ],
   },
