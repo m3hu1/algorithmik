@@ -24,6 +24,19 @@ export const metadata = {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
+  openGraph: {
+    title: "Algorithmik",
+    description: "Learn Data Structures and Algorithms",
+    url: "https://algorithmik.in", // Replace with your actual URL
+    siteName: "Algorithmik",
+    images: [
+      {
+        url: "/android-chrome-512x512.png", // Ensure this path is correct
+        width: 800,
+        height: 600,
+      },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
