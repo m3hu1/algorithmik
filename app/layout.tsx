@@ -17,6 +17,26 @@ const fontCode = JetBrains_Mono({
   subsets: ["latin"],
 })
 
+export const metadata = {
+  title: "Algorithmik",
+  description: "Learn Data Structures and Algorithms",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
