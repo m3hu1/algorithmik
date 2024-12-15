@@ -3,34 +3,60 @@
 
 import { useEffect, useState } from "react";
 import { Users } from "lucide-react";
+// import { toast } from "sonner"; // Or your preferred toast library
 
 export function ActiveUsers() {
   const [count, setCount] = useState<number>(0);
-  const [loading, setLoading] = useState(true);
+  const [isRateLimited, setIsRateLimited] = useState(false);
 
   useEffect(() => {
-    const fetchActiveUsers = async () => {
+    const sessionId =
+      sessionStorage.getItem("visitorId") ||
+      Math.random().toString(36).substring(7);
+    sessionStorage.setItem("visitorId", sessionId);
+
+    const updateCount = async () => {
+      if (isRateLimited) return;
+
       try {
-        const response = await fetch(
-          "https://api.counter.dev/stats/ef652987-1028-44de-9a88-4c720e196593",
-        );
+        const response = await fetch("/api/counter", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ sessionId }),
+        });
+
         const data = await response.json();
-        setCount(data.active || 0);
+
+        if (response.status === 429) {
+          setIsRateLimited(true);
+          // toast.error("Too many requests. Please wait.");
+
+          // Reset rate limit flag after 1 second
+          setTimeout(() => setIsRateLimited(false), 1000);
+          return;
+        }
+
+        if (data.success) {
+          setCount(data.count);
+        } else {
+          console.error("Error:", data.error);
+        }
       } catch (error) {
-        console.error("Error fetching active users:", error);
-      } finally {
-        setLoading(false);
+        console.error("Error updating counter:", error);
       }
     };
 
-    fetchActiveUsers();
+    // Initial update
+    updateCount();
+
     // Update every minute
-    const interval = setInterval(fetchActiveUsers, 60000);
+    const interval = setInterval(updateCount, 60000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isRateLimited]);
 
-  if (loading) return null;
   if (count === 0) return null;
 
   return (
