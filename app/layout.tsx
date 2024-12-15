@@ -3,6 +3,7 @@ import { Navbar } from "@/components/navbar";
 import { JetBrains_Mono } from "next/font/google";
 import { Inter } from "next/font/google";
 import { Footer } from "@/components/footer";
+import GoogleAnalytics from "@/components/Analytics";
 import "@/styles/globals.css";
 
 const fontSans = Inter({
@@ -15,7 +16,7 @@ const fontSans = Inter({
 const fontCode = JetBrains_Mono({
   variable: "--font-code",
   subsets: ["latin"],
-})
+});
 
 export const metadata = {
   title: "Algorithmik",
@@ -61,6 +62,7 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontCode.variable} font-regular antialiased`}
         suppressHydrationWarning
       >
+        <GoogleAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
