@@ -12,7 +12,7 @@ export function ActiveUsers() {
     const fetchActiveUsers = async () => {
       try {
         const response = await fetch(
-          "https://api.counter.dev/stats/YOUR_SITE_ID",
+          "https://api.counter.dev/stats/ef652987-1028-44de-9a88-4c720e196593",
         );
         const data = await response.json();
         setCount(data.active || 0);
