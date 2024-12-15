@@ -81,6 +81,7 @@ export default function RootLayout({
           <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
             {children}
           </main>
+          <SpeedInsights />
           <Footer />
         </ThemeProvider>
       </body>
