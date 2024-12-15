@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { Footer } from "@/components/footer";
 import GoogleAnalytics from "@/components/Analytics";
 import "@/styles/globals.css";
+import Script from "next/script";
 
 const fontSans = Inter({
   display: "swap",
@@ -63,6 +64,12 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <GoogleAnalytics />
+        <Script
+          src="https://cdn.counter.dev/script.js"
+          data-id="ef652987-1028-44de-9a88-4c720e196593"
+          data-utcoffset="6"
+          strategy="afterInteractive"
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
