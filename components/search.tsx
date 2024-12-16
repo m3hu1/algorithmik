@@ -1,6 +1,12 @@
 "use client";
 
-import { CommandIcon, FileIcon, SearchIcon } from "lucide-react";
+import {
+  CommandIcon,
+  FileIcon,
+  MoonIcon,
+  SearchIcon,
+  SunIcon,
+} from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
   Dialog,
@@ -14,10 +20,12 @@ import { useEffect, useMemo, useState } from "react";
 import Anchor from "./anchor";
 import { advanceSearch, cn } from "@/lib/utils";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useTheme } from "next-themes";
 
 export default function Search() {
   const [searchedInput, setSearchedInput] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -79,6 +87,30 @@ export default function Search() {
                 className="h-14 px-6 bg-transparent border-b text-[14px] outline-none"
               />
             </DialogHeader>
+            {/* Theme Toggle Button */}
+            <DialogClose asChild>
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="w-full px-3 py-4 text-sm flex items-center gap-2.5 hover:bg-stone-100 dark:hover:bg-gray-600/25"
+              >
+                <div className="flex items-center w-fit gap-2 px-2 ml-2">
+                  {theme === "dark" ? (
+                    <>
+                      <SunIcon className="h-[1.1rem] w-[1.1rem]" />
+                      Turn light mode on
+                    </>
+                  ) : (
+                    <>
+                      <MoonIcon className="h-[1.1rem] w-[1.1rem]" />
+                      Turn dark mode on
+                    </>
+                  )}
+                </div>
+              </button>
+            </DialogClose>
+            {/* Separator */}
+            <div className="h-px bg-border mx-0" />
+            {/* Search Results */}
             {filteredResults.length == 0 && searchedInput && (
               <p className="text-muted-foreground mx-auto mt-2 text-sm">
                 No results found for{" "}
