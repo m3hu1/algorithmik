@@ -7,12 +7,12 @@ description: Solve optimization problems efficiently with the power of overlappi
 
 Dynamic Programming (DP) is a powerful algorithmic paradigm used to solve problems by breaking them into smaller overlapping subproblems. Instead of solving the same subproblem multiple times, DP stores the results in a table (memoization or tabulation) and reuses them to optimize the overall computation.
 
-### <HoverUnderline>Key Concepts in DP</HoverUnderline>
+## <HoverUnderline>Key Concepts in DP</HoverUnderline>
 
 1. **Overlapping Subproblems**: The problem can be divided into subproblems that are reused multiple times.
 2. **Optimal Substructure**: The solution to the main problem can be built from the solutions to its subproblems.
 
-### <HoverUnderline>DP Approaches</HoverUnderline>
+## <HoverUnderline>DP Approaches</HoverUnderline>
 
 1. **Top-Down (Memoization)**:
    - Solve the problem recursively.
@@ -22,12 +22,12 @@ Dynamic Programming (DP) is a powerful algorithmic paradigm used to solve proble
    - Solve the problem iteratively.
    - Build a solution by solving all subproblems from the smallest to the largest.
 
-### <HoverUnderline>Time & Space Complexities</HoverUnderline>
+## <HoverUnderline>Time & Space Complexities</HoverUnderline>
 
 - **Time Complexity**: `O(n)` to `O(n*m)` (depends on the problem and state space).
 - **Space Complexity**: Can range from `O(n)` (space-optimized DP) to `O(n*m)` (when storing a table of solutions).
 
-### <HoverUnderline>When to Use DP</HoverUnderline>
+## <HoverUnderline>When to Use DP</HoverUnderline>
 
 Dynamic Programming is a great choice for problems like:
 
@@ -37,7 +37,7 @@ Dynamic Programming is a great choice for problems like:
 - Shortest path in a graph (e.g., Floyd-Warshall, Bellman-Ford).
 - Partitioning problems (e.g., Palindrome Partitioning, Subset Sum).
 
-### <HoverUnderline>Code Examples</HoverUnderline>
+## <HoverUnderline>Code Examples</HoverUnderline>
 
 Below is an example of solving the Fibonacci sequence problem using both approaches.
 
@@ -57,7 +57,7 @@ Below is an example of solving the Fibonacci sequence problem using both approac
     // Bottom-Up Approach (Tabulation)
     int fibonacci(int n) {
         if (n <= 1) return n;
-        
+
         vector<int> dp(n + 1);
         dp[0] = 0;
         dp[1] = 1;
@@ -153,10 +153,10 @@ Below is an example of solving the Fibonacci sequence problem using both approac
   </TabsContent>
 </Tabs>
 
-### <HoverUnderline>Problems to Solve</HoverUnderline>
+## <HoverUnderline>Problems to Solve</HoverUnderline>
 
 > [Important Problems on DP](https://leetcode.com/problem-list/aknlm6br/)
 
-### <HoverUnderline>Resources</HoverUnderline>
+## <HoverUnderline>Resources</HoverUnderline>
 
 `WIP`

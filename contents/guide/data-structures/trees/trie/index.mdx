@@ -22,13 +22,17 @@ Here’s an example of how the Trie looks after inserting the words: `cat`, `cap
 
 ## <HoverUnderline>Key Operations on a Trie</HoverUnderline>
 
-#### Insertion `O(m)` where m is the length of the word
+<Note type="note">
+    `m` is the length of the word, `p` is the length of the prefix and `n` is the number of child nodes traversed.
+</Note>
+
+#### Insertion `O(m)`
 Inserts a word character by character. If a character doesn't exist as a child, it creates a new node.
 
-#### Search `O(m)` where m is the length of the word
+#### Search `O(m)`
 Checks if a word exists by traversing the tree character by character.
 
-#### Prefix Matching `O(p + n)` where p is the length of the prefix and n is the number of child nodes traversed.
+#### Prefix Matching `O(p + n)`
 Efficiently finds all words starting with a given prefix.
 
 ## <HoverUnderline>Applications of Tries</HoverUnderline>
@@ -41,7 +45,7 @@ Tries are widely used in:
 
 Tries are efficient for operations involving prefixes, making them indispensable in various real-world applications.
 
-### <HoverUnderline>Code Examples</HoverUnderline>
+## <HoverUnderline>Code Examples</HoverUnderline>
 
 Here are examples of basic Trie operations in **Python**, **C++**, and **Java**.
 
@@ -49,7 +53,6 @@ Here are examples of basic Trie operations in **Python**, **C++**, and **Java**.
   <TabsList>
   <TabsTrigger value="cpp">C++</TabsTrigger>
     <TabsTrigger value="python">Python</TabsTrigger>
-    
     <TabsTrigger value="java">Java</TabsTrigger>
   </TabsList>
 
