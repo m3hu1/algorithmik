@@ -4,6 +4,8 @@ import { page_routes } from "@/lib/routes-config";
 import { MoveRight, MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import { AnimatedGridPattern } from "@/components/animated-grid";
+import { ProblemsFolderButton } from "@/components/ProblemsFolderButton";
+import { StartLearningButton } from "@/components/StartLearningButton";
 
 export default function Home() {
   return (
@@ -28,15 +30,17 @@ export default function Home() {
           Mastering Data Structure & Algorithms
         </h1>
         <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
-          This is a comprehensive guide to mastering data structures and algorithms. It covers a wide range of topics, from the basics to advanced concepts.
+          This is a comprehensive guide to mastering data structures and
+          algorithms. It covers a wide range of topics, from the basics to
+          advanced concepts.
         </p>
         <div className="flex flex-row items-center gap-5">
           <Link
             href={`/guide${page_routes[0].href}`}
-            className={buttonVariants({ 
+            className={buttonVariants({
               variant: "expandIcon",
-              className: "px-6", 
-              size: "lg" 
+              className: "px-6",
+              size: "lg",
             })}
           >
             Start Learning
@@ -44,16 +48,18 @@ export default function Home() {
               <MoveRight className="h-4 w-4" />
             </div>
           </Link>
-          <Link
-          href="/guide/problem-sets/"
-          className={buttonVariants({
-            variant: "problems",
-            className: "px-6",
-            size: "lg",
-          })}
-        >
-          Problems Folder
-        </Link>
+          {/* <StartLearningButton href={`/guide${page_routes[0].href}`} /> */}
+          {/* <Link
+            href="/guide/problem-sets/"
+            className={buttonVariants({
+              variant: "problems",
+              className: "px-6",
+              size: "lg",
+            })}
+          >
+            Problems Folder
+          </Link> */}
+          <ProblemsFolderButton />
           {/* <Link
           href="/blog"
           className={buttonVariants({
