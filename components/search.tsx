@@ -43,7 +43,7 @@ export default function Search() {
       <div
         className={cn(
           "fixed inset-0 bg-background/80 backdrop-blur-sm z-40 transition-all duration-300",
-          isOpen ? "opacity-100" : "opacity-0 pointer-events-none",
+          isOpen ? "opacity-90" : "opacity-0 pointer-events-none",
         )}
       />
       <div>
