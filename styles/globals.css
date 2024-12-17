@@ -83,15 +83,6 @@ body {
     }
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: hsl(var(--primary));
-    border-radius: 10px;
-}
-
 @layer base {
     * {
         @apply border-border;
