@@ -25,6 +25,7 @@ import Annotate from "@/components/markdown/annotate";
 import HoverUnderline from "@/components/markdown/hover-underline";
 import AnimatedUnderline from "@/components/markdown/underline";
 import ProblemProgress from "@/components/markdown/problem-progress";
+import AlertComponent from "@/components/markdown/alert";
 
 // add custom components
 const components = {
@@ -45,6 +46,7 @@ const components = {
   AnimatedUnderline,
   ProblemProgress,
   Drawer: DrawerComponent,
+  Alert: AlertComponent,
 };
 
 // can be used for other pages like blogs, Guides etc
