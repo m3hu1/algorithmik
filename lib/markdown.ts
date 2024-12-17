@@ -10,6 +10,7 @@ import rehypeCallouts from "rehype-callouts";
 import { page_routes, ROUTES } from "./routes-config";
 import { visit } from "unist-util-visit";
 import matter from "gray-matter";
+import DrawerComponent from "@/components/markdown/drawer";
 
 // custom components imports
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -42,7 +43,8 @@ const components = {
   Annotate,
   HoverUnderline,
   AnimatedUnderline,
-  ProblemProgress
+  ProblemProgress,
+  Drawer: DrawerComponent,
 };
 
 // can be used for other pages like blogs, Guides etc
@@ -58,7 +60,7 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
           rehypePrism,
           rehypeSlug,
           rehypeAutolinkHeadings,
-          [rehypeCallouts, { theme: 'github' }],
+          [rehypeCallouts, { theme: "github" }],
           postProcess,
         ],
         remarkPlugins: [remarkGfm],
@@ -90,7 +92,8 @@ export async function getDocsTocs(slug: string) {
   const rawMdx = await fs.readFile(contentPath, "utf-8");
   // captures between ## - #### <HoverUnderline>can modify accordingly</HoverUnderline>
   // const headingsRegex = /^(#{2,4})\s(.+)$/gm;
-  const headingsRegex = /^(#{2,4})\s(?:<HoverUnderline>)?(.+?)(?:<\/HoverUnderline>)?$/gm;
+  const headingsRegex =
+    /^(#{2,4})\s(?:<HoverUnderline>)?(.+?)(?:<\/HoverUnderline>)?$/gm;
   let match;
   const extractedHeadings = [];
   while ((match = headingsRegex.exec(rawMdx)) !== null) {
@@ -157,14 +160,14 @@ export async function getAllChilds(pathString: string) {
         "/contents/guide/",
         prevHref,
         it.href,
-        "index.mdx"
+        "index.mdx",
       );
       const raw = await fs.readFile(totalPath, "utf-8");
       return {
         ...justGetFrontmatterFromMD<BaseMdxFrontmatter>(raw),
         href: `/guide${prevHref}${it.href}`,
       };
-    })
+    }),
   );
 }
 
@@ -221,7 +224,7 @@ export async function getAllBlogs() {
         ...justGetFrontmatterFromMD<BlogMdxFrontmatter>(rawMdx),
         slug: file.split(".")[0],
       };
-    })
+    }),
   );
   return uncheckedRes.filter((it) => !!it) as (BlogMdxFrontmatter & {
     slug: string;

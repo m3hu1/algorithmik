@@ -128,26 +128,26 @@ Here's how you implement a basic graph in different languages:
     class Graph:
         def __init__(self):
             self.graph = defaultdict(list)
-        
+
         def add_edge(self, u, v):
             # Add edge for undirected graph
             self.graph[u].append(v)
             self.graph[v].append(u)
-        
+
         def bfs(self, start):
             visited = set()
             queue = deque([start])
             visited.add(start)
-            
+
             while queue:
                 vertex = queue.popleft()
                 print(vertex, end=" ")
-                
+
                 for neighbor in self.graph[vertex]:
                     if neighbor not in visited:
                         visited.add(neighbor)
                         queue.append(neighbor)
-    
+
     # Create the graph
     g = Graph()
 
@@ -169,30 +169,30 @@ Here's how you implement a basic graph in different languages:
     public class Graph {
         private int V;
         private List<List<Integer>> adj;
-        
+
         public Graph(int vertices) {
             V = vertices;
             adj = new ArrayList<>(V);
             for (int i = 0; i < V; i++)
                 adj.add(new ArrayList<>());
         }
-        
+
         public void addEdge(int v, int w) {
             adj.get(v).add(w);
             adj.get(w).add(v);  // For undirected graph
         }
-        
+
         public void BFS(int s) {
             boolean[] visited = new boolean[V];
             Queue<Integer> queue = new LinkedList<>();
-            
+
             visited[s] = true;
             queue.offer(s);
-            
+
             while (!queue.isEmpty()) {
                 s = queue.poll();
                 System.out.print(s + " ");
-                
+
                 for (int n : adj.get(s)) {
                     if (!visited[n]) {
                         visited[n] = true;
@@ -224,8 +224,100 @@ Here's how you implement a basic graph in different languages:
 
    - Depth-First Search (DFS)
    - Breadth-First Search (BFS)
-   - Dijkstra's Algorithm
-   - Bellman-Ford Algorithm
+   - <>
+     <Drawer title="Dijkstra's Algorithm" description="Read about Dijkstra's algorithm in brief">
+       Dijkstra's Algorithm
+       <div>
+         Dijkstra's algorithm is a graph search algorithm that solves the single-source shortest path problem for a graph with non-negative edge weights.
+
+         ### How it works
+
+         1. Initialize distances to all vertices as infinite
+         2. Keep track of visited vertices
+         3. For each unvisited vertex:
+            - Find the vertex with minimum distance
+            - Mark it as visited
+            - Update distances to adjacent vertices
+
+         ### Example Implementation
+
+         ```python
+         def dijkstra(graph, start):
+             distances = {vertex: float('infinity') for vertex in graph}
+             distances[start] = 0
+             pq = [(0, start)]
+
+             while pq:
+                 current_distance, current_vertex = heapq.heappop(pq)
+
+                 if current_distance > distances[current_vertex]:
+                     continue
+
+                 for neighbor, weight in graph[current_vertex].items():
+                     distance = current_distance + weight
+
+                     if distance < distances[neighbor]:
+                         distances[neighbor] = distance
+                         heapq.heappush(pq, (distance, neighbor))
+
+             return distances
+         ```
+
+         ### Time Complexity
+
+         | Implementation | Time Complexity |
+         |---------------|----------------|
+         | Using array | `O(V²)` |
+         | Using binary heap | `O((V+E) log V)` |
+         | Using Fibonacci heap | `O(E + V log V)` |
+
+         > Note: `V` is the number of vertices and `E` is the number of edges in the graph.
+       </div>
+     </Drawer>
+     </>
+    - <>
+      <Drawer title="Bellman-Ford Algorithm" description="Read about Bellman-Ford algorithm in brief">
+        Bellman-Ford Algorithm
+        <div>
+          The Bellman-Ford algorithm is a graph search algorithm that finds the shortest paths from a single source vertex to all other vertices in a weighted graph. It can handle graphs with negative edge weights.
+
+          ### How it works
+
+          1. Initialize distances to all vertices as infinite, except the source vertex which is set to 0
+          2. Relax all edges `|V| - 1` times, where `|V|` is the number of vertices
+          3. Check for negative-weight cycles by verifying if any edge can be further relaxed
+
+          ### Example Implementation
+
+          ```python
+          def bellman_ford(graph, start):
+              distances = {vertex: float('infinity') for vertex in graph}
+              distances[start] = 0
+
+              for _ in range(len(graph) - 1):
+                  for vertex in graph:
+                      for neighbor, weight in graph[vertex].items():
+                          if distances[vertex] + weight < distances[neighbor]:
+                              distances[neighbor] = distances[vertex] + weight
+
+              for vertex in graph:
+                  for neighbor, weight in graph[vertex].items():
+                      if distances[vertex] + weight < distances[neighbor]:
+                          raise ValueError("Graph contains a negative-weight cycle")
+
+              return distances
+          ```
+
+          ### Time Complexity
+
+          | Implementation | Time Complexity |
+          |---------------|----------------|
+          | Bellman-Ford | `O(VE)` |
+
+          > Note: `V` is the number of vertices and `E` is the number of edges in the graph.
+        </div>
+      </Drawer>
+      </>
    - Floyd-Warshall Algorithm
    - Kruskal's Algorithm
    - Prim's Algorithm
