@@ -8,6 +8,19 @@ html {
     scroll-behavior: smooth !important;
 }
 
+/* html.no-scroll {
+    overscroll-behavior: none;
+}
+
+body.no-scroll {
+    overscroll-behavior: none;
+} */
+
+html,
+body {
+    overscroll-behavior: none !important;
+}
+
 @layer base {
     :root {
         --background: 0 0% 100%;

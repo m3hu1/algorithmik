@@ -5,11 +5,13 @@ import { MoveRight, MoveUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import { AnimatedGridPattern } from "@/components/animated-grid";
 import { ProblemsFolderButton } from "@/components/ProblemsFolderButton";
-import { StartLearningButton } from "@/components/StartLearningButton";
+// import NoOverscroll from "@/components/NoOverscroll";
+// import { StartLearningButton } from "@/components/StartLearningButton";
 
 export default function Home() {
   return (
     <div className="relative">
+      {/* <NoOverscroll /> */}
       <div className="hero-section relative flex sm:min-h-[92vh] min-h-[85vh] flex-col items-center justify-center text-center px-2 py-8">
         <AnimatedGridPattern
           numSquares={30}
