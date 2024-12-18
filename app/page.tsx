@@ -29,12 +29,16 @@ export default function Home() {
           <MoveUpRightIcon className="w-4 h-4 font-extrabold" />
         </Link>
         <h1 className="text-3xl font-bold mb-4 sm:text-6xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-transparent dark:from-white dark:to-slate-900/10 pb-2">
-          Mastering Data Structure & Algorithms
+          Master Data Structures & Algorithms
         </h1>
+        {/* <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
+          A comprehensive guide to mastering data structures and algorithms. It
+          covers a wide range of topics, from the basics to advanced concepts.
+        </p> */}
         <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
-          This is a comprehensive guide to mastering data structures and
-          algorithms. It covers a wide range of topics, from the basics to
-          advanced concepts.
+          A comprehensive guide to mastering data structures and algorithms.
+          Explore notes on important DSA topics and tackle a variety of problem
+          sets.
         </p>
         <div className="flex flex-row items-center gap-5">
           <Link
