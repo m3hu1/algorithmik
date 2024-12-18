@@ -4,6 +4,8 @@ Your comprehensive guide to mastering Data Structures and Algorithms.
 
 Check it out: [Algorithmik](https://www.algorithmik.in/)
 
+> Alternate link: [algorithmik.vercel.app](https://algorithmik.vercel.app/)
+
 ## Guide Features 📚
 
 ### 1. Structured Learning Path
