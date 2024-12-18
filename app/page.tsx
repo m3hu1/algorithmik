@@ -32,7 +32,12 @@ export default function Home() {
           />
         </Link>
         <h1 className="text-3xl font-bold mb-4 sm:text-6xl pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-transparent dark:from-white dark:to-slate-900/10 pb-2">
-          Master Data Structures & Algorithms
+          <span className="block sm:hidden">
+            Learn Data Structures & Algorithms
+          </span>
+          <span className="hidden sm:block">
+            Master Data Structures & Algorithms
+          </span>
         </h1>
         {/* <p className="mb-8 sm:text-xl max-w-[800px] text-muted-foreground">
           A comprehensive guide to mastering data structures and algorithms. It
