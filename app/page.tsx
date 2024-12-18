@@ -23,7 +23,7 @@ export default function Home() {
         <Link
           href="https://github.com/m3hu1/algorithmik"
           target="_blank"
-          className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-4 sm:-mt-12"
+          className="mb-5 sm:text-lg flex items-center gap-2 underline underline-offset-2 sm:-mt-12"
         >
           Support me by starring the repository{" "}
           <MoveUpRightIcon className="w-4 h-4 font-extrabold" />
