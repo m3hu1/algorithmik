@@ -1,5 +1,6 @@
 import { ModeToggle } from "@/components/theme-toggle";
 import { GithubIcon, TwitterIcon } from "lucide-react";
+import { X, Github } from "iconoir-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
 import { page_routes } from "@/lib/routes-config";
@@ -24,7 +25,7 @@ export function Navbar() {
     <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">
       <div className="sm:container mx-auto w-[95vw] h-full flex items-center justify-between md:gap-2">
         <div className="flex items-center gap-5">
-        <SheetLeftbar />
+          <SheetLeftbar />
           <div className="flex items-center gap-6">
             <div className="sm:flex hidden">
               <Logo />
@@ -37,14 +38,15 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-          <Search />
+            <Search />
             <div className="flex ml-2.5 sm:ml-0">
               <Link
                 href="https://github.com/m3hu1/algorithmik"
                 target="_blank"
                 className={buttonVariants({ variant: "ghost", size: "icon" })}
               >
-                <GithubIcon className="h-[1.1rem] w-[1.1rem]" />
+                {/* <GithubIcon className="h-[1.1rem] w-[1.1rem]" /> */}
+                <Github className="h-[1.1rem] w-[1.1rem]" />
               </Link>
               <Link
                 href="https://x.com/pathakkmehul"
@@ -54,7 +56,8 @@ export function Navbar() {
                   size: "icon",
                 })}
               >
-                <TwitterIcon className="h-[1.1rem] w-[1.1rem]" />
+                {/* <TwitterIcon className="h-[1.1rem] w-[1.1rem]" /> */}
+                <X className="h-[1.1rem] w-[1.1rem]" />
               </Link>
               <ModeToggle />
             </div>

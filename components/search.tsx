@@ -7,6 +7,7 @@ import {
   SearchIcon,
   SunIcon,
 } from "lucide-react";
+import { MoonSat, SunLight, Page, KeyCommand } from "iconoir-react";
 import { Input } from "@/components/ui/input";
 import {
   Dialog,
@@ -71,7 +72,8 @@ export default function Search() {
                 type="search"
               />
               <div className="sm:flex hidden absolute top-1/2 -translate-y-1/2 right-2 text-xs font-medium font-mono items-center gap-0.5 dark:bg-stone-900 bg-stone-200/65 p-1 rounded-sm">
-                <CommandIcon className="w-3 h-3" />
+                {/* <CommandIcon className="w-3 h-3" /> */}
+                <KeyCommand className="w-3 h-3" />
                 <span>K</span>
               </div>
             </div>
@@ -96,12 +98,14 @@ export default function Search() {
                 <div className="flex items-center w-fit gap-2 px-2 ml-2">
                   {theme === "dark" ? (
                     <>
-                      <SunIcon className="h-[1.1rem] w-[1.1rem]" />
+                      {/* <SunIcon className="h-[1.1rem] w-[1.1rem]" /> */}
+                      <SunLight className="h-[1.1rem] w-[1.1rem]" />
                       Turn light mode on
                     </>
                   ) : (
                     <>
-                      <MoonIcon className="h-[1.1rem] w-[1.1rem]" />
+                      {/* <MoonIcon className="h-[1.1rem] w-[1.1rem]" /> */}
+                      <MoonSat className="h-[1.1rem] w-[1.1rem]" />
                       Turn dark mode on
                     </>
                   )}
@@ -128,7 +132,8 @@ export default function Search() {
                       href={`/guide${item.href}`}
                     >
                       <div className="flex items-center w-fit h-full py-3 gap-1.5 px-2">
-                        <FileIcon className="h-[1.1rem] w-[1.1rem] mr-1" />{" "}
+                        {/* <FileIcon className="h-[1.1rem] w-[1.1rem] mr-1" />{" "} */}
+                        <Page className="h-[1.1rem] w-[1.1rem] mr-1" />{" "}
                         {item.title}
                       </div>
                     </Anchor>
