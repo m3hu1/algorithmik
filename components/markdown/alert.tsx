@@ -4,7 +4,7 @@
 import React from "react";
 import {
   AlertDialog,
-  AlertDialogAction,
+  // AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
   AlertDialogDescription,
@@ -13,7 +13,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
 interface AlertComponentProps {
   children: React.ReactNode;
@@ -37,7 +37,7 @@ export default function AlertComponent({
           {children}
         </span>
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent onOpenAutoFocus={(e) => e.preventDefault()}>
         <AlertDialogHeader>
           <AlertDialogTitle>{title}</AlertDialogTitle>
           <AlertDialogDescription>{description}</AlertDialogDescription>
