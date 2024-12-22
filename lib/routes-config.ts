@@ -20,7 +20,8 @@ export const ROUTES: EachRoute[] = [
   {
     title: "Getting Started",
     href: "/getting-started",
-    description: "This section tells you how to navigate this guide effectively.",
+    description:
+      "This section tells you how to navigate this guide effectively.",
     items: [
       { title: "Structure of This Guide", href: "/structure" },
       {
@@ -35,20 +36,23 @@ export const ROUTES: EachRoute[] = [
     description: "A list of various problem sets that you can use to practice.",
     items: [
       { title: "Problems Folder", href: "/problems-folder" },
-      { title: "Company Folder", href: "/company-folder", items: [
-        { title: "Amazon", href: "/amazon"},
-        { title: "Google", href: "/google"},
-        { title: "Microsoft", href: "/microsoft"},
-        { title: "Facebook", href: "/facebook"},
-        { title: "Tesla", href: "/tesla"},
-        { title: "Uber", href: "/uber"},
-        { title: "PayPal", href: "/paypal"},
-        { title: "Bloomberg", href: "/bloomberg"},
-        { title: "Samsung", href: "/samsung"},
-        { title: "Dropbox", href: "/dropbox"},
-        
-      ]},
-      { title: "Blind 75", href: "/blind-75"},
+      {
+        title: "Company Folder",
+        href: "/company-folder",
+        items: [
+          { title: "Amazon", href: "/amazon" },
+          { title: "Google", href: "/google" },
+          { title: "Microsoft", href: "/microsoft" },
+          { title: "Facebook", href: "/facebook" },
+          { title: "Tesla", href: "/tesla" },
+          { title: "Uber", href: "/uber" },
+          { title: "PayPal", href: "/paypal" },
+          { title: "Bloomberg", href: "/bloomberg" },
+          { title: "Samsung", href: "/samsung" },
+          { title: "Dropbox", href: "/dropbox" },
+        ],
+      },
+      { title: "Blind 75", href: "/blind-75" },
       { title: "LeetCode Problem Lists", href: "/leetcode-list" },
     ],
   },
@@ -58,28 +62,44 @@ export const ROUTES: EachRoute[] = [
     description: "List of various data structures to learn.",
     items: [
       { title: "Arrays", href: "/array" },
-      { title: "Strings", href: "/string"},
-      { title: "Stacks", href: "/stack"},
-      { title: "Queues", href: "/queue"},
-      { title: "Linked Lists", href: "/linked-lists", items: [
-        { title: "Singly Linked List", href: "/singly-linked-list" },
-        { title: "Doubly Linked List", href: "/doubly-linked-list" },
-      ]},
-      { title: "Hash Tables", href: "/hash-tables", items: [
-        { title: "Hash Map", href: "/hashmap" },
-        { title: "Hash Set", href: "/hashset" },
-      ] },
-      { title: "Heaps", href: "/heaps", items: [
-        { title: "Min Heap", href: "/minheap" },
-        { title: "Max Heap", href: "/maxheap" },
-      ]},
-      { title: "Trees", href: "/trees", items: [
-        { title: "Binary Tree", href: "/binary-tree" },
-        { title: "Binary Search Tree", href: "/BST" },
-        { title: "Trie", href: "/trie" },
-        { title: "Segment Tree", href: "/segment-tree" },
-      ]},
-      { title: "Graphs", href: "/graphs"},
+      { title: "Strings", href: "/string" },
+      { title: "Stacks", href: "/stack" },
+      { title: "Queues", href: "/queue" },
+      {
+        title: "Linked Lists",
+        href: "/linked-lists",
+        items: [
+          { title: "Singly Linked List", href: "/singly-linked-list" },
+          { title: "Doubly Linked List", href: "/doubly-linked-list" },
+        ],
+      },
+      {
+        title: "Hash Tables",
+        href: "/hash-tables",
+        items: [
+          { title: "Hash Map", href: "/hashmap" },
+          { title: "Hash Set", href: "/hashset" },
+        ],
+      },
+      {
+        title: "Heaps",
+        href: "/heaps",
+        items: [
+          { title: "Min Heap", href: "/minheap" },
+          { title: "Max Heap", href: "/maxheap" },
+        ],
+      },
+      {
+        title: "Trees",
+        href: "/trees",
+        items: [
+          { title: "Binary Tree", href: "/binary-tree" },
+          { title: "Binary Search Tree", href: "/BST" },
+          { title: "Trie", href: "/trie" },
+          { title: "Segment Tree", href: "/segment-tree" },
+        ],
+      },
+      { title: "Graphs", href: "/graphs" },
     ],
   },
   {
@@ -97,12 +117,13 @@ export const ROUTES: EachRoute[] = [
       { title: "Backtracking", href: "/backtracking" },
       { title: "Dynamic Programming", href: "/DP" },
       { title: "Bit Manipulation", href: "/bit-manipulation" },
-    ]
+    ],
   },
   {
     title: "Prerequisites",
     href: "/prerequisites",
-    description: "Things to know before or during learning data structures & algorithms.",
+    description:
+      "Things to know before or during learning data structures & algorithms.",
     items: [
       {
         title: "Algorithmic Complexity",
@@ -110,16 +131,20 @@ export const ROUTES: EachRoute[] = [
       },
       { title: "Pointers", href: "/pointers" },
       { title: "Recursion", href: "/recursion" },
-    ]
+    ],
   },
   {
     title: "Miscellaneous",
     href: "/misc",
     description: "This section contains miscellaneous topics.",
     items: [
-      {  title: "Complexity of Various Algorithms", href: "/complexity-of-algos", },
-      { title: "Identifying Patterns", href: "/patterns", },
+      {
+        title: "Complexity of Various Algorithms",
+        href: "/complexity-of-algos",
+      },
+      { title: "Identifying Patterns", href: "/patterns" },
       { title: "Learning Roadmap", href: "/roadmap" },
+      { title: "Algorithms All in One", href: "/algo-all-in-one" },
     ],
   },
 ];

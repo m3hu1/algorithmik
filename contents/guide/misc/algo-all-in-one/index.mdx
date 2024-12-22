@@ -1,0 +1,816 @@
+---
+title: Algorithms All in One
+description: This section contains code for all the important algorithms in one place.
+---
+
+## Binary Search
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    int binarySearch(int arr[], int size, int target) {
+        int low = 0, high = size - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (arr[mid] == target) {
+                return mid; // Target found
+            } else if (arr[mid] < target) {
+                low = mid + 1; // Search in the right half
+            } else {
+                high = mid - 1; // Search in the left half
+            }
+        }
+
+        return -1; // Target not found
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    def binary_search(arr, target):
+        low, high = 0, len(arr) - 1
+
+        while low <= high:
+            mid = (low + high) // 2
+
+            if arr[mid] == target:
+                return mid  # Target found
+            elif arr[mid] < target:
+                low = mid + 1  # Move to the right half
+            else:
+                high = mid - 1  # Move to the left half
+
+        return -1  # Target not found
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    public static int binarySearch(int[] arr, int target) {
+        int low = 0, high = arr.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (arr[mid] == target) {
+                return mid; // Target found
+            } else if (arr[mid] < target) {
+                low = mid + 1; // Search in the right half
+            } else {
+                high = mid - 1; // Search in the left half
+            }
+        }
+
+        return -1; // Target not found
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## Breadth First Search (BFS)
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    void bfs(vector<vector<int>>& graph, int start) {
+        int n = graph.size();
+        vector<bool> visited(n, false);
+        queue<int> q;
+
+        visited[start] = true;
+        q.push(start);
+
+        while (!q.empty()) {
+            int vertex = q.front();
+            q.pop();
+            cout << vertex << " ";
+
+            for (int neighbor : graph[vertex]) {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    q.push(neighbor);
+                }
+            }
+        }
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    from collections import deque
+
+    def bfs(graph, start):
+        visited = set()
+        queue = deque([start])
+        visited.add(start)
+
+        while queue:
+            vertex = queue.popleft()
+            print(vertex, end=" ")
+
+            for neighbor in graph[vertex]:
+                if neighbor not in visited:
+                    visited.add(neighbor)
+                    queue.append(neighbor)
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    public static void bfs(List<List<Integer>> graph, int start) {
+        boolean[] visited = new boolean[graph.size()];
+        Queue<Integer> queue = new LinkedList<>();
+
+        visited[start] = true;
+        queue.offer(start);
+
+        while (!queue.isEmpty()) {
+            int vertex = queue.poll();
+            System.out.print(vertex + " ");
+
+            for (int neighbor : graph.get(vertex)) {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    queue.offer(neighbor);
+                }
+            }
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## Depth First Search (DFS)
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    void dfs(vector<vector<int>>& graph, vector<bool>& visited, int vertex) {
+        visited[vertex] = true;
+        cout << vertex << " ";
+
+        for (int neighbor : graph[vertex]) {
+            if (!visited[neighbor]) {
+                dfs(graph, visited, neighbor);
+            }
+        }
+    }
+
+    // Wrapper function to initialize visited array
+    void dfsStart(vector<vector<int>>& graph, int start) {
+        vector<bool> visited(graph.size(), false);
+        dfs(graph, visited, start);
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    def dfs(graph, visited, vertex):
+        visited.add(vertex)
+        print(vertex, end=" ")
+
+        for neighbor in graph[vertex]:
+            if neighbor not in visited:
+                dfs(graph, visited, neighbor)
+
+    # Wrapper function to initialize visited set
+    def dfs_start(graph, start):
+        visited = set()
+        dfs(graph, visited, start)
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    public static void dfs(List<List<Integer>> graph, boolean[] visited, int vertex) {
+        visited[vertex] = true;
+        System.out.print(vertex + " ");
+
+        for (int neighbor : graph.get(vertex)) {
+            if (!visited[neighbor]) {
+                dfs(graph, visited, neighbor);
+            }
+        }
+    }
+
+    // Wrapper function to initialize visited array
+    public static void dfsStart(List<List<Integer>> graph, int start) {
+        boolean[] visited = new boolean[graph.size()];
+        dfs(graph, visited, start);
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## Sliding Window
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    int slidingWindow(vector<int>& arr) {
+        int result = 0;
+        int left = 0, right = 0;
+        unordered_map<int, int> window;  // or other data structure as needed
+
+        while (right < arr.size()) {
+            // 1. Add the right element to window
+            window[arr[right]]++;
+
+            // 2. Contract window if needed
+            while (left <= right && /* condition to shrink window */) {
+                // Remove left element from window
+                window[arr[left]]--;
+                if (window[arr[left]] == 0) {
+                    window.erase(arr[left]);
+                }
+                left++;
+            }
+
+            // 3. Update result using current window
+            result = max(result, right - left + 1);  // or other calculation
+
+            right++;
+        }
+
+        return result;
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    def sliding_window(arr):
+        # Initialize window boundaries and result
+        left = right = 0
+        result = 0
+        window = {}  # or other data structure as needed
+
+        while right < len(arr):
+            # 1. Expand: add element at right pointer
+            window[arr[right]] = window.get(arr[right], 0) + 1
+
+            # 2. Contract: if window needs shrinking
+            while left <= right and /* condition to shrink window */:
+                # Remove element at left pointer
+                window[arr[left]] -= 1
+                if window[arr[left]] == 0:
+                    del window[arr[left]]
+                left += 1
+
+            # 3. Update result using current window
+            result = max(result, right - left + 1)  # or other calculation
+
+            right += 1
+
+        return result
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    public static int slidingWindow(int[] arr) {
+        int result = 0;
+        int left = 0, right = 0;
+        Map<Integer, Integer> window = new HashMap<>();  // or other data structure
+
+        while (right < arr.length) {
+            // 1. Add the right element to window
+            window.put(arr[right], window.getOrDefault(arr[right], 0) + 1);
+
+            // 2. Contract window if needed
+            while (left <= right && /* condition to shrink window */) {
+                // Remove left element from window
+                window.put(arr[left], window.get(arr[left]) - 1);
+                if (window.get(arr[left]) == 0) {
+                    window.remove(arr[left]);
+                }
+                left++;
+            }
+
+            // 3. Update result using current window
+            result = Math.max(result, right - left + 1);  // or other calculation
+
+            right++;
+        }
+
+        return result;
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## Two Pointers
+
+<Note type="note" title="Note">
+    Two Pointers approach is too broad to be covered in a single snippet. This section will contain the snippet for a classic two pointers problem.
+</Note>
+
+<Alert title="Container With Most Water" description="Problem: Given n non-negative integers representing an array of heights, find the two lines that together with the x-axis forms a container that contains the most water.">Container With Most Water - Classic Two Pointers Problem</Alert>
+
+<Tabs defaultValue="python" className="pt-5 pb-1 mt-4">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    int maxArea(vector<int>& height) {
+        int maxWater = 0;
+        int left = 0;
+        int right = height.size() - 1;
+
+        while (left < right) {
+            // Calculate width * height
+            int width = right - left;
+            int h = min(height[left], height[right]);
+            maxWater = max(maxWater, width * h);
+
+            // Move the pointer with smaller height
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return maxWater;
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    def max_area(height):
+        max_water = 0
+        left, right = 0, len(height) - 1
+
+        while left < right:
+            # Calculate width * height
+            width = right - left
+            h = min(height[left], height[right])
+            max_water = max(max_water, width * h)
+
+            # Move the pointer with smaller height
+            if height[left] < height[right]:
+                left += 1
+            else:
+                right -= 1
+
+        return max_water
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    public int maxArea(int[] height) {
+        int maxWater = 0;
+        int left = 0;
+        int right = height.length - 1;
+
+        while (left < right) {
+            // Calculate width * height
+            int width = right - left;
+            int h = Math.min(height[left], height[right]);
+            maxWater = Math.max(maxWater, width * h);
+
+            // Move the pointer with smaller height
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return maxWater;
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## Dynamic Programming
+
+<Note type="note" title="Note">
+    DP is too broad to be covered in a single snippet. This section will contain the snippet for a classic DP problem.
+</Note>
+
+<Alert title="Longest Common Subsequence" description="Problem: Given two strings text1 and text2, return the length of their longest common subsequence. A subsequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.">Longest Common Subsequence - Classic DP Problem</Alert>
+
+<Tabs defaultValue="python" className="pt-5 pb-1 mt-4">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    int longestCommonSubsequence(string text1, string text2) {
+        int m = text1.length();
+        int n = text2.length();
+        vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+
+        // Fill the dp table
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (text1[i-1] == text2[j-1]) {
+                    // If characters match, add 1 to diagonal value
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                } else {
+                    // If they don't match, take max of left and up
+                    dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+
+        return dp[m][n];
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    def longest_common_subsequence(text1: str, text2: str) -> int:
+        m, n = len(text1), len(text2)
+        dp = [[0] * (n + 1) for _ in range(m + 1)]
+
+        # Fill the dp table
+        for i in range(1, m + 1):
+            for j in range(1, n + 1):
+                if text1[i-1] == text2[j-1]:
+                    # If characters match, add 1 to diagonal value
+                    dp[i][j] = dp[i-1][j-1] + 1
+                else:
+                    # If they don't match, take max of left and up
+                    dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+
+        return dp[m][n]
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    public int longestCommonSubsequence(String text1, String text2) {
+        int m = text1.length();
+        int n = text2.length();
+        int[][] dp = new int[m + 1][n + 1];
+
+        // Fill the dp table
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (text1.charAt(i-1) == text2.charAt(j-1)) {
+                    // If characters match, add 1 to diagonal value
+                    dp[i][j] = dp[i-1][j-1] + 1;
+                } else {
+                    // If they don't match, take max of left and up
+                    dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+                }
+            }
+        }
+
+        return dp[m][n];
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## Greedy
+<Note type="note" title="Note">
+    Greedy algorithms make locally optimal choices at each step. This section contains a classic greedy problem implementation.
+</Note>
+<Alert title="Jump Game" description="Problem: You are given an array of non-negative integers nums where nums[i] represents the maximum number of steps you can jump forward from index i. Return true if you can reach the last index, or false otherwise.">Jump Game - Classic Greedy Problem</Alert>
+<Tabs defaultValue="python" className="pt-5 pb-1 mt-4">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    bool canJump(vector<int>& nums) {
+        int maxReach = 0;
+        int n = nums.size();
+
+        for (int i = 0; i <= maxReach; i++) {
+            // If we can reach the last index at any point
+            if (maxReach >= n - 1) return true;
+
+            // Update the farthest index we can reach
+            maxReach = max(maxReach, i + nums[i]);
+
+            // If we can't move forward
+            if (i == maxReach && i < n - 1) return false;
+        }
+
+        return true;
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    def can_jump(nums: List[int]) -> bool:
+        max_reach = 0
+        n = len(nums)
+
+        for i in range(n):
+            # If we can't reach current index
+            if i > max_reach:
+                return False
+
+            # Update the farthest index we can reach
+            max_reach = max(max_reach, i + nums[i])
+
+            # If we can reach the last index
+            if max_reach >= n - 1:
+                return True
+
+        return True
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    public boolean canJump(int[] nums) {
+        int maxReach = 0;
+        int n = nums.length;
+
+        for (int i = 0; i <= maxReach && i < n; i++) {
+            // Update the farthest index we can reach
+            maxReach = Math.max(maxReach, i + nums[i]);
+
+            // If we can reach the last index
+            if (maxReach >= n - 1) {
+                return true;
+            }
+        }
+
+        return maxReach >= n - 1;
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## Bit Manipulation
+<Note type="note" title="Note">
+    Bit manipulation involves operating on individual bits of numbers. This section contains a classic bit manipulation problem.
+</Note>
+<Alert title="Single Number" description="Problem: Given a non-empty array of integers nums where every element appears twice except for one. Find that single element. You must implement a solution with O(1) extra space and O(n) time complexity.">Single Number - Classic Bit Manipulation Problem</Alert>
+<Tabs defaultValue="python" className="pt-5 pb-1 mt-4">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    int singleNumber(vector<int>& nums) {
+        int result = 0;
+
+        // XOR all numbers together
+        // Properties used:
+        // 1. a ^ a = 0 (XOR with self gives 0)
+        // 2. a ^ 0 = a (XOR with 0 gives number itself)
+        // 3. a ^ b ^ a = b (XOR is associative)
+        for (int num : nums) {
+            result ^= num;
+        }
+
+        return result;
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    def single_number(nums: List[int]) -> int:
+        result = 0
+
+        # XOR all numbers together
+        # Properties used:
+        # 1. a ^ a = 0 (XOR with self gives 0)
+        # 2. a ^ 0 = a (XOR with 0 gives number itself)
+        # 3. a ^ b ^ a = b (XOR is associative)
+        for num in nums:
+            result ^= num
+
+        return result
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    public int singleNumber(int[] nums) {
+        int result = 0;
+
+        // XOR all numbers together
+        // Properties used:
+        // 1. a ^ a = 0 (XOR with self gives 0)
+        // 2. a ^ 0 = a (XOR with 0 gives number itself)
+        // 3. a ^ b ^ a = b (XOR is associative)
+        for (int num : nums) {
+            result ^= num;
+        }
+
+        return result;
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## Backtracking
+<Note type="note" title="Note">
+    Backtracking is an algorithmic technique that considers searching every possible combination in order to solve a computational problem. This section contains a classic backtracking problem.
+</Note>
+<Alert title="Subsets" description="Problem: Given an integer array nums of unique elements, return all possible subsets (the power set). The solution set must not contain duplicate subsets.">Subsets - Classic Backtracking Problem</Alert>
+<Tabs defaultValue="python" className="pt-5 pb-1 mt-4">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    void backtrack(vector<int>& nums, int start, vector<int>& curr, vector<vector<int>>& result) {
+        // Add current subset to result
+        result.push_back(curr);
+
+        // Try adding each remaining number
+        for (int i = start; i < nums.size(); i++) {
+            // Include nums[i]
+            curr.push_back(nums[i]);
+
+            // Recur with next position
+            backtrack(nums, i + 1, curr, result);
+
+            // Backtrack by removing nums[i]
+            curr.pop_back();
+        }
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    def backtrack(start, curr, result):
+        # Add current subset to result
+        result.append(curr[:])
+
+        # Try adding each remaining number
+        for i in range(start, len(nums)):
+            # Include nums[i]
+            curr.append(nums[i])
+
+            # Recur with next position
+            backtrack(i + 1, curr, result)
+
+            # Backtrack by removing nums[i]
+            curr.pop()
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    private void backtrack(int[] nums, int start, List<Integer> curr, List<List<Integer>> result) {
+        // Add current subset to result
+        result.add(new ArrayList<>(curr));
+
+        // Try adding each remaining number
+        for (int i = start; i < nums.size(); i++) {
+            // Include nums[i]
+            curr.add(nums[i]);
+
+            // Recur with next position
+            backtrack(nums, i + 1, curr, result);
+
+            // Backtrack by removing nums[i]
+            curr.remove(curr.size() - 1);
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
+
+## Merge Sort
+
+<Tabs defaultValue="python" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="cpp">C++</TabsTrigger>
+    <TabsTrigger value="python">Python</TabsTrigger>
+    <TabsTrigger value="java">Java</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cpp">
+    ```cpp
+    void merge(int arr[], int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        int L[n1], R[n2];
+        for (int i = 0; i < n1; i++) L[i] = arr[left + i];
+        for (int j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];
+
+        int i = 0, j = 0, k = left;
+
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) arr[k++] = L[i++];
+        while (j < n2) arr[k++] = R[j++];
+    }
+
+    void mergeSort(int arr[], int left, int right) {
+        if (left >= right) return;
+
+        int mid = left + (right - left) / 2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+        merge(arr, left, mid, right);
+    }
+    ```
+  </TabsContent>
+  <TabsContent value="python">
+    ```python
+    def merge_sort(arr):
+        if len(arr) > 1:
+            mid = len(arr) // 2
+            left_half = arr[:mid]
+            right_half = arr[mid:]
+
+            merge_sort(left_half)
+            merge_sort(right_half)
+
+            i = j = k = 0
+
+            while i < len(left_half) and j < len(right_half):
+                if left_half[i] < right_half[j]:
+                    arr[k] = left_half[i]
+                    i += 1
+                else:
+                    arr[k] = right_half[j]
+                    j += 1
+                k += 1
+
+            while i < len(left_half):
+                arr[k] = left_half[i]
+                i += 1
+                k += 1
+
+            while j < len(right_half):
+                arr[k] = right_half[j]
+                j += 1
+                k += 1
+    ```
+  </TabsContent>
+  <TabsContent value="java">
+    ```java
+    public class MergeSort {
+        public static void merge(int[] arr, int left, int mid, int right) {
+            int n1 = mid - left + 1;
+            int n2 = right - mid;
+
+            int[] L = new int[n1];
+            int[] R = new int[n2];
+
+            for (int i = 0; i < n1; i++) L[i] = arr[left + i];
+            for (int j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];
+
+            int i = 0, j = 0, k = left;
+
+            while (i < n1 && j < n2) {
+                if (L[i] <= R[j]) {
+                    arr[k] = L[i];
+                    i++;
+                } else {
+                    arr[k] = R[j];
+                    j++;
+                }
+                k++;
+            }
+
+            while (i < n1) arr[k++] = L[i++];
+            while (j < n2) arr[k++] = R[j++];
+        }
+
+        public static void mergeSort(int[] arr, int left, int right) {
+            if (left < right) {
+                int mid = left + (right - left) / 2;
+                mergeSort(arr, left, mid);
+                mergeSort(arr, mid + 1, right);
+                merge(arr, left, mid, right);
+            }
+        }
+    }
+    ```
+  </TabsContent>
+</Tabs>
