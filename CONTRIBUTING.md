@@ -56,4 +56,6 @@ I will review all feedback personally, but please note that response times may v
 
 Thank you for helping make Algorithmik a better resource for everyone!
 
+My email: [pathakkmehul@gmail.com](mailto:pathakkmehul@gmail.com)
+
 ~ Mehul Pathak

@@ -27,14 +27,14 @@ Check it out: [Algorithmik](https://www.algorithmik.in/)
   - And more...
 
 ### 2. Problem Sets 💪
+- **Important must-solve problems**: Handpicked problems for each topic
+- **Difficulty Levels**: From Easy to Hard
 - **Company-wise Problems**: Curated problems from top tech companies
   - Google
   - Facebook
   - Amazon
   - Microsoft
   - And more...
-- **Topic-wise Problems**: Problems organized by concepts
-- **Difficulty Levels**: From Easy to Hard
 
 ### 3. Study Materials 📝
 - **Concept Notes**: Clear explanations of DSA concepts
@@ -49,25 +49,6 @@ Check it out: [Algorithmik](https://www.algorithmik.in/)
 - **Blogs**: Top competitive programming blogs
 - **Video Tutorials**: Curated YouTube channels and playlists
 
-#### Improvement Tips
-1. **For Beginners**
-   - Start with easy problems
-   - Focus on basic data structures
-   - Practice implementation
-   - Learn one programming language well
-
-2. **For Intermediates**
-   - Solve medium-level problems
-   - Learn advanced data structures
-   - Practice contest problems
-   - Focus on optimization
-
-3. **For Advanced**
-   - Participate in contests regularly
-   - Solve hard problems
-   - Learn advanced algorithms
-   - Practice system design
-
 #### Contest Preparation
 - **Practice Strategies**: How to make the most of practice time
 - **Contest Tips**: Do's and don'ts during contests
@@ -75,13 +56,13 @@ Check it out: [Algorithmik](https://www.algorithmik.in/)
 
 ## Contributing 🤝
 
-We welcome contributions! If you have:
-- New problems and solutions
+All contributions are welcome! If you have:
+- New problems
 - Better explanations
 - Additional resources
 - Bug fixes
 
-Please check our [Contributing Guidelines](CONTRIBUTING.md).
+Please check the [Contributing Guidelines](CONTRIBUTING.md).
 
 ## License 📄
 
