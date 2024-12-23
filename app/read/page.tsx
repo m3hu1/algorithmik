@@ -43,7 +43,7 @@ function BlogCard({
   return (
     <Link
       href={`/read/${slug}`}
-      className="flex flex-col gap-2 items-start border rounded-md py-5 px-3 min-h-[400px]"
+      className="flex flex-col gap-2 items-start border rounded-md py-5 px-3 min-h-[300px]"
     >
       <h3 className="text-md font-semibold -mt-1 pr-7">{title}</h3>
       <div className="w-full">
@@ -57,12 +57,12 @@ function BlogCard({
         />
       </div>
       <p className="text-sm text-muted-foreground">{description}</p>
-      <div className="flex items-center justify-between w-full mt-auto">
+      {/* <div className="flex items-center justify-between w-full mt-auto">
         <p className="text-[13px] text-muted-foreground">
           Posted on {formatDate2(date)}
         </p>
         <AvatarGroup users={authors} />
-      </div>
+      </div> */}
     </Link>
   );
 }

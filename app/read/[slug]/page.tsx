@@ -87,9 +87,9 @@ export default async function BlogPage(props: PageProps) {
         </h1>
         <div className="mt-1 flex flex-col gap-3">
           <Authors authors={res.frontmatter.authors} />
-          <p className="text-muted-foreground text-sm">
+          {/* <p className="text-muted-foreground text-sm">
             {formatDate(res.frontmatter.date)}
-          </p>
+          </p> */}
         </div>
       </div>
       <div className="!w-full -mt-10">
