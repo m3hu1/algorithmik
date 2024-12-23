@@ -28,13 +28,21 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   }
 
   const { frontmatter } = res;
+  const url = `https://algorithmik.in/read/${slug}`;
+
   return {
     metadataBase: new URL("https://algorithmik.in"),
     title: frontmatter.title,
     description: frontmatter.description,
+    alternates: {
+      canonical: url,
+    },
     openGraph: {
       title: frontmatter.title,
       description: frontmatter.description,
+      type: "article",
+      url: url,
+      siteName: "Algorithmik",
     },
   };
 }
