@@ -38,11 +38,30 @@ export default async function DocsPage({ params: { slug = [] } }: PageProps) {
 export async function generateMetadata({ params: { slug = [] } }: PageProps) {
   const pathName = slug.join("/");
   const res = await getDocsForSlug(pathName);
-  if (!res) return null;
+  if (!res) {
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist.",
+    };
+  }
   const { frontmatter } = res;
+
   return {
     title: frontmatter.title,
     description: frontmatter.description,
+    openGraph: {
+      title: frontmatter.title,
+      description: frontmatter.description,
+      url: `https://algorithmik.in/guide/${pathName}`,
+      siteName: "Algorithmik",
+      images: [
+        {
+          url: "/android-chrome-512x512.png",
+          width: 800,
+          height: 600,
+        },
+      ],
+    },
   };
 }
 

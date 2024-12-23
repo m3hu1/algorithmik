@@ -22,14 +22,20 @@ const fontCode = JetBrains_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://algorithmik.in"),
-  title: "Algorithmik",
+  title: {
+    default: "Algorithmik",
+    template: "%s | Algorithmik",
+  },
   description: "Master Data Structures and Algorithms",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "Algorithmik",
+    title: {
+      default: "Algorithmik",
+      template: "%s | Algorithmik",
+    },
     description: "Master Data Structures and Algorithms",
     url: "https://algorithmik.in", // Replace with your actual URL
     siteName: "Algorithmik",
