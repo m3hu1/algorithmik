@@ -1,0 +1,63 @@
+---
+title: "How to Approach a New Leetcode Problem"
+description: "My personal guide on tackling a new problem effectively - from reading the problem to analyzing solutions. Here's what I've learned from grinding hundreds of problems."
+date: 23-12-2024
+authors:
+  - avatar: "/mehul.png"
+    handle: "m3hu1"
+    username: Mehul Pathak
+    handleUrl: "https://github.com/m3hu1"
+cover: ""
+---
+
+## First Things First: Read The Problem (Like, Actually Read It)
+
+I used to jump straight into coding as soon as I saw a problem. Big mistake! Now, I force myself to read the problem statement carefully. It's amazing how many times I've caught important details that would have tripped me up later.
+
+Take your time here - read it twice if you need to. I like to jot down what the problem is actually asking for in my own words. This has saved me from going down the wrong path so many times.
+
+## Test Cases Are Your Friends
+
+The test cases aren't just there to check if your code works - they're actually super helpful in understanding what the problem wants. I always look at them right after reading the problem.
+
+Sometimes I'll even write my own test cases. It helps me think about edge cases and weird scenarios that might break my code. Trust me, in interviews, they love throwing edge cases at you!
+
+## Pay Attention to Those Numbers (They're Trying to Tell You Something)
+
+You know those **constraints** in the problem description? Like when they say n ≤ 10^5 or something? I used to ignore them completely. Turns out, they're actually giving you huge hints about what kind of solution you need!
+
+Here's what I've learned:
+- If you see `n <= 10^2`, you can get away with an `O(n²)`, `O(2ⁿ)` or `O(n!)` solution
+- If you see `n <= 10^3`, you can probably get away with `O(n²)`
+- If `n > 10^3` and `n <= 10^6`, they're probably expecting `O(n)` or `O(n log n)`
+- If you see `n > 10^6`, you better come up with something more clever - probably `O(n)` or better like `O(log n)` or `O(1)`
+
+## Don't Bang Your Head Against the Wall
+
+I give myself about 20-30 minutes on a new problem. If I'm still completely stuck after that, I know it's time to learn from others. No shame in that!
+
+Here's usually how I split that time:
+- Few minutes to read and understand
+- Quick look at the constraints
+- Rest of the time trying to solve it
+- If I'm stuck after ~25 minutes, time to look for help
+
+## Learning from Others (Because We're All in This Together)
+
+If I can't solve it, I usually check out a video solution. NeetCode is my go-to, but there are lots of great creators out there. Watching someone else's thought process teaches you so much more than just reading the solution.
+
+## Always Check Other Solutions
+
+Even after solving a problem, I always check out other solutions in the discussion section. It's crazy how many different ways there are to solve the same problem! I've picked up so many cool tricks this way.
+
+## Know Your Code's Complexity
+
+This is super important for interviews - you need to know the time and space complexity of your solution. I always think about this before submitting my code. It's not just about getting the right answer, it's about getting it efficiently.
+
+When I started LeetCode, I was terrible at analyzing complexity. But with practice, it becomes second nature. Now I can usually spot if my solution is going to be too slow before even running it.
+
+## Wrapping Up
+
+Remember, everyone struggles with LeetCode at first. It's totally normal! The key is having a systematic approach and learning from each problem, whether you solve it or not.
+
+This approach has worked well for me, but feel free to adapt it to what works for you. The most important thing is to keep practicing and learning.
