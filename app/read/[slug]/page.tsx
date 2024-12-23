@@ -1,12 +1,11 @@
 import { Typography } from "@/components/typography";
 import { buttonVariants } from "@/components/ui/button";
 import { Author, getAllBlogStaticPaths, getBlogForSlug } from "@/lib/markdown";
-import { ArrowLeftIcon, MoveLeft } from "lucide-react";
+import { MoveLeft } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { formatDate } from "@/lib/utils";
-import Image from "next/image";
 import type { Metadata } from "next";
 import ScrollProgress from "@/components/scroll-progress";
 
@@ -43,6 +42,14 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
       type: "article",
       url: url,
       siteName: "Algorithmik",
+      images: [
+        {
+          url: frontmatter.cover,
+          width: 800,
+          height: 600,
+          alt: frontmatter.title,
+        },
+      ],
     },
   };
 }
