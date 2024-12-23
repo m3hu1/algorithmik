@@ -14,10 +14,10 @@ export const NAVLINKS = [
     title: "Learn",
     href: `/guide${page_routes[0].href}`,
   },
-  // {
-  //   title: "Blog",
-  //   href: "/blog",
-  // },
+  {
+    title: "Read",
+    href: "/read",
+  },
 ];
 
 export function Navbar() {
@@ -30,7 +30,7 @@ export function Navbar() {
             <div className="sm:flex hidden">
               <Logo />
             </div>
-            <div className="lg:flex hidden items-center gap-4 text-sm font-medium text-muted-foreground">
+            <div className="lg:flex hidden items-center gap-6 text-sm font-medium text-muted-foreground">
               <NavMenu />
             </div>
           </div>
@@ -85,7 +85,7 @@ export function NavMenu({ isSheet = false }) {
             key={item.title + item.href}
             activeClassName="!text-primary md:font-semibold font-medium"
             absolute
-            className="flex items-center gap-1 dark:text-stone-300/85 text-stone-800"
+            className="flex items-center gap-1 dark:text-stone-300/85 text-stone-800 hover:text-primary dark:hover:text-primary"
             href={item.href}
           >
             {item.title}
