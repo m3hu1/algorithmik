@@ -151,3 +151,18 @@ pre > code {
     background-color: #eceadf;
     color: black;
 }
+
+* {
+    scrollbar-color: hsl(var(--primary)) transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--primary));
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
