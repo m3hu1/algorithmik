@@ -123,6 +123,26 @@ body {
     text-decoration-color: hsl(var(--primary));
 }
 
+.xyz {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(212, 212, 212, 0.7);
+    transition: text-decoration-color 0.2s ease;
+}
+
+.xyz:hover {
+    text-decoration-color: hsl(var(--primary));
+}
+
+.dark .xyz {
+    text-decoration-color: rgba(150, 150, 150, 0.7);
+}
+
+.dark .xyz:hover {
+    text-decoration-color: hsl(var(--primary));
+}
+
 pre {
     padding: 2px 0 !important;
     width: inherit !important;

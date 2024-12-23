@@ -33,7 +33,7 @@ export default function AlertComponent({
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <span className="underline cursor-pointer hover:text-primary transition-colors">
+        <span className="xyz cursor-pointer hover:text-primary transition-colors">
           {children}
         </span>
       </AlertDialogTrigger>
