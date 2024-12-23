@@ -29,8 +29,13 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
   const { frontmatter } = res;
   return {
+    metadataBase: new URL("https://algorithmik.in"),
     title: frontmatter.title,
     description: frontmatter.description,
+    openGraph: {
+      title: frontmatter.title,
+      description: frontmatter.description,
+    },
   };
 }
 

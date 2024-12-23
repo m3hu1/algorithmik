@@ -21,6 +21,7 @@ const fontCode = JetBrains_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://algorithmik.in"),
   title: "Algorithmik",
   description: "Master Data Structures and Algorithms",
   icons: {
