@@ -24,7 +24,7 @@ export const metadata = {
   metadataBase: new URL("https://algorithmik.in"),
   title: {
     default: "Algorithmik",
-    template: "%s | Algorithmik",
+    template: "%s",
   },
   description: "Master Data Structures and Algorithms",
   icons: {
@@ -34,7 +34,7 @@ export const metadata = {
   openGraph: {
     title: {
       default: "Algorithmik",
-      template: "%s | Algorithmik",
+      template: "%s",
     },
     description: "Master Data Structures and Algorithms",
     url: "https://algorithmik.in", // Replace with your actual URL
