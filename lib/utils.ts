@@ -11,7 +11,7 @@ export function helperSearch(
   node: EachRoute,
   prefix: string,
   currenLevel: number,
-  maxLevel?: number
+  maxLevel?: number,
 ) {
   const res: EachRoute[] = [];
   let parentHas = false;
@@ -29,7 +29,7 @@ export function helperSearch(
         item,
         nextLink,
         currenLevel + 1,
-        maxLevel
+        maxLevel,
       );
       if (!!innerRes.length && !parentHas && !node.noLink) {
         res.push({ ...node, items: undefined, href: nextLink });
@@ -42,7 +42,7 @@ export function helperSearch(
 
 export function advanceSearch(query: string) {
   return ROUTES.map((node) =>
-    helperSearch(query, node, "", 1, query.length == 0 ? 2 : undefined)
+    helperSearch(query, node, "", 1, query.length == 0 ? 2 : undefined),
   ).flat();
 }
 
@@ -50,14 +50,37 @@ export function formatDate(dateStr: string): string {
   const [day, month, year] = dateStr.split("-").map(Number);
   const date = new Date(year, month - 1, day);
 
-  const options: Intl.DateTimeFormatOptions = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  // Get the day with appropriate suffix (st, nd, rd, th)
+  const getDayWithSuffix = (day: number): string => {
+    if (day > 3 && day < 21) return day + "th";
+    switch (day % 10) {
+      case 1:
+        return day + "st";
+      case 2:
+        return day + "nd";
+      case 3:
+        return day + "rd";
+      default:
+        return day + "th";
+    }
   };
 
-  return date.toLocaleDateString("en-US", options);
+  return `${months[date.getMonth()]} ${getDayWithSuffix(date.getDate())}, ${date.getFullYear()}`;
 }
 
 export function formatDate2(dateStr: string): string {
