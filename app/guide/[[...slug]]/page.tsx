@@ -56,9 +56,9 @@ export async function generateMetadata({ params: { slug = [] } }: PageProps) {
       siteName: "Algorithmik",
       images: [
         {
-          url: "/android-chrome-512x512.png",
-          width: 800,
-          height: 600,
+          url: "/algorithmik.png",
+          width: 1200,
+          height: 630,
         },
       ],
     },
