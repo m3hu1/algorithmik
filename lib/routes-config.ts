@@ -35,7 +35,7 @@ export const ROUTES: EachRoute[] = [
     href: "/problem-sets",
     description: "A list of various problem sets that you can use to practice.",
     items: [
-      { title: "Problems Folder", href: "/problems-folder" },
+      { title: "Important Problems", href: "/important-problems" },
       {
         title: "Company Folder",
         href: "/company-folder",
