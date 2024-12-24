@@ -41,9 +41,9 @@ export const metadata = {
     siteName: "Algorithmik",
     images: [
       {
-        url: "/android-chrome-512x512.png", // Ensure this path is correct
-        width: 800,
-        height: 600,
+        url: "/algorithmik.png", // Ensure this path is correct
+        width: 1200,
+        height: 630,
       },
     ],
   },
