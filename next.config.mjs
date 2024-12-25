@@ -8,6 +8,14 @@ const nextConfig = {
       },
     ],
   },
+  webpack: (config, { dev, isServer }) => {
+    // Suppress the warning
+    config.infrastructureLogging = {
+      level: "error",
+    };
+
+    return config;
+  },
 };
 
 export default nextConfig;
