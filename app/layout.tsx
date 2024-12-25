@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import { Footer } from "@/components/footer";
 import GoogleAnalytics from "@/components/Analytics";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import "@/styles/globals.css";
 import Script from "next/script";
 
@@ -71,6 +72,7 @@ export default function RootLayout({
         className={`${fontSans.variable} ${fontCode.variable} font-regular antialiased`}
         suppressHydrationWarning
       >
+        <Analytics />
         <GoogleAnalytics />
         <Script
           src="https://cdn.counter.dev/script.js"
