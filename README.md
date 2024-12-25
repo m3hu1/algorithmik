@@ -28,6 +28,7 @@ Check it out: [Algorithmik](https://www.algorithmik.in/)
 
 ### 2. Problem Sets 💪
 - **Important must-solve problems**: Handpicked problems for each topic
+- **Problem sets on nice algorithms**: Problems on advanced algorithms
 - **Difficulty Levels**: From Easy to Hard
 - **Company-wise Problems**: Curated problems from top tech companies
   - Google
