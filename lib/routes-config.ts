@@ -52,6 +52,15 @@ export const ROUTES: EachRoute[] = [
           { title: "Dropbox", href: "/dropbox" },
         ],
       },
+      {
+        title: "Algorithms Folder",
+        href: "/algorithms-folder",
+        items: [
+          { title: "Dynamic Programming", href: "/DP" },
+          { title: "Segment Tree", href: "/segment-tree" },
+          { title: "Trie", href: "/trie" },
+        ],
+      },
       { title: "Blind 75", href: "/blind-75" },
       { title: "LeetCode Problem Lists", href: "/leetcode-list" },
     ],
