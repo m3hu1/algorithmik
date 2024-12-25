@@ -59,6 +59,7 @@ export const ROUTES: EachRoute[] = [
           { title: "Dynamic Programming", href: "/DP" },
           { title: "Segment Tree", href: "/segment-tree" },
           { title: "Trie", href: "/trie" },
+          { title: "KMP", href: "/kmp" },
         ],
       },
       { title: "Blind 75", href: "/blind-75" },
