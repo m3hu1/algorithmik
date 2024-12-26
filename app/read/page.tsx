@@ -57,12 +57,12 @@ function BlogCard({
         />
       </div>
       <p className="text-sm text-muted-foreground">{description}</p>
-      {/* <div className="flex items-center justify-between w-full mt-auto">
+      <div className="flex items-center justify-between w-full mt-auto">
         <p className="text-[13px] text-muted-foreground">
           Posted on {formatDate2(date)}
         </p>
         <AvatarGroup users={authors} />
-      </div> */}
+      </div>
     </Link>
   );
 }

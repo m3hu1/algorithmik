@@ -80,3 +80,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=m3hu1/algorithmik&type=Date)](https://star-history.com/#m3hu1/algorithmik&Date)
+
+## Contributors
+
+<a href="https://github.com/m3hu1/algorithmik/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=m3hu1/algorithmik" />
+</a>
+<br></br>
+Thanks for contributing!
