@@ -1,0 +1,30 @@
+---
+title: "Are Memoization and Tabulation the Same Since They Both Solve Problems Without Causing TLE?"
+description: "Understanding the differences between Memoization and Tabulation in Dynamic Programming and their specific use cases for efficient problem-solving."
+date: 26-12-2024
+authors:
+  - avatar: "https://avatars.githubusercontent.com/u/114915077?v=4"
+    handle: "parth9784"
+    username: Parth Dadhich
+    handleUrl: "https://github.com/Parth9784"
+cover: ""
+---
+
+## Memoization vs Tabulation: Are They the Same?
+
+Memoization and Tabulation are concepts used in Dynamic Programming that play a vital role in solving bigger problems. These techniques work by either breaking problems down into smaller subproblems or building solutions iteratively from subproblem solutions.
+
+First, let’s address a common misconception that we all usually had: **"Memoization"** is often mistakenly read as **"Memorization"**. Memoization involves storing the solutions of subproblems after solving them once. These precalculated solutions are reused whenever the same problem arises, preventing redundant computations. This technique follows a **Top-down recursive approach**, meaning it starts with the main problem, divides it into smaller subproblems, and stores the results in an array for future use. This process enhances the solution's speed and prevents excessive memory usage in the recursive stack, thereby avoiding Time Limit Exceeded (TLE) errors.
+
+While **Tabulation** is an iterative **Bottom-up approach**, it avoids recursion entirely, making it faster by eliminating the overhead of recursive calls. Tabulation starts by storing the solution to the smallest subproblem in an array and then builds the solution to the main problem iteratively. Since it does not require a recursive stack, it uses less memory compared to Memoization.
+
+### So, Should We Use Tabulation Exclusively Instead of Memoization?
+
+Not necessarily. Both approaches have their specific use cases. Problems that are naturally recursive are easier to solve using Memoization, while problems that can be expressed iteratively are better suited for Tabulation.
+
+### When to Use What:
+
+- **Use Memoization** for problems that are naturally recursive and have manageable recursion depth.
+- **Use Tabulation** when recursion depth is too large or to optimize space usage.
+
+Both techniques aim to reduce redundant computations and provide efficient solutions, but their application depends on the nature of the problem at hand.
