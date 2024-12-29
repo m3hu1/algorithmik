@@ -60,6 +60,7 @@ export const ROUTES: EachRoute[] = [
           { title: "Segment Tree", href: "/segment-tree" },
           { title: "Trie", href: "/trie" },
           { title: "KMP", href: "/kmp" },
+          { title: "Z-Function", href: "/z-function" },
         ],
       },
       { title: "Blind 75", href: "/blind-75" },
