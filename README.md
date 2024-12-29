@@ -87,4 +87,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <img src="https://contrib.rocks/image?repo=m3hu1/algorithmik" />
 </a>
 <br></br>
-Thanks for contributing!
+
+- [Parth Dadhich](https://github.com/Parth9784) for contributing memoization-vs-tabulation article.
+
+Thanks to everyone for contributing!
