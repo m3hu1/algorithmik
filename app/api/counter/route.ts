@@ -12,9 +12,17 @@ const rateLimiter = new RateLimiter({
   limit: 1,
 });
 
+// Track last cleanup time to reduce cleanup frequency
+let lastCleanup = Date.now();
+
 async function cleanOldSessions() {
+  // Only clean up if it's been more than 3 minutes since last cleanup
+  if (Date.now() - lastCleanup < 3 * 60 * 1000) {
+    return;
+  }
   const fiveMinutesAgo = Date.now() - 5 * 60 * 1000;
   await redis.zremrangebyscore("active_sessions", 0, fiveMinutesAgo);
+  lastCleanup = Date.now();
 }
 
 export async function POST(request: Request) {
@@ -69,7 +77,6 @@ export async function POST(request: Request) {
 }
 
 export async function GET() {
-  await cleanOldSessions();
   const count = await redis.zcard("active_sessions");
   return Response.json({ count: Number(count) });
 }

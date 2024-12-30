@@ -51,8 +51,8 @@ export function ActiveUsers() {
     // Initial update
     updateCount();
 
-    // Update every minute
-    const interval = setInterval(updateCount, 60000);
+    // Update every 3 minutes, to reduce the no. of calls on redis db
+    const interval = setInterval(updateCount, 3 * 60 * 1000);
 
     return () => clearInterval(interval);
   }, [isRateLimited]);
