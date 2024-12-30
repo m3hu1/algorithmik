@@ -1,74 +1,65 @@
 // app/api/counter/route.ts
+import { Redis } from "@upstash/redis";
 import { RateLimiter } from "@/lib/rate-limit";
 
-interface Session {
-  ip: string;
-  sessionId: string;
-  timestamp: number;
-}
-
-const sessions = new Map<string, Session>();
-
-// Create rate limiter instance (1 request per second per IP)
-const rateLimiter = new RateLimiter({
-  interval: 1000, // 1 second
-  limit: 1, // 1 request
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_REST_URL!,
+  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
 });
 
-function cleanOldSessions() {
+const rateLimiter = new RateLimiter({
+  interval: 1000,
+  limit: 1,
+});
+
+async function cleanOldSessions() {
   const fiveMinutesAgo = Date.now() - 5 * 60 * 1000;
-  for (const [key, session] of sessions.entries()) {
-    if (session.timestamp < fiveMinutesAgo) {
-      sessions.delete(key);
-    }
-  }
+  await redis.zremrangebyscore("active_sessions", 0, fiveMinutesAgo);
 }
 
 export async function POST(request: Request) {
   try {
-    // Get IP address
     const forwarded = request.headers.get("x-forwarded-for");
     const ip = forwarded ? forwarded.split(",")[0] : "unknown";
 
-    // Check rate limit
     const isAllowed = await rateLimiter.check(ip);
     if (!isAllowed) {
+      const count = await redis.zcard("active_sessions");
       return Response.json(
         {
           success: false,
           error: "Too many requests",
-          count: sessions.size,
+          count: Number(count),
         },
         { status: 429 },
       );
     }
 
     const { sessionId } = await request.json();
+    const key = `${ip}-${sessionId}`;
+    const now = Date.now();
+
+    // Add/update session
+    await redis.zadd("active_sessions", { score: now, member: key });
 
     // Clean old sessions
-    cleanOldSessions();
+    await cleanOldSessions();
 
-    // Create unique key from IP and session ID
-    const key = `${ip}-${sessionId}`;
+    // Get current count
+    const count = await redis.zcard("active_sessions");
 
-    // Update session
-    sessions.set(key, {
-      ip,
-      sessionId,
-      timestamp: Date.now(),
-    });
-
-    // Clean up rate limiter
     rateLimiter.cleanup();
 
     return Response.json({
-      count: sessions.size,
+      count: Number(count),
       success: true,
     });
   } catch (error) {
+    console.error("Redis error:", error);
+    const count = await redis.zcard("active_sessions");
     return Response.json(
       {
-        count: sessions.size,
+        count: Number(count),
         success: false,
         error: "Failed to process request",
       },
@@ -78,6 +69,7 @@ export async function POST(request: Request) {
 }
 
 export async function GET() {
-  cleanOldSessions();
-  return Response.json({ count: sessions.size });
+  await cleanOldSessions();
+  const count = await redis.zcard("active_sessions");
+  return Response.json({ count: Number(count) });
 }
