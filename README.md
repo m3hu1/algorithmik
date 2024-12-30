@@ -2,9 +2,13 @@
 
 Your comprehensive guide to mastering Data Structures and Algorithms.
 
-Check it out: [Algorithmik](https://www.algorithmik.in/)
+Check it out: [algorithmik.in](https://www.algorithmik.in/)
 
+> [!TIP]
 > Alternate link: [algorithmik.vercel.app](https://algorithmik.vercel.app/)
+
+> [!NOTE]
+> Developed by: Mehul Pathak
 
 ## Guide Features 📚
 
