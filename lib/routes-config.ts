@@ -45,6 +45,7 @@ export const ROUTES: EachRoute[] = [
           { title: "Microsoft", href: "/microsoft" },
           { title: "Facebook", href: "/facebook" },
           { title: "Goldman Sachs", href: "/goldman-sachs" },
+          { title: "Atlassian", href: "/atlassian" },
           { title: "Tesla", href: "/tesla" },
           { title: "Uber", href: "/uber" },
           { title: "PayPal", href: "/paypal" },
