@@ -41,6 +41,7 @@ export const ROUTES: EachRoute[] = [
         href: "/company-folder",
         items: [
           { title: "Amazon", href: "/amazon" },
+          { title: "Apple", href: "/apple" },
           { title: "Atlassian", href: "/atlassian" },
           { title: "Bloomberg", href: "/bloomberg" },
           { title: "Dropbox", href: "/dropbox" },
@@ -54,6 +55,7 @@ export const ROUTES: EachRoute[] = [
           { title: "Tesla", href: "/tesla" },
           { title: "TikTok", href: "/tiktok" },
           { title: "Uber", href: "/uber" },
+          { title: "Visa", href: "/visa" },
         ],
       },
       {
