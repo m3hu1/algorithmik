@@ -59,7 +59,8 @@ function BlogCard({
       <p className="text-sm text-muted-foreground">{description}</p>
       <div className="flex items-center justify-between w-full mt-auto">
         <p className="text-[13px] text-muted-foreground">
-          Posted on {formatDate2(date)}
+          {/* Posted on {formatDate2(date)} */}
+          by {authors[0]?.username}
         </p>
         <AvatarGroup users={authors} />
       </div>
