@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import "@/styles/globals.css";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/toaster";
 
 const fontSans = Inter({
   display: "swap",
@@ -89,6 +90,7 @@ export default function RootLayout({
           <Navbar />
           <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
             {children}
+            <Toaster />
           </main>
           <SpeedInsights />
           <Footer />
