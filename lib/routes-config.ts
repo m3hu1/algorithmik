@@ -73,6 +73,8 @@ export const ROUTES: EachRoute[] = [
       },
       { title: "Blind 75", href: "/blind-75" },
       { title: "LeetCode Problem Lists", href: "/leetcode-list" },
+      { title: "Submit A Problem Set", href: "/submit-your-own" },
+      { title: "User-Submitted", href: "/user-submitted" },
     ],
   },
   {

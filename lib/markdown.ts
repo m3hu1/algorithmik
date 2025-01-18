@@ -26,6 +26,7 @@ import HoverUnderline from "@/components/markdown/hover-underline";
 import AnimatedUnderline from "@/components/markdown/underline";
 import ProblemProgress from "@/components/markdown/problem-progress";
 import AlertComponent from "@/components/markdown/alert";
+import dynamic from "next/dynamic";
 
 // add custom components
 const components = {
@@ -47,6 +48,9 @@ const components = {
   ProblemProgress,
   Drawer: DrawerComponent,
   Alert: AlertComponent,
+  SubmitProblemSetForm: dynamic(
+    () => import("@/components/SubmitProblemSetForm"),
+  ),
 };
 
 // can be used for other pages like blogs, Guides etc
