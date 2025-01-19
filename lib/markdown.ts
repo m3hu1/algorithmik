@@ -27,7 +27,6 @@ import AnimatedUnderline from "@/components/markdown/underline";
 import ProblemProgress from "@/components/markdown/problem-progress";
 import AlertComponent from "@/components/markdown/alert";
 import dynamic from "next/dynamic";
-import { Telegram } from "iconoir-react";
 
 // add custom components
 const components = {
@@ -52,7 +51,6 @@ const components = {
   SubmitProblemSetForm: dynamic(
     () => import("@/components/SubmitProblemSetForm"),
   ),
-  Telegram,
 };
 
 // can be used for other pages like blogs, Guides etc
