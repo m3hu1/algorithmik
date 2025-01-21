@@ -5,6 +5,10 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 export default async function Toc({ path }: { path: string }) {
   const tocs = await getDocsTocs(path);
 
+  if (!tocs || tocs.length === 0) {
+    return null;
+  }
+
   return (
     <div className="lg:flex hidden toc flex-[1.5] min-w-[238px] py-9 sticky top-16 h-[96.95vh]">
       <div className="flex flex-col gap-3 w-full pl-2">
