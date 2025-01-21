@@ -40,6 +40,7 @@ export const ROUTES: EachRoute[] = [
         title: "Company Folder",
         href: "/company-folder",
         items: [
+          { title: "Airbnb", href: "/airbnb" },
           { title: "Amazon", href: "/amazon" },
           { title: "Apple", href: "/apple" },
           { title: "Atlassian", href: "/atlassian" },
@@ -53,11 +54,14 @@ export const ROUTES: EachRoute[] = [
           { title: "Microsoft", href: "/microsoft" },
           { title: "Oracle", href: "/oracle" },
           { title: "PayPal", href: "/paypal" },
+          { title: "PhonePe", href: "/phonepe" },
+          { title: "Rubrik", href: "/rubrik" },
           { title: "Samsung", href: "/samsung" },
           { title: "Tesla", href: "/tesla" },
           { title: "TikTok", href: "/tiktok" },
           { title: "Uber", href: "/uber" },
           { title: "Visa", href: "/visa" },
+          { title: "VMware", href: "/vmware" },
         ],
       },
       {
