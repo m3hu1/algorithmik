@@ -8,372 +8,372 @@
 
 
 <url>
-  <loc>https://www.algorithmik.in/</loc>
+  <loc>https://algorithmik.vercel.app/</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/introduction</loc>
+  <loc>https://algorithmik.vercel.app/guide/introduction</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/read</loc>
+  <loc>https://algorithmik.vercel.app/read</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/introduction/about</loc>
+  <loc>https://algorithmik.vercel.app/guide/introduction/about</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/getting-started</loc>
+  <loc>https://algorithmik.vercel.app/guide/getting-started</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/getting-started/structure</loc>
+  <loc>https://algorithmik.vercel.app/guide/getting-started/structure</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/getting-started/programming-language</loc>
+  <loc>https://algorithmik.vercel.app/guide/getting-started/programming-language</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/important-problems</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/important-problems</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/algorithms-folder</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/algorithms-folder</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/blind-75</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/blind-75</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/leetcode-list</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/leetcode-list</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/array</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/array</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/string</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/string</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/stack</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/stack</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/queue</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/queue</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/linked-lists</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/linked-lists</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/hash-tables</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/hash-tables</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/heaps</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/heaps</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/trees</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/trees</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/graphs</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/graphs</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/sorting</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/sorting</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/binary-search</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/binary-search</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/two-pointers</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/two-pointers</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/greedy</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/greedy</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/sliding-window</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/sliding-window</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/DFS</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/DFS</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/BFS</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/BFS</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/backtracking</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/backtracking</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/DP</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/DP</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/algorithms/bit-manipulation</loc>
+  <loc>https://algorithmik.vercel.app/guide/algorithms/bit-manipulation</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/prerequisites</loc>
+  <loc>https://algorithmik.vercel.app/guide/prerequisites</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/prerequisites/complexity</loc>
+  <loc>https://algorithmik.vercel.app/guide/prerequisites/complexity</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/prerequisites/pointers</loc>
+  <loc>https://algorithmik.vercel.app/guide/prerequisites/pointers</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/prerequisites/recursion</loc>
+  <loc>https://algorithmik.vercel.app/guide/prerequisites/recursion</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/misc</loc>
+  <loc>https://algorithmik.vercel.app/guide/misc</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/misc/complexity-of-algos</loc>
+  <loc>https://algorithmik.vercel.app/guide/misc/complexity-of-algos</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/misc/patterns</loc>
+  <loc>https://algorithmik.vercel.app/guide/misc/patterns</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/misc/roadmap</loc>
+  <loc>https://algorithmik.vercel.app/guide/misc/roadmap</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/misc/algo-all-in-one</loc>
+  <loc>https://algorithmik.vercel.app/guide/misc/algo-all-in-one</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/read/improving-in-contests</loc>
+  <loc>https://algorithmik.vercel.app/read/improving-in-contests</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/read/cant-solve-new-problems</loc>
+  <loc>https://algorithmik.vercel.app/read/cant-solve-new-problems</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/read/approaching-a-new-problem</loc>
+  <loc>https://algorithmik.vercel.app/read/approaching-a-new-problem</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/amazon</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/amazon</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/google</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/google</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/microsoft</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/microsoft</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/facebook</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/facebook</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/tesla</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/tesla</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/uber</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/uber</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/paypal</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/paypal</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/bloomberg</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/bloomberg</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/samsung</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/samsung</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/company-folder/dropbox</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/company-folder/dropbox</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/algorithms-folder/DP</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/algorithms-folder/DP</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/algorithms-folder/segment-tree</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/algorithms-folder/segment-tree</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/algorithms-folder/trie</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/algorithms-folder/trie</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/problem-sets/algorithms-folder/kmp</loc>
+  <loc>https://algorithmik.vercel.app/guide/problem-sets/algorithms-folder/kmp</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/grokking-data-structures.pdf</loc>
+  <loc>https://algorithmik.vercel.app/grokking-data-structures.pdf</loc>
   <lastmod>2024-12-25T16:24:38+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/array/kadane</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/array/kadane</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/array/dnf</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/array/dnf</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/array/prefix-sum</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/array/prefix-sum</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/linked-lists/singly-linked-list</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/linked-lists/singly-linked-list</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/linked-lists/doubly-linked-list</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/linked-lists/doubly-linked-list</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/hash-tables/hashmap</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/hash-tables/hashmap</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/hash-tables/hashset</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/hash-tables/hashset</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/heaps/minheap</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/heaps/minheap</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/heaps/maxheap</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/heaps/maxheap</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/trees/binary-tree</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/trees/binary-tree</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/trees/BST</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/trees/BST</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/trees/trie</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/trees/trie</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://www.algorithmik.in/guide/data-structures/trees/segment-tree</loc>
+  <loc>https://algorithmik.vercel.app/guide/data-structures/trees/segment-tree</loc>
   <lastmod>2024-12-25T16:24:43+00:00</lastmod>
   <priority>0.51</priority>
 </url>

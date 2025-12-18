@@ -1,1 +1,1 @@
-Sitemap: https://www.algorithmik.in/sitemap.xml
+Sitemap: https://algorithmik.vercel.app/sitemap.xml
