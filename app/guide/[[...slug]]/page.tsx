@@ -56,7 +56,7 @@ export async function generateMetadata(props: PageProps) {
     openGraph: {
       title: frontmatter.title,
       description: frontmatter.description,
-      url: `https://algorithmik.in/guide/${pathName}`,
+      url: `https://algorithmik-alt.vercel.app/guide/${pathName}`,
       siteName: "Algorithmik",
       images: [
         {

@@ -27,10 +27,10 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
   }
 
   const { frontmatter } = res;
-  const url = `https://algorithmik.in/read/${slug}`;
+  const url = `https://algorithmik-alt.vercel.app/read/${slug}`;
 
   return {
-    metadataBase: new URL("https://algorithmik.in"),
+    metadataBase: new URL("https://algorithmik-alt.vercel.app"),
     title: frontmatter.title,
     description: frontmatter.description,
     alternates: {

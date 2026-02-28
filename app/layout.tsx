@@ -23,7 +23,7 @@ const fontCode = JetBrains_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://algorithmik.in"),
+  metadataBase: new URL("https://algorithmik-alt.vercel.app"),
   title: {
     default: "Algorithmik",
     template: "%s",
@@ -39,11 +39,11 @@ export const metadata = {
       template: "%s",
     },
     description: "Master Data Structures and Algorithms",
-    url: "https://algorithmik.in", // Replace with your actual URL
+    url: "https://algorithmik-alt.vercel.app",
     siteName: "Algorithmik",
     images: [
       {
-        url: "/algorithmik.png", // Ensure this path is correct
+        url: "/algorithmik.png",
         width: 1200,
         height: 630,
       },
