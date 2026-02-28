@@ -59,6 +59,8 @@ async function parseMdx<Frontmatter>(rawMdx: string) {
     source: rawMdx,
     options: {
       parseFrontmatter: true,
+      blockJS: false,
+      blockDangerousJS: false,
       mdxOptions: {
         rehypePlugins: [
           preProcess,
