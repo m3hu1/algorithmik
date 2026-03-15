@@ -2,10 +2,10 @@
 
 Your comprehensive guide to mastering Data Structures and Algorithms.
 
-Check it out: [algorithmik-alt.vercel.app](https://algorithmik-alt.vercel.app/)
+Check it out: [algorithmik.vercel.app](https://algorithmik.vercel.app/)
 
 > [!CAUTION]
-> I do not own or operate `algorithmik.in` anymore. Any content currently hosted there is not affiliated with me. The new domain is [algorithmik-alt.vercel.app](https://algorithmik-alt.vercel.app/).
+> I do not own or operate `algorithmik.in` anymore. Any content currently hosted there is not affiliated with me. The new domain is [algorithmik.vercel.app](https://algorithmik.vercel.app/).
 
 ## Guide Features 📚
 
