@@ -1,6 +1,5 @@
 import { getDocsTocs } from "@/lib/markdown";
-import TocObserver from "./toc-observer";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { RailToc } from "@/components/ui/rail-toc";
 
 export default async function Toc({ path }: { path: string }) {
   const tocs = await getDocsTocs(path);
@@ -9,14 +8,22 @@ export default async function Toc({ path }: { path: string }) {
     return null;
   }
 
+  const items = tocs.map(({ href, level, text }) => ({
+    id: href.slice(1),
+    label: text,
+    depth: level - 2,
+  }));
+
   return (
-    <div className="lg:flex hidden toc flex-[1.5] min-w-[238px] py-9 sticky top-16 h-[96.95vh]">
-      <div className="flex flex-col gap-3 w-full pl-2">
-        <h3 className="font-medium text-sm">On this page</h3>
-        <ScrollArea className="pb-2 pt-0.5 overflow-y-auto">
-          <TocObserver data={tocs} />
-        </ScrollArea>
-      </div>
+    <div className="lg:flex hidden toc flex-[1.5] min-w-[238px] py-9 pl-3 sticky top-16 max-h-[calc(100vh-4rem)] overflow-y-auto">
+      <RailToc
+        items={items}
+        title="On this page"
+        offset={80}
+        style={
+          { "--rail": "hsl(var(--foreground) / 0.5)" } as React.CSSProperties
+        }
+      />
     </div>
   );
 }
